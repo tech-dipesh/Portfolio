@@ -209,6 +209,17 @@
         </div>
         <div class="rights">All rights &#169 reserved by dipendra Sharma</div>
     </footer>
+
+    <div class="custom-cursor"></div>
+
+    <script>
+        const customCursor = document.querySelector('.custom-cursor');
+
+        document.addEventListener('mousemove', (e) => {
+            customCursor.style.left = `${e.pageX - customCursor.offsetWidth / 2}px`;
+            customCursor.style.top = `${e.pageY - customCursor.offsetHeight / 2}px`;
+        });
+    </script>
     <!-- This is for the animated my site of one line -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>

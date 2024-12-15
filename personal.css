@@ -260,3 +260,25 @@ header img{
     .contact{
         text-wrap: nowrap;
     }
+
+    .custom-cursor {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(52, 152, 219, 0.5);
+        border: 2px solid rgba(41, 128, 185, 0.8);
+        border-radius: 50%;
+        pointer-events: none;
+        transition: transform 0.1s ease-out, background-color 0.3s ease;
+    }
+
+    a, button {
+        cursor: pointer;
+    }
+
+    a:hover ~ .custom-cursor, button:hover ~ .custom-cursor {
+        width: 60px;
+        height: 60px;
+        background-color: rgba(46, 204, 113, 0.7);
+        border-color: rgba(39, 174, 96, 0.9);
+    }
