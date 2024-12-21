@@ -2,36 +2,63 @@
 
 <head>
     <title>Dipendra Portfolio </title>
-    <link rel="icon" href="https://static-00.iconduck.com/assets.00/web-developer-illustration-2005x2048-fal2biag.png"
-        type="icon/png">
+    <link rel="icon" href="https://static-00.iconduck.com/assets.00/web-developer-illustration-2005x2048-fal2biag.png" type="icon/png">
     <link rel="stylesheet" href="personal.css">
     <script src="personal.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-
+    <link rel="stylesheet" href="contact-us.css">
 </head>
 
 </style>
 
 <body>
-    <div id="progress-bar">
-        
-    </div>
+    <div id="progress-bar"></div>
     <header id="header">
         <a href="#header"><img src="https://static-00.iconduck.com/assets.00/web-developer-illustration-2005x2048-fal2biag.png" alt=""></a>
         <nav>
-            <div class="left">Dipendra Portfolio Website </div>
+            <div class="left">Dipendra (Dipesh) Portfolio Website </div>
             <div class="right">
                 <ul>
                     <li><a href="#header">Home</a></li>
-                    <li><a href="#footer">About</a></li>
-                    <li><a href="#footer">Services</a></li>
+                    <li><a href="3dwith-three-js.html">See me in 3D</a></li>
                     <li><a href="#footer">Testimonial</a></li>
                     <li><a href="#footer">Projects</a></li>
-                    <li><a href="#footer">Contact Me</a></li>
+                    <li><a href="#footer" onclick="openModal()">Contact Me</a></li>
                 </ul>
             </div>
         </nav>
-        
+        <div class="modal" id="contactModal">
+          <div class="modal-content">
+              <button class="close-btn" onclick="closeModal()">&times;</button>
+              <h2 class="form-title">Get in Touch</h2>
+              
+              <form id="contactForm" onsubmit="handleSubmit(event)">
+                  <div class="form-group">
+                      <label for="name">Name</label>
+                      <input type="text" id="name" placeholder="Enter your name">
+                      <div class="error-message" id="nameError"></div>
+                  </div>
+                  
+                  <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" id="email" placeholder="Enter your email">
+                      <div class="error-message" id="emailError"></div>
+                  </div>
+                  
+                  <div class="form-group">
+                      <label for="message">Message</label>
+                      <textarea id="message" rows="4" placeholder="Enter your message"></textarea>
+                      <div class="error-message" id="messageError"></div>
+                  </div>
+                  
+                  <button type="submit" class="submit-btn">Send Message</button>
+              </form>
+              
+              <div class="success-message" id="successMessage">
+                  Thank you! Your message has been sent successfully.
+              </div>
+          </div>
+      </div>
     </header>
     <main>
         <section class="first">
@@ -172,45 +199,90 @@
                 <div class="progress" style="width: 80%;">80%</div>
               </div>
             </div>
+            <div class="skill">
+              <p>Three.Js</p>
+              <div class="progress-bar">
+                <div class="progress" style="width: 20%;">20%</div>
+              </div>
+            </div>
           </section>
     </main>
-    <footer id="footer">
-        <div class="flex">
-            <div class="footer1">
-                <h3>Dipendra Portfolio</h3>
-            </div>
-            <div class="footer2">
-                <ul>
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#header">About</a></li>
-                    <li><a href="#header">Servicces</a></li>
-                    <li><a href="#header">Projects</a></li>
-                    <li><a href="#header">Testimonial</a></li>
-                    <li><a href="#header" class="contact">Contact Me</a></li>
-                </ul>
-            </div>
-            <div class="footer3">Social Media
-                <ul>
-                    <li><a href="https://linkedin.com/in/dipeshacademy">Linkedin</a></li>
-                    <li><a href="https://github.com/tech-dipesh">Github</a></li>
-                    <li><a href="https://leetcode.com/u/dipeshs">Leetcode</a></li>
-                </ul>
-            </div>
-            <div class="footer3">
-                <ul>
-                    <li><a href="https://wa.me/9779745400194"><img
-                                src="https://cdn-icons-png.flaticon.com/128/455/455705.png" alt=""></a></li>
-                    <li><a href="mailto:dipeshgautambusiness@gmail.com">
-                            <img src="https://cdn-icons-png.flaticon.com/128/542/542689.png" alt="Email Image" /></a></li>
-                    <li><a href="https://linkedin.com/in/dipeshacademy"><img
-                                src="https://cdn-icons-png.flaticon.com/128/3536/3536505.png" alt=""></a></li>
-                </ul>
-            </div>
+    
+    <section class="testimonials">
+      <h2>Testimonial</h2>
+      <div class="testimonial-container">
+        <div class="testimonial active">
+          <p>"Thank you Dipesh for the work that you provided. I'm happy to have worked with him - he's responsible, good with communication, and works to fulfill the task according to the buyer's requirement. Recommended."</p>
+          <h3> Hando, South Korea</h3>
         </div>
-        <div class="rights">All rights &#169 reserved by dipendra Sharma</div>
-    </footer>
+        <div class="testimonial">
+          <p>" We collaborated with him on strategies to grow our social media presence from 25 million subscribers to an even larger audience. He provided significant assistance during a short-term project, contributing greatly to the task."</p>
+          <h3>LankyBox</h3>
+        </div>
+        <div class="testimonial">
+          <p>"We collaborated on content creation for a short-term project, focusing on Nepali sports, mainly cricket, to reach a global audience."</p>
+          <h3>Wicket Nepal - Owner</h3>
+        </div>
+      </div>
+    </section>
+    
+    <section class="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">What services do you offer?</div>
+          <div class="faq-answer">My primary skills include junior front-end development, YouTube content growth strategy, influencer marketing, and content writing. In the future, you can hire me for major projects related to full-stack development with fully built tools.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How can we collaborate?</div>
+          <div class="faq-answer">You can easily reach me on WhatsApp, which might be the most convenient way to contact me. Alternatively, you can email me or we can arrange a meet-up around Chandigarh (India). Just to note, I’m Nepali and currently here for my studies, so if you're nearby, we can meet.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do you take on freelance projects?</div>
+          <div class="faq-answer">Yes, I work as a freelance developer, offering services that include full-stack web development, custom website design, and integrating dynamic functionalities using JavaScript and modern frameworks.</div>
+        </div>
+      </div>
+    </section>
+    
+    <footer id="footer">
+      <div class="flex">
+          <div class="footer1">
+              <h3>Dipendra (Dipesh) Portfolio</h3>
+          </div>
+          <div class="footer2">
+              <ul>
+                  <li><a href="#header">Home</a></li>
+                  <li><a href="3dwith-three-js.html">See me in 3D</a></li>
+                  <li><a href="#header">Projects</a></li>
+                  <li><a href="#header">Testimonial</a></li>
+                  <li><a href="#header" class="contact" onclick="openModal()">Contact Me</a></li>
+              </ul>
+          </div>
+          <div class="footer3">Social Media
+              <ul>
+                  <li><a href="https://linkedin.com/in/dipeshacademy">Linkedin</a></li>
+                  <li><a href="https://github.com/tech-dipesh">Github</a></li>
+                  <li><a href="https://leetcode.com/u/dipeshs">Leetcode</a></li>
+              </ul>
+          </div>
+          <div class="footer3">
+              <ul>
+                  <li><a href="https://wa.me/9779745400194"><img
+                              src="https://cdn-icons-png.flaticon.com/128/455/455705.png" alt=""></a></li>
+                  <li><a href="mailto:dipeshgautambusiness@gmail.com">
+                          <img src="https://cdn-icons-png.flaticon.com/128/542/542689.png" alt="Email Image" /></a></li>
+                  <li><a href="https://linkedin.com/in/dipeshacademy"><img
+                              src="https://cdn-icons-png.flaticon.com/128/3536/3536505.png" alt=""></a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="rights">All rights &#169 reserved by dipendra Sharma</div>
+  </footer>
 
-    <div class="custom-cursor"></div>
+  <div class="custom-cursor"></div>
+
+<!-- this is for going top of the page -->
+    <button id="back-to-top" aria-label="Back to top">↑</button>
 
     <script>
         const customCursor = document.querySelector('.custom-cursor');
