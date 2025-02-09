@@ -1,237 +1,250 @@
+<!DOCTYPE html>
 <html>
-    <head>
-    <title>Dipendra Porfolio</title>
-    <link rel="icon" href="https://static-00.iconduck.com/assets.00/web-developer-illustration-2005x2048-fal2biag.png" type="icon/png">
+<head>
+    <title>My Tech Stack Journey</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        canvas { display: block; }
+        .skill-info {
+            position: absolute;
+            border-radius: 10px;
+            padding: 20px;
+            color: white;
+            font-family: Arial;
+            max-width: 300px;
+            opacity: 0;
+            transition: all 0.3s;
+            pointer-events: none;
+            backdrop-filter: blur(5px);
+        }
+        .skill-info.visible {
+            opacity: 1;
+            transform: translateY(-10px);
+        }
+        .skill-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+        .skill-description {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 5px;
+            background: #333;
+            margin-top: 10px;
+            border-radius: 3px;
+        }
+        .progress {
+            width: 0%;
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.8s ease-out, background-color 0.3s;
+        }
+    </style>
 </head>
 <body>
-<section class="tech-stack-3d">
-    <canvas id="tech-stack-canvas"></canvas>
-    <div class="canvas-overlay">
-        <h2>My Tech Stack Journey So far</h2>
-        <p>Please rotate to see my portfolio</p>
+    <div id="skillInfo" class="skill-info">
+        <div class="skill-title"></div>
+        <div class="skill-description"></div>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
     </div>
-    <div class="h3"><h3>Please Note that i am still beginner at Three.Js this is just the basic coding:)</h3></div>
-</section>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
-
-<style>
-.tech-stack-3d {
-    position: relative;
-    width: 100%;
-    height: 60vh;
-    min-height: 400px;
-    background: #000021;
-    overflow: hidden;
-}
-h3{
-    color: white;
-    position: absolute;
-    top: 90%;
-
-    }
-#tech-stack-canvas {
-    width: 100% !important;
-    height: 100% !important;
-}
-
-.canvas-overlay {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    color: white;
-    z-index: 1;
-    pointer-events: none;
-}
-
-.canvas-overlay h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-.canvas-overlay p {
-    font-size: 1rem;
-    opacity: 0.8;
-}
-
-@media (max-width: 768px) {
-    .tech-stack-3d {
-        height: 40vh;
-        min-height: 300px;
-    }
-    
-    .canvas-overlay h2 {
-        font-size: 1.5rem;
-    }
-}
-</style>
-
-<!-- this is 3js which i am still trying to learn hopefully i would learn that quickly the website is help with ai and also mine intermediate learning -->
-<script>
-class TechStackScene {
-    constructor() {
-        this.scene = new THREE.Scene();
-        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        this.renderer = new THREE.WebGLRenderer({
-            canvas: document.getElementById('tech-stack-canvas'),
-            antialias: true,
-            alpha: true
-        });
-        
-        this.init();
-        this.animate();
-        this.setupEventListeners();
-    }
-    
-    init() {
-        // this is for setup renderiing
-        this.renderer.setPixelRatio(window.devicePixelRatio);
-        this.renderer.setSize(window.innerWidth, window.innerHeight);
-        
-        // this is my setup camera
-        this.camera.position.z = 5;
-        
-        // this is for geometry icoon
-        this.createTechStack();
-        
-        // this is for add lights
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-        const pointLight = new THREE.PointLight(0xffffff, 1);
-        pointLight.position.set(5, 5, 5);
-        this.scene.add(ambientLight, pointLight);
-    }
-    
-    createTechStack() {
-        // this is for create a cube
-        const geometry = new THREE.BoxGeometry(2, 2, 2);
-        const materials = [
-            this.createTextMaterial('JavaScript'),
-            this.createTextMaterial('React'),
-            this.createTextMaterial('Node.js'),
-            this.createTextMaterial('Youtube'),
-            this.createTextMaterial('Influencer Marketer'),
-            this.createTextMaterial('Git'),
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
+    <script>
+        const skills = [
+            {
+                name: 'Influencer Marketing',
+                color: 0xff4081,
+                position: [-4, 0, 0],
+                description: 'Strategic social media influence and brand collaboration',
+                proficiency: 90,
+                hoverColor: '#ff4081',
+                bgColor: 'rgba(255, 64, 129, 0.2)'
+            },
+            {
+                name: 'YouTube Management',
+                color: 0xff0000,
+                position: [0, 0, -4],
+                description: 'Content strategy and channel growth optimization',
+                proficiency: 85,
+                hoverColor: '#ff0000',
+                bgColor: 'rgba(255, 0, 0, 0.2)'
+            },
+            {
+                name: 'JavaScript',
+                color: 0xf0db4f,
+                position: [4, 0, 0],
+                description: 'Interactive web development and functionality',
+                proficiency: 75,
+                hoverColor: '#f0db4f',
+                bgColor: 'rgba(240, 219, 79, 0.2)'
+            },
+            {
+                name: 'Three.js',
+                color: 0x049ef4,
+                position: [0, 0, 4],
+                description: '3D graphics and interactive visualizations',
+                proficiency: 45,
+                hoverColor: '#049ef4',
+                bgColor: 'rgba(4, 158, 244, 0.2)'
+            }
         ];
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+        scene.background = new THREE.Color(0x0a0a2a);
+
+        const platforms = skills.map(skill => {
+            const group = new THREE.Group();
+            const geometry = new THREE.BoxGeometry(2, 0.3, 2);
+            const material = new THREE.MeshPhongMaterial({
+                color: skill.color,
+                shininess: 100,
+                specular: 0x444444
+            });
+            const platform = new THREE.Mesh(geometry, material);
+            
+            const glowGeometry = new THREE.BoxGeometry(2.2, 0.4, 2.2);
+            const glowMaterial = new THREE.MeshPhongMaterial({
+                color: skill.color,
+                transparent: true,
+                opacity: 0.3
+            });
+            const glow = new THREE.Mesh(glowGeometry, glowMaterial);
+            
+            group.add(platform);
+            group.add(glow);
+            group.position.set(...skill.position);
+            group.userData = skill;
+            group.scale.set(0, 0, 0);
+            
+            new TWEEN.Tween(group.scale)
+                .to({ x: 1, y: 1, z: 1 }, 1000)
+                .easing(TWEEN.Easing.Elastic.Out)
+                .delay(skills.indexOf(skill) * 200)
+                .start();
+            
+            scene.add(group);
+            return group;
+        });
+
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+
+        const pointLight = new THREE.PointLight(0xffffff, 1);
+        pointLight.position.set(10, 10, 10);
+        scene.add(pointLight);
+
+        const particleCount = 1000;
+        const particleGeometry = new THREE.BufferGeometry();
+        const particlePositions = new Float32Array(particleCount * 3);
         
-        this.cube = new THREE.Mesh(geometry, materials);
-        this.scene.add(this.cube);
-        
-        // this is for floating the webpage
-        this.particles = new THREE.Group();
-        for (let i = 0; i < 50; i++) {
-            const particle = this.createParticle();
-            this.particles.add(particle);
+        for(let i = 0; i < particleCount * 3; i += 3) {
+            particlePositions[i] = (Math.random() - 0.5) * 100;
+            particlePositions[i + 1] = (Math.random() - 0.5) * 100;
+            particlePositions[i + 2] = (Math.random() - 0.5) * 100;
         }
-        this.scene.add(this.particles);
-    }
-    
-    createTextMaterial(text) {
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = 256;
-        canvas.height = 256;
         
-        // this is for the draw
-        ctx.fillStyle = '#1a1a3a';
-        ctx.fillRect(0, 0, 256, 256);
-        
-        // Draw text
-        ctx.font = 'bold 32px Arial';
-        ctx.fillStyle = '#ffffff';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText(text, 128, 128);
-        
-        const texture = new THREE.CanvasTexture(canvas);
-        return new THREE.MeshStandardMaterial({ map: texture });
-    }
-    
-    createParticle() {
-        const geometry = new THREE.SphereGeometry(0.02, 8, 8);
-        const material = new THREE.MeshBasicMaterial({ 
-            color: 0x6c63ff,
+        particleGeometry.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
+        const particleMaterial = new THREE.PointsMaterial({
+            color: 0xffffff,
+            size: 0.1,
             transparent: true,
-            opacity: Math.random() * 0.5 + 0.25
+            opacity: 0.6
         });
-        const particle = new THREE.Mesh(geometry, material);
-        
-        // create the random position for my understand
-        particle.position.set(
-            (Math.random() - 0.5) * 10,
-            (Math.random() - 0.5) * 10,
-            (Math.random() - 0.5) * 10
-        );
-        
-        // for me it is a the particale rotate
-        particle.userData.originalY = particle.position.y;
-        particle.userData.speed = Math.random() * 0.02 + 0.01;
-        
-        return particle;
-    }
-    
-    animate() {
-        requestAnimationFrame(() => this.animate());
-        
-        // it is for the rotate  
-        this.cube.rotation.x += 0.002;
-        this.cube.rotation.y += 0.003;
-        
-        //it is for the animate 
-        this.particles.children.forEach(particle => {
-            particle.position.y = particle.userData.originalY + 
-                Math.sin(Date.now() * particle.userData.speed) * 0.2;
-        });
-        
-        this.renderer.render(this.scene, this.camera);
-    }
-    
-    setupEventListeners() {
-        window.addEventListener('resize', () => {
-            this.camera.aspect = window.innerWidth / window.innerHeight;
-            this.camera.updateProjectionMatrix();
-            this.renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-        
-        //make mouse interactive my understant
+        const particles = new THREE.Points(particleGeometry, particleMaterial);
+        scene.add(particles);
+
+        camera.position.z = 10;
+
+        const raycaster = new THREE.Raycaster();
+        const mouse = new THREE.Vector2();
         let isDragging = false;
         let previousMousePosition = { x: 0, y: 0 };
-        
-        document.getElementById('tech-stack-canvas').addEventListener('mousedown', (e) => {
-            isDragging = true;
-            previousMousePosition = {
-                x: e.clientX,
-                y: e.clientY
-            };
-        });
-        
-        document.addEventListener('mousemove', (e) => {
+        const skillInfo = document.getElementById('skillInfo');
+
+        function updateSkillInfo(skill, x, y) {
+            skillInfo.style.background = skill.bgColor;
+            skillInfo.querySelector('.skill-title').textContent = skill.name;
+            skillInfo.querySelector('.skill-title').style.color = skill.hoverColor;
+            skillInfo.querySelector('.skill-description').textContent = skill.description;
+            skillInfo.querySelector('.progress').style.width = skill.proficiency + '%';
+            skillInfo.querySelector('.progress').style.backgroundColor = skill.hoverColor;
+            skillInfo.style.left = (x + 20) + 'px';
+            skillInfo.style.top = (y - 20) + 'px';
+            skillInfo.classList.add('visible');
+        }
+
+        function hideSkillInfo() {
+            skillInfo.classList.remove('visible');
+        }
+
+        document.addEventListener('mousemove', (event) => {
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
             if (isDragging) {
-                const deltaMove = {
-                    x: e.clientX - previousMousePosition.x,
-                    y: e.clientY - previousMousePosition.y
-                };
-                
-                this.cube.rotation.y += deltaMove.x * 0.005;
-                this.cube.rotation.x += deltaMove.y * 0.005;
-                
-                previousMousePosition = {
-                    x: e.clientX,
-                    y: e.clientY
-                };
+                const deltaX = event.clientX - previousMousePosition.x;
+                const deltaY = event.clientY - previousMousePosition.y;
+                scene.rotation.y += deltaX * 0.005;
+                scene.rotation.x += deltaY * 0.005;
+            }
+
+            previousMousePosition = { x: event.clientX, y: event.clientY };
+
+            raycaster.setFromCamera(mouse, camera);
+            const intersects = raycaster.intersectObjects(platforms, true);
+
+            platforms.forEach(platform => {
+                new TWEEN.Tween(platform.scale)
+                    .to({ x: 1, y: 1, z: 1 }, 200)
+                    .start();
+                platform.children[1].material.opacity = 0.3;
+            });
+
+            if (intersects.length > 0) {
+                const hoveredPlatform = intersects[0].object.parent;
+                new TWEEN.Tween(hoveredPlatform.scale)
+                    .to({ x: 1.2, y: 1.2, z: 1.2 }, 200)
+                    .start();
+                hoveredPlatform.children[1].material.opacity = 0.8;
+                updateSkillInfo(hoveredPlatform.userData, event.clientX, event.clientY);
+            } else {
+                hideSkillInfo();
             }
         });
-        
-        document.addEventListener('mouseup', () => {
-            isDragging = false;
+
+        document.addEventListener('mousedown', () => isDragging = true);
+        document.addEventListener('mouseup', () => isDragging = false);
+        document.addEventListener('wheel', (event) => {
+            camera.position.z = Math.max(5, Math.min(15, camera.position.z + event.deltaY * 0.01));
         });
-    }
-}
-//this is for the initialazition the scene when loaded.
-document.addEventListener('DOMContentLoaded', () => {
-    new TechStackScene();
-});
-</script>
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        function animate() {
+            requestAnimationFrame(animate);
+            TWEEN.update();
+            particles.rotation.y += 0.0005;
+            platforms.forEach(platform => {
+                platform.rotation.y += 0.01;
+            });
+            renderer.render(scene, camera);
+        }
+
+        animate();
+    </script>
 </body>
 </html>
