@@ -16,7 +16,6 @@ const links = [
 ]
 
 export default function Header() {
-  const [isDrawer, setIsDrawer] = useState(false)
   return (
     <header className="w-full bg-[#06063a] shadow-md px-6 py-4">
       <div className="flex items-center justify-between">

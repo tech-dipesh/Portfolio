@@ -5,7 +5,9 @@
   
 
 # FEatures:
-  - 
+  - Add teh header feature to the page,
+  - Add the footer page
+  
   
 # Library Used:
   - react-router
