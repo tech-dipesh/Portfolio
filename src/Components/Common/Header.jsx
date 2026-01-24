@@ -25,10 +25,8 @@ export default function Header() {
         </span>
         <nav className="hidden md:flex space-x-6">
           {links.map(link=>(
-            <div className='text-gray-700 dark:text-gray-200 hover:text[#3498db] cursor-pointer transition'>{link.name}
-              {/* <NavLink to='/'/> */}
-              {/* <Link to='/'/> */}
-            </div>
+            <NavLink key={link.name} className='text-gray-700 dark:text-gray-200 hover:text[#3498db] cursor-pointer transition' to={link.path}>{link.name}
+            </NavLink>
           ))}
         </nav>
         <div className="flex items-center space-x-4">
