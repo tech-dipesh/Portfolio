@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './App.css'
-import Header from './Components/Common/Header'
+import Header from './Components/Header'
 import { Outlet } from 'react-router'
-import Footer from './Components/Common/Footer'
+import Footer from './Components/Footer'
 
 function App() {
   return (

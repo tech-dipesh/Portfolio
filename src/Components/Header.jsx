@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { NavLink, Link } from 'react-router'
 // import DarkModeToggle from './Toggle'
 // import MobileDrawer from '../drawer/Mobile'
-import logo from '../../assets/images/me.png'
+import logo from '../assets/images/me.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 

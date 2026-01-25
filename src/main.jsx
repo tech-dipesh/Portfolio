@@ -3,8 +3,8 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router'
-import Contact from "./Components/Pages/Contact"
-import Home from './Components/Pages/Home.jsx'
+import Contact from "./Pages/Contact"
+import Home from './Pages/Home'
 const router=createBrowserRouter([
   {
     path: "/",
