@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
-import Profile from "../../public/profile.png"
+import Profile from "../assets/profile.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClipboard, faCopy } from '@fortawesome/free-regular-svg-icons'
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faLocation, faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
+import { Link } from 'react-router';
 export default function Home() {
   const [isCopy, setIsCopy]=useState(false);
   const clickCopy=()=>{
@@ -10,6 +13,16 @@ export default function Home() {
   setIsCopy(!isCopy)
 } 
 
+
+function getWithAmPm(date) {
+  let hours = date.getHours();
+  hours%=12;
+  hours=hours?hours:12;
+  let minutes = date.getMinutes();
+  let getAmOrPm = hours >= 12 ? 'pm' : 'am';
+  minutes = minutes < 10 ? '0'+minutes : minutes;
+  return `${hours}:${minutes} ${getAmOrPm}`
+}
   return (
 <div>
       <h3 className='my-8 md:gap-2 justify-center flex text-3xl md:text-4xl font-bold text-slate-100'>I Design the Sytem that Work For Everyone.</h3>
@@ -35,6 +48,32 @@ export default function Home() {
     </div>
       </div>
       </div>
+<div className='bg-slate-900 p-8 rounded-lg max-w-md mx-10 md:mx-10 mx-20 grid'>
+  <h2 className='text-3xl mb-4'>
+    <span className='font-light italic'>Dipesh</span>
+    <span className='font-bold'> Sharma.</span>
+  </h2>
+  <div className='flex items-center gap-2 bg-slate-900  text-gray-400 text-sm mb-8'>
+    <FontAwesomeIcon icon={faLocationDot} className='text-gray-500'/>
+    <span>Chandigarh, In</span>
+    <span className='mx-1'>•</span>
+    <span>{getWithAmPm(new Date())}</span>
+  </div>
+  <div>
+
+  <div className='flex gap-6 text-xl text-gray-300'>
+    <Link to='https://github.com/tech-dipesh' target='_blank'>
+    <FontAwesomeIcon icon={faGithub} className='hover:text-white cursor-pointer transition-colors'/>
+    </Link>
+    <Link to='https://x.com/tec_dipesh' target='_blank'>
+    <FontAwesomeIcon icon={faXTwitter} className='hover:text-white cursor-pointer transition-colors'/>
+    </Link>
+    <Link to='https://linkedin.com/in/tech-dipesh' target='_blank'>
+    <FontAwesomeIcon icon={faLinkedin} className='hover:text-white cursor-pointer transition-colors'/>
+    </Link>
+  </div>
+  </div>
+</div>
 </div>
   )
 }
