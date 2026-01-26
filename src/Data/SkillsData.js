@@ -18,7 +18,7 @@ import Express from "../assets/skills/express.png"
 import Contextapi from "../assets/skills/context-api.png"
 import Vercel from "../assets/skills/vercel.webp"
 import Vite from "../assets/skills/vite.png"
-import Skillcart from "../Components/Skillcart"
+import VsCode from "../assets/skills/vs-code.png"
 
 export const LanguagesList=[
   {
@@ -88,6 +88,10 @@ export const Tools=[
   {
     name: 'Api',
     icon: API
+  },
+  {
+    name: 'Vscode',
+    icon: VsCode
   },
   {
     name: 'Npm',

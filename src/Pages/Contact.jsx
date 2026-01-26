@@ -46,7 +46,7 @@ export default function Contact() {
   }
 
   return (
-    <div className="p-4 mx-auto max-w-xl bg-white bg-slate-900">
+    <div className="p-4 mx-auto max-w-xl bg-slate-900">
         <h2 className="text-3xl text-slate-900 font-bold">Contact us</h2>
         <form className="mt-8 space-y-5" onSubmit={(e)=>submitForm(e)}>
           <div>

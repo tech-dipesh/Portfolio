@@ -12,6 +12,8 @@
   - Add all the data of the 3 projects.
   - Create individual Project Cart with stylying
   - Create teh contact page with lot of styling from tailwindcss.
+  - Add teh Skills page and also the certificate page.
+  - also the better stylying of teh cart page,
   
   
 # Library Used:
