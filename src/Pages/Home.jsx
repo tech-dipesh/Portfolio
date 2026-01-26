@@ -9,6 +9,7 @@ import { Link } from 'react-router';
 import Projects from './Projects';
 import Contact from './Contact';
 import FutureLearn from './Future-Learn';
+import Skills from './Skills';
 export default function Home() {
   const [isCopy, setIsCopy] = useState(false);
   const clickCopy = () => {
@@ -101,6 +102,7 @@ export default function Home() {
         </section>
       </section>
       <Projects />
+      <Skills/>
       <FutureLearn />
       <Contact />
     </div>
