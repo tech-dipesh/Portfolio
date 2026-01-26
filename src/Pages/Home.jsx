@@ -6,7 +6,7 @@ import { faArrowRight, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
 import { Link } from 'react-router';
-import Projects from '../Components/Projects';
+import Projects from './Projects';
 export default function Home() {
   const [isCopy, setIsCopy] = useState(false);
   const clickCopy = () => {
@@ -84,8 +84,8 @@ export default function Home() {
         {/* <h3>I'm Dipesh Sharma, a Software Developer Aficionado who loves to solve the comlex problem, with help of the coding.</h3> */}
         <h3>I’m a software developer who loves to solve real-world problems by writing code that tells computers what to do. Day and night, I enjoy thinking about coding—finding better ways to solve problems and learning new topics through different approaches. I love coding in my strongest areas of technology, with a major focus on JavaScript and C++.</h3>
         <div className='flex my-4'>
-          {skills.map(skill=>(
-            <div className='rounded-1xl cursor-pointer px-4 py-2 gap-4 bg-slate-900 mx-4'>
+          {skills.map((skill, i)=>(
+            <div className='rounded-1xl cursor-pointer px-4 py-2 gap-4 bg-slate-900 mx-4' key={i}>
               {skill}
             </div>
           ))}

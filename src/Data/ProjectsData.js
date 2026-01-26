@@ -1,9 +1,13 @@
-import StateImage from "../assets/images/stateflow.png";
+import StateImage from "../assets/images/state-flow.png";
 import AirBnb from "../assets/images/airbnb.png";
 import MusicPlayer from "../assets/images/beat-bridge.png";
 
+import React from "../assets/skills/react.png"
+import Tailwind from "../assets/skills/tailwind.png"
+
 export default [
   {
+    id: 1,
     name: "State-Flow",
     intro:
       "A Jira-inspired task manager built with React to track projects, deadlines, and priorities—all in one clean, drag-and-drop board.",
@@ -31,6 +35,7 @@ export default [
     Completed: "January 2026",
   },
   {
+    id: 2,
     name: "Home Finder",
     intro:
       "A full-stack Airbnb-style rental platform where users can list properties, browse locations, and leave reviews—all with secure authentication and cloud image upload.",
@@ -39,7 +44,7 @@ export default [
     liveDemo: "https://mega-project-listing.onrender.com/",
     Description:
       "This is my first backend-focused project using the MVC architecture. It handles user authentication, file uploads to Cloudinary, and live maps with geo-location—all while keeping data persistent with MongoDB Atlas.",
-    image: StateImage,
+    image: AirBnb,
     features: [
       "User Authentication & Authorization – Secure signup/login with Passport.js, session management, and user-specific permissions for editing/deleting listings.",
       "Cloud-Powered Media Handling – Upload property images directly to Cloudinary with Multer, with compression and preview features for better UX.",
@@ -59,6 +64,7 @@ export default [
     Completed: "February 2025",
   },
   {
+    id: 3,
     name: "Beat Bridge",
     intro:
       "A fully-featured music player built entirely from scratch using vanilla JavaScript—no frameworks, no libraries, just pure DOM manipulation and custom logic.",
@@ -67,7 +73,7 @@ export default [
     liveDemo: "https://state-flows.vercel.app/",
     Description:
       "This is a complete audio player with playlists, queue management, bookmarks, search, sleep timer, and keyboard shortcuts. All state persists across sessions via localStorage, providing a seamless user experience.",
-    image: StateImage,
+    image: MusicPlayer,
     features: [
       "- Smart Queue & Playlist System – Add songs to queue or select from playlists; tracks automatically play in sequence after the current song ends.",
       "- **Sleep Timer & Custom Controls** – Set predefined or custom timers to stop playback, with volume/speed sliders, bookmarks, and play count tracking.",

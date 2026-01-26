@@ -10,6 +10,7 @@
   - Now implement the HOmepage with takign a ui inspiration
   - Also addding my project data.
   - Add all the data of the 3 projects.
+  - Create individual Project Cart with stylying
   
   
 # Library Used:
