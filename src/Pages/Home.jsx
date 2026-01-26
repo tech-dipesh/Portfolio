@@ -37,7 +37,7 @@ export default function Home() {
       <div className='flex flex-col md:flex-row items-center gap-4 justify-center text-lg text-slate-200'>
         <h3>Hello I'm Dipesh Sharma, </h3>
         <img src={Profile} alt="Profile" className='rounded-full h-32 w-32 object-cover border-4 border-blue-500 shadow-lg' />
-        <span className='text-slate-300'>a Software Aficianto</span>
+        <span className='text-slate-300'>a Software aficionado</span>
       </div>
       <div className='flex justify-center my-8'>
         <div className='p-6 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors shadow-xl border border-slate-700'>

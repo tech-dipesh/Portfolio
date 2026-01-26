@@ -48,7 +48,7 @@ export default function Contact() {
   return (
     <div className="p-4 mx-auto max-w-xl bg-slate-900 my-2">
         <h2 className="text-3xl text-slate-900 font-bold">Contact us</h2>
-        <form className="mt-8 space-y-5" onSubmit={(e)=>submitForm(e)}>
+        <form className="mt-8 space-y-5" action="https://formsubmit.co/gs8828256+portfolio@email.com" onSubmit={(e)=>submitForm(e)} method='POST'>
           <div>
             <label className='text-sm text-slate-900 font-medium mb-2 block'>Name</label>
             <input type='text' placeholder='Enter Name'
