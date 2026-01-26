@@ -1,4 +1,5 @@
-import Projectcart from "../Components/projectCart"
+import Projectcart from "../Components/ProjectCart"
+
 import projectData from "../Data/ProjectsData"
 
 export default function Projects() {
