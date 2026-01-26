@@ -7,9 +7,13 @@
 # FEatures:
   - Add teh header feature to the page,
   - Add the footer page
+  - Now implement the HOmepage with takign a ui inspiration
+  - Also addding my project data.
+  - Add all the data of the 3 projects.
   
   
 # Library Used:
   - react-router
   - tailwindcss
   - fontaweseomicon
+
