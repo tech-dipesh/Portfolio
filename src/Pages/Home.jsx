@@ -33,7 +33,7 @@ export default function Home() {
 
   return (
     <div>
-      <h3 className='my-8 md:gap-2 justify-center flex text-3xl md:text-4xl font-bold text-slate-100'>I Design the Sytem that Work For Everyone.</h3>
+      <h3 className='md:my-6 lg:my-8 md:gap-2 justify-center flex md:text-2xl lg:text-3xl font-bold text-slate-100'>I Design the Sytem that Work For Everyone.</h3>
       <div className='flex flex-col md:flex-row items-center gap-4 justify-center text-lg text-slate-200'>
         <h3>Hello I'm Dipesh Sharma, </h3>
         <img src={Profile} alt="Profile" className='rounded-full h-32 w-32 object-cover border-4 border-blue-500 shadow-lg' />

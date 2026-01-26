@@ -14,10 +14,15 @@
   - Create teh contact page with lot of styling from tailwindcss.
   - Add teh Skills page and also the certificate page.
   - also the better stylying of teh cart page,
-  
+  - Fix the responsive design for the header page during a mobiolse usage
+
+  - Also add the not Found Page of the website.
+  - Also used lucide-react of install some certain icons.
+  - 
   
 # Library Used:
   - react-router
   - tailwindcss
   - fontaweseomicon
+  - lucide-react
 

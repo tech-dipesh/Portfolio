@@ -25,7 +25,7 @@ export default function Header() {
     </Link>
     <button 
       onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-      className="md:hidden text-slate-300 hover:text-blue-400 transition-colors"
+      className="md:hidden text-slate-300 hover:text-blue-400 transition-colors cursor-pointer"
     >
       <FontAwesomeIcon icon={isMobileMenuOpen ? faTimes : faBars} className="text-xl"/>
     </button>

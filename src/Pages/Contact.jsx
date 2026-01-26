@@ -1,4 +1,6 @@
+import { ArrowLeft, Send } from 'lucide-react';
 import React, { useState } from 'react'
+import { Link } from 'react-router';
 
 export default function Contact() {
   const [value, setValue]=useState({
@@ -96,9 +98,15 @@ export default function Contact() {
               <div className='text-red-500'>Please Enter a Message</div>
                }
           </div>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <Link to='./' className='bg-slate-700 p-2 rounded-lg hover:text-gray-700'><ArrowLeft/></Link>
+          <div className='text-white bg-slate-900 flex font-medium hover:bg-slate-800 tracking-wide text-sm px-4 py-2.5 border-0 outline-0 cursor-pointer'>
           <input type='submit'
             value='Send Message'
-            className="text-white bg-slate-900 font-medium hover:bg-slate-800 tracking-wide text-sm px-4 py-2.5 w-full border-0 outline-0 cursor-pointer"/>
+            className="flex mx-4"/>
+            <Send className='flex mx-2'/>
+          </div>
+            </div>
         </form>
       </div>
   )
