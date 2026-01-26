@@ -2,7 +2,6 @@ import { Link } from "react-router";
 import Github from "../assets/social-media/github.png"
 
 export default function Projectcart({image, Project}) {
-  console.log('project', Project);
   return (
  <article className='flex flex-col lg:flex-row gap-8 bg-slate-900/50 p-6 md:p-8 rounded-2xl border border-slate-800 hover:border-slate-700 transition-all duration-300 group'>
       <div className='flex-1 relative'>

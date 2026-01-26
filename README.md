@@ -11,6 +11,7 @@
   - Also addding my project data.
   - Add all the data of the 3 projects.
   - Create individual Project Cart with stylying
+  - Create teh contact page with lot of styling from tailwindcss.
   
   
 # Library Used:
