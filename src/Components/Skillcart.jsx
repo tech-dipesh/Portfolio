@@ -1,5 +1,6 @@
 import { faCertificate, faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router'
 
 export default function Skillcart({name, icon}) {
   return (
@@ -18,7 +19,7 @@ export default function Skillcart({name, icon}) {
 export function CertificateCart({list}) {
   return (
     <div className='flex items-center gap-3 px-6 py-4 bg-slate-900/50 border border-slate-800 rounded-xl hover:border-yellow-500/30 hover:bg-slate-900 transition-all duration-300 cursor-pointer group'>
-      <Link to='https://github.com'>
+      <Link to='https://github.com' target='_blank'>
       <FontAwesomeIcon 
         icon={faCertificate} 
         className='text-yellow-500 text-lg shrink-0'

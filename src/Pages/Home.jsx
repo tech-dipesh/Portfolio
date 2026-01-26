@@ -23,7 +23,7 @@ export default function Home() {
     hours %= 12;
     hours = hours ? hours : 12;
     let minutes = date.getMinutes();
-    let getAmOrPm = hours >= 12 ? 'pm' : 'am';
+    let getAmOrPm = hours >= 12 ? 'am' : 'pm';
     minutes = minutes < 10 ? '0' + minutes : minutes;
     return `${hours}:${minutes} ${getAmOrPm}`
   }

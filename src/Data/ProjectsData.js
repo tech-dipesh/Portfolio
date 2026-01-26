@@ -75,9 +75,9 @@ export default [
       "This is a complete audio player with playlists, queue management, bookmarks, search, sleep timer, and keyboard shortcuts. All state persists across sessions via localStorage, providing a seamless user experience.",
     image: MusicPlayer,
     features: [
-      "- Smart Queue & Playlist System – Add songs to queue or select from playlists; tracks automatically play in sequence after the current song ends.",
-      "- Sleep Timer & Custom Controls – Set predefined or custom timers to stop playback, with volume/speed sliders, bookmarks, and play count tracking.",
-      " - Persistent State & Shortcuts – Remembers last song, position, volume, and bookmarks. Full keyboard control with over 10 shortcuts (play/pause, volume, speed, timer, etc.",
+      "Smart Queue & Playlist System – Add songs to queue or select from playlists; tracks automatically play in sequence after the current song ends.",
+      "Sleep Timer & Custom Controls – Set predefined or custom timers to stop playback, with volume/speed sliders, bookmarks, and play count tracking.",
+      "Persistent State & Shortcuts – Remembers last song, position, volume, and bookmarks. Full keyboard control with over 10 shortcuts (play/pause, volume, speed, timer, etc.",
       "Pure Vanilla Implementation – Built manually without AI or tutorials—uses modular JavaScript, dynamic UI updates, and efficient event handling for a smooth, framework‑free experience.",
     ],
     techStack: ["HTML", "CSS", "Vanilla JavaScript (ES6 Modules)"],
