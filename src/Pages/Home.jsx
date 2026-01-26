@@ -7,6 +7,7 @@ import { faGithub, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
 import { Link } from 'react-router';
 import Projects from './Projects';
+import Contact from './Contact';
 export default function Home() {
   const [isCopy, setIsCopy] = useState(false);
   const clickCopy = () => {
@@ -56,7 +57,7 @@ export default function Home() {
 
 
     <section className='flex'>
-      <div className='bg-slate-900 p-8 rounded-lg max-w-md mx-10 md:mx-10 lg:mx-20 grid'>
+      <div className='bg-slate-900 py-2 px-24 rounded-lg max-w-md mx-10 md:mx-10 lg:mx-20 grid'>
         <h2 className='text-3xl mb-4'>
           <span className='font-light italic'>Dipesh</span>
           <span className='font-bold'> Sharma.</span>
@@ -93,6 +94,7 @@ export default function Home() {
       </section>
     </section>
     <Projects/>
+    <Contact/>
     </div>
   )
 }
