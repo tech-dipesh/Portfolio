@@ -28,7 +28,7 @@ export default function Home() {
   }
 
 
-  const skills=['JavaScript', 'React', 'C++', 'Redux', 'Nodejs', 'TypeScript']
+  const skills = ['JavaScript', 'React', 'C++', 'Redux', 'Nodejs', 'TypeScript']
 
   return (
     <div>
@@ -57,19 +57,21 @@ export default function Home() {
       </div>
 
 
-    <section className='flex'>
-      <div className='bg-slate-900 py-2 px-24 rounded-lg max-w-md mx-10 md:mx-10 lg:mx-20 grid'>
-        <h2 className='text-3xl mb-4'>
-          <span className='font-light italic'>Dipesh</span>
-          <span className='font-bold'> Sharma.</span>
-        </h2>
-        <div className='flex items-center gap-2 bg-slate-900  text-gray-400 text-sm mb-8'>
-          <FontAwesomeIcon icon={faLocationDot} className='text-gray-500' />
-          <span>Chandigarh, In</span>
-          <span className='mx-1'>•</span>
-          <span>{getWithAmPm(new Date())}</span>
-        </div>
-          <div className='gap-6 text-xl text-gray-300'>
+      <section className='flex flex-col lg:flex-row gap-8 max-w-6xl mx-auto px-4 my-12'>
+        <div className='bg-slate-900 p-8 rounded-2xl border border-slate-800 shrink-0 lg:w-96'>
+          <h2 className='text-4xl mb-6'>
+            <span className='font-light italic'>Dipesh</span>
+            <span className='font-bold text-gray-300'> Sharma.</span>
+          </h2>
+
+          <div className='flex items-center gap-2 text-gray-400 text-sm mb-12'>
+            <FontAwesomeIcon icon={faLocationDot} className='text-gray-500' />
+            <span>Chandigarh, In</span>
+            <span className='mx-1'>•</span>
+            <span>{getWithAmPm(new Date())}</span>
+          </div>
+
+          <div className='flex gap-8 text-2xl text-gray-300'>
             <Link to='https://github.com/tech-dipesh' target='_blank'>
               <FontAwesomeIcon icon={faGithub} className='hover:text-white cursor-pointer transition-colors' />
             </Link>
@@ -81,22 +83,26 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      <section className='justify-center p-24'>
-        <h2>Who I am:</h2>
-        {/* <h3>I'm Dipesh Sharma, a Software Developer Aficionado who loves to solve the comlex problem, with help of the coding.</h3> */}
-        <h3>I’m a software developer who loves to solve real-world problems by writing code that tells computers what to do. Day and night, I enjoy thinking about coding—finding better ways to solve problems and learning new topics through different approaches. I love coding in my strongest areas of technology, with a major focus on JavaScript and C++.</h3>
-        <div className='flex my-4'>
-          {skills.map((skill, i)=>(
-            <div className='rounded-1xl cursor-pointer px-4 py-2 gap-4 bg-slate-900 mx-4' key={i}>
-              {skill}
-            </div>
-          ))}
-        </div>
+        <section className='flex-1 flex flex-col gap-6'>
+          <h2 className='text-2xl font-semibold text-slate-200'>Who I am:</h2>
+          <p className='text-slate-300 leading-relaxed text-base'>
+            I'm a software developer who loves to solve real-world problems by writing code that tells computers what to do. Day and night, I enjoy thinking about coding—finding better ways to solve problems and learning new topics through different approaches. I love coding in my strongest areas of technology, with a major focus on JavaScript and C++.
+          </p>
+          <div className='flex flex-wrap gap-3 mt-2'>
+            {skills.map((skill, i) => (
+              <div
+                className='px-5 py-2.5 bg-slate-900 border border-slate-800 rounded-lg text-slate-300 text-sm hover:border-slate-700 hover:bg-slate-800 transition-all cursor-default'
+                key={i}
+              >
+                {skill}
+              </div>
+            ))}
+          </div>
+        </section>
       </section>
-    </section>
-    <Projects/>
-    <FutureLearn/>
-    <Contact/>
+      <Projects />
+      <FutureLearn />
+      <Contact />
     </div>
   )
 }
