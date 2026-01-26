@@ -16,17 +16,19 @@ export default function Contact() {
   const submitForm=(e)=>{
     e.preventDefault();
     console.log('input value is', value);
-    console.log('error', error);
-    if(!error.name){
+    if(!value.name){
         setError(prev=>({prev, name: 'Please Enter your name.'}))
+        console.log('inside name error');
         return
       }
-    if(!error.email){
+      if(!value.email){
         setError(prev=>({prev, email: 'Please Enter your Email.'}))
+        console.log('inside email error.');
         return
       }
-    if(!error.Message){
+      if(!value.Message){
         setError(prev=>({prev, email: 'Please Enter your Message.'}))
+        console.log('inside message error.');
         return
     }
     setValue({
@@ -44,14 +46,17 @@ export default function Contact() {
   }
 
   return (
-    <div className="p-4 mx-auto max-w-xl bg-white">
+    <div className="p-4 mx-auto max-w-xl bg-white bg-slate-900">
         <h2 className="text-3xl text-slate-900 font-bold">Contact us</h2>
         <form className="mt-8 space-y-5" onSubmit={(e)=>submitForm(e)}>
           <div>
             <label className='text-sm text-slate-900 font-medium mb-2 block'>Name</label>
             <input type='text' placeholder='Enter Name'
               name='Name'
-              onChange={(e)=>setValue(prev=>({...prev, name: e.target.value}))}
+              onChange={(e)=>(
+                setValue(prev=>({...prev, name: e.target.value})),
+                setError(prev=>({...prev, name: ''}))
+              )}
               value={value.name}
               className="w-full py-2.5 px-4 text-slate-800 bg-gray-100 border border-gray-200 focus:border-slate-900 focus:bg-transparent text-sm outline-0 transition-all" />
               {
@@ -64,7 +69,9 @@ export default function Contact() {
             <input type='email' placeholder='Enter Email'
               name='Email'
               onChange={(e)=>(
-                setValue(prev=>({...prev, email: e.target.value}))
+                setValue(prev=>({...prev, email: e.target.value})),
+                setError(prev=>({...prev, email: ''}))
+
   )}
               value={value.email}
               className="w-full py-2.5 px-4 text-slate-800 bg-gray-100 border border-gray-200 focus:border-slate-900 focus:bg-transparent text-sm outline-0 transition-all" />
@@ -77,7 +84,10 @@ export default function Contact() {
             <label className='text-sm text-slate-900 font-medium mb-2 block'>Message</label>
             <textarea placeholder='Enter Message' rows="6"
               name='Message'
-                onChange={(e)=>setValue(prev=>({...prev, Message: e.target.value}))}
+                onChange={(e)=>(
+                  setValue(prev=>({...prev, Message: e.target.value})),
+                   setError(prev=>({...prev, Message: ''}))
+              )}
               value={value.Message}
               className="w-full px-4 text-slate-800 bg-gray-100 border border-gray-200 focus:border-slate-900 focus:bg-transparent text-sm pt-3 outline-0 transition-all">
               </textarea>

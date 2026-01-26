@@ -27,6 +27,7 @@ export default function Projectcart({image, Project}) {
         
         <Link 
           to={Project.githubLink} 
+          target="_blank"
           className='absolute -top-2 -right-2 w-12 h-12 bg-slate-800 border border-slate-700 rounded-full flex items-center justify-center hover:bg-slate-700 hover:border-slate-600 transition-all duration-300 hover:scale-110 z-10'
         >
           <img src={Github} alt="Github" className="w-6 h-6"/>

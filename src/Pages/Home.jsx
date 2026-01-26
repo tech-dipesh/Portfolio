@@ -8,6 +8,7 @@ import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
 import { Link } from 'react-router';
 import Projects from './Projects';
 import Contact from './Contact';
+import FutureLearn from './Future-Learn';
 export default function Home() {
   const [isCopy, setIsCopy] = useState(false);
   const clickCopy = () => {
@@ -94,6 +95,7 @@ export default function Home() {
       </section>
     </section>
     <Projects/>
+    <FutureLearn/>
     <Contact/>
     </div>
   )
