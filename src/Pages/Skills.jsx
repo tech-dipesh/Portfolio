@@ -1,6 +1,7 @@
-import Skillcart, { CertificateCart } from "../Components/Skillcart";
-import { Certificate, LanguagesList, LibraryList, Tools } from "../Data/SkillsData";
-
+import Skillcart from "../Components/Skillcart";
+import CertificateCart from "../Components/Certificatecart";
+import {  LanguagesList, LibraryList, Tools } from "../Data/SkillsData";
+import CertificateData from "../Data/CertificateData";
 export default function Skills() {
   return (
     <div className='min-h-screen py-20 px-4'>
@@ -38,10 +39,10 @@ export default function Skills() {
           <div>
             <h1 className='font-bold text-5xl text-slate-100 mb-12'>Certifications</h1>
             <div className='mb-8'>
-              <h2 className='text-2xl font-semibold text-slate-200 mb-6'>Frontend</h2>
+              {/* <h2 className='text-2xl font-semibold text-slate-200 mb-6'>Frontend</h2> */}
               <div className='space-y-3'>
-                {Certificate.map((list, i) => (
-                  <CertificateCart key={i} list={list} />
+                {CertificateData.map(({title, url}, i) => (
+                  <CertificateCart key={i} title={title} url={url}/>
                 ))}
               </div>
             </div>

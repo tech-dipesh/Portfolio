@@ -12,7 +12,7 @@ const links = [
   { name: 'Projects', path: '/projects' },
   { name: 'Contact', path: '/contact' },
   { name: 'Skills', path: '/skills' },
-  { name: 'Resume', path: './resume.pdf#' },
+  { name: 'Resume', path: './resume.pdf', target: 'new' },
 ]
 
 
@@ -31,15 +31,16 @@ export default function Header() {
       <FontAwesomeIcon icon={isMobileMenuOpen ? faTimes : faBars} className="text-xl"/>
     </button>
    <nav className="hidden md:flex items-center gap-4 lg:gap-8">
-  {links.map(link => (
+  {links.map(({name, path, target}) => (
     <NavLink 
-      key={link.name} 
+      key={name} 
       className={({isActive}) => 
         `text-slate-300 hover:text-blue-400 cursor-pointer transition-colors duration-200 font-medium relative group text-sm md:text-base ${isActive ? 'text-blue-400' : ''}`
       }
-      to={link.path}
+      to={path}
+      target={target==='new'?'_blank':''}
     >
-      {link.name}
+      {name}
     </NavLink>
       ))}
     </nav>

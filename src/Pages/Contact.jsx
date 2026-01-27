@@ -48,7 +48,10 @@ export default function Contact() {
   }
 
   return (
-    <div className='min-w-2xl bg-zinc-700 md:min-h-screen lg:min-h-4xl lg:py-16'>
+    <div className='min-w-2xl  bg-zinc-700 grid'>
+      <div>
+        <h2>Contact Me For </h2>
+      </div>
     <div className="p-4 mx-auto max-w-xl bg-slate-900 my-2 rounded-xl">
         <h2 className="text-3xl text-white dark:text-slate-900 font-bold">Contact us</h2>
         <form className="mt-8 space-y-5" action="https://formsubmit.co/gs8828256+portfolio@email.com" onSubmit={(e)=>submitForm(e)} method='POST'>

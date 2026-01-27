@@ -114,6 +114,3 @@ export const Tools=[
     icon: Git
   },
 ]
-
-
-export const Certificate=['Learn Basic React', 'Ecmascript Javascript', 'Full Stack Project']
