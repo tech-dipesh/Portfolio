@@ -23,6 +23,9 @@
   - Try to implement the dark light mode majority area.
   - Move the certificate cart to different comps, and also update the certiciate cart
   - make the Resume to show on the new Tab.
+  - Update resume to latest Resume
+  - Add my Github Contribution Page
+
 
   >:warning: The Biggest Pitfall that i've try to implment while implementing the dark light mode theme, whiich try multiple method nothing seem to be working, but thanksfull with the help of the one stackvoerlow answer i've able to implement the darkLight Mode Them: `@custom-variant dark (&:where(.dark, .dark *));` should be implement on the entir project.
     don't need any tailwind.config.js from v4 tailwindcss nowards.

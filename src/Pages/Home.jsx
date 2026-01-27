@@ -4,6 +4,9 @@ import Contact from './Contact';
 import FutureLearn from './Future-Learn';
 import Skills from './Skills';
 import TopHome from '../Components/TopHome';
+import { GitHubCalendar } from 'react-github-calendar';
+import Github from '../Components/Github';
+
 export default function Home() {
   return (
     <div className=' text-black dark:text-slate-100 bg-slate-900 dark:bg-slate-800 p-4'>
@@ -11,6 +14,7 @@ export default function Home() {
       <Projects />
       <Skills/>
       <FutureLearn />
+      <Github/>
       <Contact />
     </div>
   )
