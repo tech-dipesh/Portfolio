@@ -48,8 +48,9 @@ export default function Contact() {
   }
 
   return (
-    <div className="p-4 mx-auto max-w-xl bg-slate-900 my-2">
-        <h2 className="text-3xl text-slate-900 font-bold">Contact us</h2>
+    <div className='min-w-2xl bg-zinc-700 md:min-h-screen lg:min-h-4xl lg:py-16'>
+    <div className="p-4 mx-auto max-w-xl bg-slate-900 my-2 rounded-xl">
+        <h2 className="text-3xl text-white dark:text-slate-900 font-bold">Contact us</h2>
         <form className="mt-8 space-y-5" action="https://formsubmit.co/gs8828256+portfolio@email.com" onSubmit={(e)=>submitForm(e)} method='POST'>
           <div>
             <label className='text-sm text-slate-900 font-medium mb-2 block'>Name</label>
@@ -73,30 +74,30 @@ export default function Contact() {
               onChange={(e)=>(
                 setValue(prev=>({...prev, email: e.target.value})),
                 setError(prev=>({...prev, email: ''}))
-
-  )}
+                
+              )}
               value={value.email}
               className="w-full py-2.5 px-4 text-slate-800 bg-gray-100 border border-gray-200 focus:border-slate-900 focus:bg-transparent text-sm outline-0 transition-all" />
                {
-                error.email && 
-              <div className='text-red-500'>Please Enter a Email</div>
-               }
+                 error.email && 
+                 <div className='text-red-500'>Please Enter a Email</div>
+                }
           </div>
           <div>
             <label className='text-sm text-slate-900 font-medium mb-2 block'>Message</label>
             <textarea placeholder='Enter Message' rows="6"
               name='Message'
-                onChange={(e)=>(
-                  setValue(prev=>({...prev, Message: e.target.value})),
-                   setError(prev=>({...prev, Message: ''}))
+              onChange={(e)=>(
+                setValue(prev=>({...prev, Message: e.target.value})),
+                setError(prev=>({...prev, Message: ''}))
               )}
               value={value.Message}
               className="w-full px-4 text-slate-800 bg-gray-100 border border-gray-200 focus:border-slate-900 focus:bg-transparent text-sm pt-3 outline-0 transition-all">
               </textarea>
                {
-                error.Message && 
-              <div className='text-red-500'>Please Enter a Message</div>
-               }
+                 error.Message && 
+                 <div className='text-red-500'>Please Enter a Message</div>
+                }
           </div>
           <div className="flex sm:flex-col md:flex-row items-center justify-between lg:gap-4">
           <Link to='./' className='bg-slate-700 p-2 rounded-lg hover:text-gray-700'><ArrowLeft/></Link>
@@ -109,5 +110,6 @@ export default function Contact() {
         </div>
         </form>
       </div>
+    </div>
   )
 }

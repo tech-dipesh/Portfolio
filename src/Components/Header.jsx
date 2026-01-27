@@ -19,7 +19,7 @@ const links = [
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen]=useState(false)
   return (
-  <header className="lg:w-full bg-slate-900 border-b border-slate-800 shadow-lg px-6 py-4">
+  <header className="lg:w-full bg-zinc-800 border-b border-slate-800 shadow-lg px-6 py-4">
   <div className=" lg:max-w-7xl mx-auto flex items-center justify-between">
     <Link to='./'>
       <img src={logo} alt="Logo" className='h-10 w-10 rounded-full hover:opacity-80 transition-opacity' />
@@ -47,7 +47,7 @@ export default function Header() {
   </div>
  
  {isMobileMenuOpen && (
-      <nav className="md:hidden mt-4 pb-4 border-t border-slate-800 pt-4">
+      <nav className="md:hidden mt-4 pb-4 border-t border-slate-600 pt-4">
         <div className="flex flex-col gap-4">
           {links.map(link => (
             <NavLink 
@@ -62,6 +62,7 @@ export default function Header() {
             </NavLink>
           ))}
         </div>
+        <ThemeToggle className='hidden md:block'/>
       </nav>
     )}
 </header>

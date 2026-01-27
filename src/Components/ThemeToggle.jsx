@@ -12,7 +12,7 @@ export default function ThemeToggle() {
    <div className="hidden md:flex items-center gap-4">
   <div 
     className={`relative w-14 h-7 rounded-full cursor-pointer transition-colors duration-300 ${
-      isDark ? 'bg-slate-700' : 'bg-blue-500'
+      isDark ? 'bg-slate-700' : 'bg-zinc-500'
     }`}
     onClick={toggleTheme}
   >
