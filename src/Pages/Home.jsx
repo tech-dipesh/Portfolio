@@ -42,10 +42,10 @@ export default function Home() {
       <div className='flex justify-center my-8'>
         <div className='p-6 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors shadow-xl border border-slate-700'>
           <div className='flex items-center justify-between w-full gap-4'>
-            <div className='flex items-center gap-2 cursor-pointer bg-slate-800/50 px-6 py-3 rounded-full border border-slate-700/50'>
+            <Link to='./contact' className='flex items-center gap-2 cursor-pointer bg-slate-800/50 px-6 py-3 rounded-full border border-slate-700/50'>
               <h2 className='text-slate-100 font-semibold text-lg'>Let's Connect</h2>
               <FontAwesomeIcon icon={faArrowRight} className='text-blue-400' />
-            </div>
+            </Link>
             <div onClick={clickCopy} className='flex items-center gap-3 bg-slate-800/50 px-6 py-3 rounded-full border border-slate-700/50 cursor-pointer hover:border-blue-400/50 transition-all'>
               <FontAwesomeIcon
                 icon={isCopy ? faClipboard : faCopy}
