@@ -18,8 +18,12 @@
 
   - Also add the not Found Page of the website.
   - Also used lucide-react of install some certain icons.
-  - 
+  - Change the Project Name
   
+
+  >:warning: The Biggest Pitfall that i've try to implment while implementing the dark light mode theme, whiich try multiple method nothing seem to be working, but thanksfull with the help of the one stackvoerlow answer i've able to implement the darkLight Mode Them: `@custom-variant dark (&:where(.dark, .dark *));` should be implement on the entir project.
+    don't need any tailwind.config.js from v4 tailwindcss nowards.
+    
 # Library Used:
   - react-router
   - tailwindcss

@@ -4,14 +4,15 @@ import { NavLink, Link } from 'react-router'
 // import MobileDrawer from '../drawer/Mobile'
 import logo from '../assets/images/me.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faMoon, faSun, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import ThemeToggle from './ThemeToggle';
 
 const links = [
   { name: 'Home', path: '/' },
   { name: 'Projects', path: '/projects' },
   { name: 'Contact', path: '/contact' },
   { name: 'Skills', path: '/skills' },
-  { name: 'Resume', path: './resume.pdf' },
+  { name: 'Resume', path: './resume.pdf#' },
 ]
 
 
@@ -42,10 +43,7 @@ export default function Header() {
     </NavLink>
       ))}
     </nav>
-    
-    <div className="flex items-center gap-4">
-
-    </div>
+    <ThemeToggle/>
   </div>
  
  {isMobileMenuOpen && (

@@ -98,7 +98,7 @@ export default function Contact() {
               <div className='text-red-500'>Please Enter a Message</div>
                }
           </div>
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex sm:flex-col md:flex-row items-center justify-between lg:gap-4">
           <Link to='./' className='bg-slate-700 p-2 rounded-lg hover:text-gray-700'><ArrowLeft/></Link>
           <div className='text-white bg-slate-900 flex font-medium hover:bg-slate-800 tracking-wide text-sm px-4 py-2.5 border-0 outline-0 cursor-pointer'>
           <input type='submit'
@@ -106,7 +106,7 @@ export default function Contact() {
             className="flex mx-4"/>
             <Send className='flex mx-2'/>
           </div>
-            </div>
+        </div>
         </form>
       </div>
   )
