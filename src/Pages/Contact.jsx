@@ -19,23 +19,18 @@ export default function Contact() {
 
   const submitForm=(e)=>{
     e.preventDefault();
-    console.log('input value is', value);
     if(!value.Name){
         setError(prev=>({prev, Name: 'Please Enter yourNname.'}))
-        console.log('insideNname error');
         return
       }
       if(!value.Email){
         setError(prev=>({prev, Email: 'Please Enter your Email.'}))
-        console.log('inside email error.');
         return
       }
       if(!value.Message){
         setError(prev=>({prev, Message: 'Please Enter your Message.'}))
-        console.log('inside message error.');
         return
     }
-    console.log('form submitetd succesffuly');
     ShowMessage()
     setTimeout(() => {
         e.target.submit()
@@ -90,10 +85,10 @@ export default function Contact() {
                 setError(prev=>({...prev, Email: ''}))
                 
               )}
-              value={value.email}
+              value={value.Email}
               className={inputStyle} />
                {
-                 error.email && 
+                 error.Email && 
                  <div className='text-red-500'>Please Enter a Email</div>
                 }
           </div>

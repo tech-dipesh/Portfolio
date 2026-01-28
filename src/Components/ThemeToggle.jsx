@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-// import "./Toggle.css"
+import React from 'react'
 import { Moon, Sun } from 'lucide-react'
+import useLocalStorage from '../hooks/useLocalStorage'
 export default function ThemeToggle({style=''}) {
-	 const [isDark, setIsDark] = useState(false)
+	 const [isDark, setIsDark] = useLocalStorage('theme', false)
 
   const toggleTheme = () => {
     setIsDark(!isDark)
