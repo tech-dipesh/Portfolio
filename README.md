@@ -25,6 +25,13 @@
   - make the Resume to show on the new Tab.
   - Update resume to latest Resume
   - Add my Github Contribution Page
+  - Fix the header bar with not overlap the value and also the add the hamburger
+  - Stylying of the homepage for best contact us page.
+  - Add the formSubmit co form for form submission
+  - Add the react toastify success message
+  - form submit dat to my email
+  - The problem is that i also should use teh state name capti ald don't need any return on reacttoast
+    
 
 
   >:warning: The Biggest Pitfall that i've try to implment while implementing the dark light mode theme, whiich try multiple method nothing seem to be working, but thanksfull with the help of the one stackvoerlow answer i've able to implement the darkLight Mode Them: `@custom-variant dark (&:where(.dark, .dark *));` should be implement on the entir project.

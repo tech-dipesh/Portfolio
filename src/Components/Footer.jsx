@@ -5,7 +5,7 @@ import { Link } from 'react-router'
 
 export default function Footer() {
   return (
-    <div className='flex justify-center mt-48 mb-4 bg-gray-800 pt-24'>
+    <div className='flex justify-center mt-48 mb-4 py-12 px-4 bg-gray-800 pt-24'>
       <h1 className='font-sans md:text-2xl md:text-nowrap'><FontAwesomeIcon icon={faCreativeCommons}/>2026 Dipesh Sharma. All rights reserved.</h1>
           <ul className='flex mx-24 gap-8 font-semibold '>
             <li className='text-gray-300 hover:text-white  underline'><Link to="https://linkedin.com/in/tech-dipesh" target="_blank" rel="noopener noreferrer">Linkedin</Link></li>
