@@ -24,7 +24,7 @@ export default function Header() {
 
   return (
     <>
-  <header className="relative mt-5 flex justify-between items-center lg:w-full bg-zinc-800 border-b border-slate-800 text-slate-900 dark:bg-slate-900 dark:text-slate-900 dark:border-slate-800 shadow-lg px-6 py-4 lg:px-24">
+  <header className="relative flex justify-between items-center lg:w-full bg-zinc-800 border-b border-slate-800 text-slate-900 dark:bg-slate-900 dark:text-slate-900 dark:border-slate-800 shadow-lg px-6 py-4 md:py-8 lg:px-24">
     <Link to='./'  className='h-10 w-10 rounded-full hover:opacity-80 transition-opacity'>
       <img src={logo} alt="Logo" className='rounded-full h-12 w-12'/>
     </Link>
@@ -59,7 +59,7 @@ export default function Header() {
             key={link.name}
             onClick={() => setIsMobileMenuOpen(false)}
             className={({isActive}) => 
-              `${styleLi} ${isActive ? 'text-blue-400 bg-slate-800/50 rounded-lg py-2 text-2xl' : ''}`
+              `${styleLi} ${isActive ? 'text-blue-400 bg-slate-800/50 rounded-lg py-2 text-2xl ' : 'bg-slate-700 py-2 '}`
           }
           to={link.path}
           >

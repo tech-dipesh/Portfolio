@@ -43,16 +43,16 @@ export default function Contact() {
   
 
   return (
-    <div className='container mx-auto px-6 lg:px-24 py-16  bg-zinc-50 dark:bg-slate-950 gap-4'>
-      <h2 className="text-center text-3xl font-bold text-slate-900 tracking-widest mb-12">GET IN TOUCH</h2>
-      <div className='flex flex-col lg:flex-row gap-12'>
+    <div className='container mx-auto px-6 lg:px-24 py-16  bg-slate-800 dark:bg-slate-950 gap-4'>
+      <h2 className="text-center text-3xl font-bold text-white tracking-widest mb-12 ">GET IN TOUCH</h2>
+      <div className='flex flex-col lg:flex-row gap-12 text-white'>
       <div className='lg:w-1/2 flex flex-col justify-start  space-y-6'>
         <h3>I'm avaible for intern roles & freelance projects.</h3>
         <h3>You can send me the message if you've any doubt.</h3>
         <p>I'll try to reponse your message.</p>
         <Link to='https://mail.google.com/mail/?view=cm&to=dipsharmadev@example.com&su=Portfolio%20Message' className='bg-zinc-900 p-4 rounded-xl flex items-center gap-2 w-fit'>dipsharmadev@gmail.com <Send/></Link>
       </div>
-    <div className="p-8 lg:w-1/2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 my-2 rounded-xl">
+    <div className="p-8 lg:w-1/2 bg-slate-700 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 my-2 rounded-xl">
         <h2 className="text-3xl text-slate-900 dark:text-white font-bold">Contact us</h2>
         <form className="mt-8 space-y-5" action="https://formsubmit.co/dipeshgautambusiness+portfolio@gmail.com" 
         onSubmit={(e)=>submitForm(e)} 

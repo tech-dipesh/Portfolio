@@ -3,12 +3,12 @@ import { GitHubCalendar } from 'react-github-calendar'
 
 export default function Github() {
   return (
-   <div className="w-full max-w-4xl mx-auto p-6 bg-slate-50 dark:bg-slate-950 rounded-lg border border-slate-200 dark:border-slate-800 transition-colors">
+   <div className="w-full max-w-4xl mx-auto p-6 bg bg-slate-800 dark:bg-slate-950 rounded-lg border border-slate-200 dark:border-slate-800 transition-colors shadow-xl">
   <div className="mb-6">
-    <h2 className="text-2xl font-semibold text-slate-900 dark:text-slate-100 mb-2">
+    <h2 className="text-2xl font-semibold text-white dark:text-slate-100 mb-2">
       My GitHub Contributions
     </h2>
-    <p className="text-sm text-slate-600 dark:text-slate-400">
+    <p className="text-sm text-blue-500 dark:text-slate-400">
       Activity over the last year
     </p>
   </div>
@@ -23,7 +23,7 @@ export default function Github() {
     />
   </div>
   <div className="mt-4 flex items-center justify-between text-sm">
-    <span className="text-slate-600 dark:text-slate-400">
+    <span className="text-white dark:text-slate-400">
       View on{' '}
       <a 
         href="https://github.com/tech-dipesh" 
