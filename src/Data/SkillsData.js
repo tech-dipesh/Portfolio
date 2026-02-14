@@ -19,6 +19,10 @@ import Contextapi from "../assets/skills/context-api.png"
 import Vercel from "../assets/skills/vercel.webp"
 import Vite from "../assets/skills/vite.png"
 import VsCode from "../assets/skills/vs-code.png"
+import DevTools from "../assets/skills/devtools.webp"
+import Documentation from "../assets/skills/documentation.webp"
+import Parcel from "../assets/skills/parcel.webp"
+import PostgreSql from "../assets/skills/postgresql.webp"
 
 export const LanguagesList=[
   {
@@ -60,6 +64,10 @@ export const LibraryList=[
   {
     name: 'Nodejs',
     icon: Nodejs
+  },
+  {
+    name: 'PostgreSql',
+    icon: PostgreSql
   },
   {
     name: 'Tailwind',
@@ -110,7 +118,15 @@ export const Tools=[
     icon: Vite
   },
   {
-    name: 'Git',
-    icon: Git
+    name: 'DevTools',
+    icon: DevTools
+  },
+  {
+    name: 'parcel',
+    icon: Parcel
+  },
+  {
+    name: 'Documentation',
+    icon: Documentation
   },
 ]

@@ -33,13 +33,18 @@
   - The problem is that i also should use teh state name capti ald don't need any return on reacttoast
   - Implement my Own `useLocalStorage` custom Hooks with my own Code and also implement on my dark light Theme, and remove unused impmort declaratioon.
   - Both Dark Light Mode and also repsonsive design.
-
-  
+  - Add another ceritifcate on my ceritifcate data.
     
 
 
   >:warning: The Biggest Pitfall that i've try to implment while implementing the dark light mode theme, whiich try multiple method nothing seem to be working, but thanksfull with the help of the one stackvoerlow answer i've able to implement the darkLight Mode Them: `@custom-variant dark (&:where(.dark, .dark *));` should be implement on the entir project.
     don't need any tailwind.config.js from v4 tailwindcss nowards.
+
+## Post Maintainence:
+- Add the 3 icons of the skils tols such as: parcel, devtools and doumentation
+- Add the C++ Programming Language Certificate
+- Add Skillls of Postgresql
+- 
     
 # Library Used:
   - react-router

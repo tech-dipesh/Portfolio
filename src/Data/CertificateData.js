@@ -15,4 +15,8 @@ export default [
     title: 'Front End Web Development Ultimate Guide',
     url: 'https://www.udemy.com/certificate/UC-648b5977-4f56-49b8-b193-5f422bd7568e' 
   },
+  {
+    title: 'The Complete Introduction to C++ Programming',
+    url: 'https://www.udemy.com/certificate/UC-b46e00b1-fba1-4c52-a73e-fe8994661e8a/' 
+  },
 ]
