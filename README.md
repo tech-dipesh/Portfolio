@@ -1,6 +1,6 @@
 # My Portfolio Project:
 
-# ERror that i've faced:
+# Error that i've faced:
   - I've Not set the all router and try to use which i'm failed.
   
 
@@ -30,6 +30,7 @@
   - Add the formSubmit co form for form submission
   - Add the react toastify success message
   - form submit dat to my email
+  - Have Vercel Analytics for track the total visitor on the website
   - The problem is that i also should use teh state name capti ald don't need any return on reacttoast
   - Implement my Own `useLocalStorage` custom Hooks with my own Code and also implement on my dark light Theme, and remove unused impmort declaratioon.
   - Both Dark Light Mode and also repsonsive design.
@@ -44,11 +45,22 @@
 - Add the 3 icons of the skils tols such as: parcel, devtools and doumentation
 - Add the C++ Programming Language Certificate
 - Add Skillls of Postgresql
-- 
-    
-# Library Used:
+- Add one More Certificate 
+- Add also the dsa certificate/dsa.
+- Add a Postgres Currently Learning
+- Move the Future Skills To Another Page
+
+## Library Used:
   - react-router
   - tailwindcss
-  - fontaweseomicon
+  - FontAwesomeIcon
   - lucide-react
+  - Dnd-Kit
+  - React Toastify
+  - react-github-calender
+  - Vercel Anallytics
+
+## How to Use:
+>:fire: Go to: https://tech-dipesh.vercel.app
+
 

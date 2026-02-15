@@ -1,33 +1,6 @@
 import React from 'react'
 import SmallDeveloperIcon from "../assets/images/developer-small-icon.png"
-
-const futureSkills = [
-  {
-    skill: 'React Performance Optimization',
-    bgColor: 'bg-blue-500/10',
-    borderColor: 'border-blue-500/30',
-    textColor: 'text-blue-400'
-  },
-  {
-    skill: 'Advanced Algorithms',
-    bgColor: 'bg-yellow-500/10',
-    borderColor: 'border-yellow-500/30',
-    textColor: 'text-yellow-400'
-  },
-  {
-    skill: 'Backend Intermediate Concepts',
-    bgColor: 'bg-purple-500/10',
-    borderColor: 'border-purple-500/30',
-    textColor: 'text-purple-400'
-  },
-  {
-    skill: 'Intro to System Design',
-    bgColor: 'bg-emerald-500/10',
-    borderColor: 'border-emerald-500/30',
-    textColor: 'text-emerald-400'
-  }
-];
-
+import futureSkills from '../Data/futureSkills'
 export default function FutureLearn() {
   return (
     <section className='py-12 px-4'>

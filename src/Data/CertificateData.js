@@ -4,12 +4,20 @@ export default [
     url: 'https://www.udemy.com/certificate/UC-01b424ec-55bc-4123-971f-a0e773357caf/'
   },
   {
-    title: 'Modern JavaScript for React JS - ES6',
-    url: 'https://www.udemy.com/certificate/UC-00cd95c1-69e3-4e2e-9396-e067ab2f3412' 
+    title: 'Master JavaScript from Basics to Advanced',
+    url: 'https://www.udemy.com/certificate/UC-d2bbd21c-2ace-4b1e-b807-aa0f4a88706a/' 
   },
   {
     title: 'Build a Backend REST API with Node JS from Scratch',
     url: 'https://www.udemy.com/certificate/UC-6de36946-2c9a-4f5e-b8f0-79cabcaa0e73' 
+  },
+  {
+    title: 'C++ Code Like you are in MATRIX : Mastering C++ in 13 Hours',
+    url: 'https://www.udemy.com/certificate/UC-6ea437b0-19b0-4444-b97e-687962f8e74d/' 
+  },
+  {
+    title: 'Data Structures Algorithm DSA',
+    url: 'https://www.udemy.com/certificate/UC-3bc77535-04e1-4e17-b56c-6a3b5c72dfb6/' 
   },
   {
     title: 'Front End Web Development Ultimate Guide',
