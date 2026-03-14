@@ -32,7 +32,7 @@ export default function TopHome() {
     <>
           <h3 className='md:my-6 text-white dark:text-gray-200 lg:my-8 md:gap-2 justify-center flex md:text-2xl lg:text-3xl font-bold'>I Design the Sytem that Work For Everyone.</h3>
       <div className='flex flex-col md:flex-row items-center gap-4 justify-center text-lg text-slate-200'>
-        <h3>Hello I'm Dipesh Sharma, </h3>
+        <h3>Hello I'm Dipendra Sharma, </h3>
         <img src={Profile} alt="Profile" className='rounded-full h-32 w-32 object-cover border-4 border-blue-500 shadow-lg' />
         <span className='text-slate-300'>a Software aficionado</span>
       </div>
@@ -58,7 +58,7 @@ export default function TopHome() {
       <section className='flex flex-col lg:flex-row gap-8 max-w-6xl mx-auto px-4 my-12'>
         <div className='bg-slate-900 p-8 rounded-2xl border border-slate-800 shrink-0 lg:w-96'>
           <h2 className='text-4xl mb-6'>
-            <span className='font-light italic text-white dark:text-gray-500'>Dipesh</span>
+            <span className='font-light italic text-white dark:text-gray-500'>Dipendra</span>
             <span className='font-bold text-gray-300'> Sharma.</span>
           </h2>
 
