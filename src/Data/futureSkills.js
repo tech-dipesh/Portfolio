@@ -1,6 +1,6 @@
 export default [
   {
-    skill: 'React Performance Optimization',
+    skill: 'Redux',
     bgColor: 'bg-blue-500/10',
     borderColor: 'border-blue-500/30',
     textColor: 'text-blue-400'
@@ -12,13 +12,13 @@ export default [
     textColor: 'text-yellow-400'
   },
   {
-    skill: 'Backend Intermediate Concepts',
+    skill: 'Docker',
     bgColor: 'bg-purple-500/10',
     borderColor: 'border-purple-500/30',
     textColor: 'text-purple-400'
   },
   {
-    skill: 'DataBase Postgres',
+    skill: 'Background Queue Task',
     bgColor: 'bg-violet-500',
     borderColor: 'border-purple-500/30',
     textColor: 'text-white'
