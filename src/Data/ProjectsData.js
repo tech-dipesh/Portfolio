@@ -1,6 +1,7 @@
 import StateImage from "../assets/images/state-flow.png";
 import AirBnb from "../assets/images/airbnb.png";
 import MusicPlayer from "../assets/images/beat-bridge.png";
+import Yetijobs from "../assets/images/yeti-jobs.png";
 
 import React from "../assets/skills/react.png"
 import Tailwind from "../assets/skills/tailwind.png"
@@ -8,6 +9,41 @@ import Tailwind from "../assets/skills/tailwind.png"
 export default [
   {
     id: 1,
+    name: "Yeti-Jobs",
+    intro:
+      "A Scalable job portal built with the PERN stack that connects job seekers and recruiters with advanced search, application tracking, and role based access control. Full stack Job Portal Connecting job seekers to recruiters with smart search, built with PERN stack, scalable job posting, resume analysis, real-time application management.",
+    isTeamOrSolo: "Solo Project",
+    githubLink: "https://github.com/tech-dipesh/yeti-jobs",
+    liveDemo: "https://yeti-jobs.vercel.app/",
+    Description:
+      "Scalable job platform connecting seekers and recruiters with automated workflows, secure auth, and 40+ REST APIs.",
+    image: Yetijobs,
+    features: [
+      "Job Search – Full-text search with filters by title, location, salary, and job type",
+      "Apply/Withdraw – One-click job applications with withdrawal option and application tracking",
+      "Bookmark Jobs – Save interesting jobs to apply later with personal bookmarks list",
+      "Role-Based Access – Separate dashboards for guests, recruiters, and admins with custom permissions",
+      "Resume Upload – Profile picture and resume storage via Supabase with public URL access",
+      "Email Verification – 6-digit code verification and password reset using Nodemailer SMTP",
+      "Company Management – Create, edit, and manage company profiles with employee listings",
+      "Application Status – Recruiters can update applicant status from pending to hired or rejected",
+      "Job Analytics – Track total job views and application counts for each job posting",
+      "Automated Expiry – Cron job runs daily to automatically close jobs older than 30 days"
+    ],
+    techStack: [
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "React",
+      "Cron Jobs",
+      "Tailwind CSS",
+      "Context API",
+      "Axios",
+    ],
+    Completed: "March 2026",
+  },
+  {
+    id: 2,
     name: "State-Flow",
     intro:
       "A Jira-inspired task manager built with React to track projects, deadlines, and priorities—all in one clean, drag-and-drop board.",
@@ -35,7 +71,7 @@ export default [
     Completed: "January 2026",
   },
   {
-    id: 2,
+    id: 3,
     name: "Home Finder",
     intro:
       "A full-stack Airbnb-style rental platform where users can list properties, browse locations, and leave reviews—all with secure authentication and cloud image upload.",
