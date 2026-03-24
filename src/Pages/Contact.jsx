@@ -1,5 +1,5 @@
 import { ArrowLeft, Send } from 'lucide-react';
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router';
 import ShowMessage from '../Components/Reacttoast';
 
@@ -35,7 +35,7 @@ export default function Contact() {
     setTimeout(() => {
         e.target.submit()
     }, 2000);
-   
+    navigate("/")
   }
 
   const inputStyle="w-full py-2.5 px-4 text-slate-800 bg-gray-100 border border-slate-200 focus:border-slate-900 focus:bg-transparent text-sm outline-0 transition-all  dark:bg-slate-900 dark:border-slate-800 dark:text-slate-400"
