@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
 import Projects from './Projects';
 import Contact from './Contact';
 import FutureLearn from './Future-Learn';
 import Skills from './Skills';
 import TopHome from '../Components/TopHome';
-import { GitHubCalendar } from 'react-github-calendar';
 import Github from '../Components/Github';
 
 export default function Home() {
