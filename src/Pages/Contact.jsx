@@ -1,7 +1,9 @@
-import { ArrowLeft, Send } from 'lucide-react';
+import { Send } from 'lucide-react';
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router';
 import ShowMessage from '../Components/Reacttoast';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 export default function Contact() {
   const [value, setValue]=useState({
@@ -109,7 +111,7 @@ export default function Contact() {
                 }
           </div>
           <div className="flex sm:flex-col md:flex-row items-center justify-between lg:gap-4">
-          <Link to='./' className='bg-slate-700 p-2 rounded-lg hover:text-gray-700'><ArrowLeft/></Link>
+          <Link to='./' className='bg-slate-900 py-2 px-3 rounded-lg hover:text-gray-700'><FontAwesomeIcon icon={faArrowLeft}/></Link>
           <div className='text-white bg-slate-900 flex font-medium hover:bg-slate-800 tracking-wide text-sm px-4 py-2.5 border-0 outline-0 cursor-pointer'>
           <input type='submit'
             value='Send Message'

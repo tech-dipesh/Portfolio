@@ -12,7 +12,7 @@ import npm from "../assets/skills/npm.png"
 import Git from "../assets/skills/git.png"
 import Nodejs from "../assets/skills/nodejs.png"
 import Mongodb from "../assets/skills/mongo-db.png"
-import MySql from "../assets/skills/mysql.png"
+import Database from "../assets/skills/database.webp"
 import Express from "../assets/skills/express.png"
 import Contextapi from "../assets/skills/context-api.png"
 import Vercel from "../assets/skills/vercel.webp"
@@ -42,8 +42,8 @@ export const LanguagesList=[
     icon: TypeScript
   },
   {
-    name: 'MySql',
-    icon: MySql
+    name: 'SQL',
+    icon: Database
   },
   
 ]
@@ -128,5 +128,21 @@ export const Tools=[
   {
     name: 'Documentation',
     icon: Documentation
+  },
+]
+
+
+export const Achievements=[
+  {
+    name: 'Codeathon 7.0 Winner ',
+    proof: 'https://drive.google.com/file/d/19h1wVZB8a6Fis89e7LebEkdeuG_-vOYF/view?usp=sharing'
+  },
+  {
+    name: 'BiblioPhile Award Winner',
+    proof: 'https://drive.google.com/file/d/14BLCLvQWZnQmDc75lo4Wm9TcbCPk7DZo/view?usp=sharing'
+  },
+  {
+    name: 'CEED Member (Entrepreneurship Program) – Chitkara University',
+    proof: 'https://www.linkedin.com/company/chitkaraenterpriselab'
   },
 ]

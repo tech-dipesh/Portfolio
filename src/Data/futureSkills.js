@@ -1,6 +1,6 @@
 export default [
   {
-    skill: 'Redux',
+    skill: 'WebSocket',
     bgColor: 'bg-blue-500/10',
     borderColor: 'border-blue-500/30',
     textColor: 'text-blue-400'
@@ -12,7 +12,7 @@ export default [
     textColor: 'text-yellow-400'
   },
   {
-    skill: 'Docker',
+    skill: 'Open Source With Dockerize',
     bgColor: 'bg-purple-500/10',
     borderColor: 'border-purple-500/30',
     textColor: 'text-purple-400'
