@@ -1,7 +1,6 @@
 import React from "../assets/skills/react.png"
 import Redux from "../assets/skills/redux.webp"
 import Tailwind from "../assets/skills/tailwind.png"
-import Bootstrap from "../assets/skills/react.png"
 import Css from "../assets/skills/css.png"
 import JavaScript from "../assets/skills/javascript.png"
 import C from "../assets/skills/c.webp"
@@ -19,6 +18,7 @@ import Contextapi from "../assets/skills/context-api.png"
 import Vercel from "../assets/skills/vercel.webp"
 import Vite from "../assets/skills/vite.png"
 import VsCode from "../assets/skills/vs-code.png"
+import Docker from "../assets/skills/docker.png"
 import DevTools from "../assets/skills/devtools.webp"
 import Documentation from "../assets/skills/documentation.webp"
 import Parcel from "../assets/skills/parcel.webp"
@@ -62,7 +62,7 @@ export const LibraryList=[
     icon: Redux
   },
   {
-    name: 'Nodejs',
+    name: 'Node.js',
     icon: Nodejs
   },
   {
@@ -72,10 +72,6 @@ export const LibraryList=[
   {
     name: 'Tailwind',
     icon: Tailwind
-  },
-  {
-    name: 'Bootstrap',
-    icon: Bootstrap
   },
   {
     name: 'Css',
@@ -93,6 +89,10 @@ export const LibraryList=[
 ]
 
 export const Tools=[
+  {
+    name: 'Docker',
+    icon: Docker
+  },
   {
     name: 'Api',
     icon: API
