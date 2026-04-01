@@ -26,7 +26,7 @@ export default function Header() {
     <>
   <header className="relative flex justify-between items-center lg:w-full bg-zinc-800 border-b border-slate-800 text-slate-900 dark:bg-slate-900 dark:text-slate-900 dark:border-slate-800 shadow-lg md:py-4 lg:px-24">
     <Link to='./'  className='h-10 w-10 rounded-full hover:opacity-80 transition-opacity'>
-      <img src={logo} alt="Logo" className='rounded-full h-12 w-12'/>
+      <img src={logo} alt="Logo" className='rounded-full h-10 object-cover w-12'/>
     </Link>
     <button 
       onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

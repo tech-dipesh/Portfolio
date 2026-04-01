@@ -5,7 +5,7 @@ import CertificateData from "../Data/CertificateData";
 import Achievementscard from "../Components/Skills/Achievementscard";
 export default function Skills() {
   return (
-    <div className='min-h-screen py-20 px-4'>
+    <div className='min-h-screen py-20 px-4 bg-slate-900 dark:bg-slate-800 '>
       <div className='max-w-7xl mx-auto flex flex-col lg:flex-row gap-12'>
         <div className='flex-1'>
           <div className='mb-20'>

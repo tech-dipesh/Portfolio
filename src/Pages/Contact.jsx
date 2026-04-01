@@ -40,12 +40,12 @@ export default function Contact() {
     navigate("/")
   }
 
-  const inputStyle="w-full py-2.5 px-4 text-slate-800 bg-gray-100 border border-slate-200 focus:border-slate-900 focus:bg-transparent text-sm outline-0 transition-all  dark:bg-slate-900 dark:border-slate-800 dark:text-slate-400"
-  const labelStyle="text-slate-900 dark:text-slate-400 text-sm text-slate-900 font-medium mb-2 block text-sm text-slate-900 font-medium mb-2 block text-sm text-slate-900 font-medium mb-2 block"
+  const inputStyle="w-full py-2.5 px-4 text-slate-800 bg-slate-100  dark:text-slate-400 border border-slate-200 focus:border-slate-900 rounded-lg  text-sm outline-0 transition-all  dark:bg-slate-900 dark:border-slate-800"
+  const labelStyle="text-slate-900 text-slate-400 text-sm text-slate-900 font-medium mb-2 block text-sm text-slate-900 font-medium mb-2 block text-sm text-slate-900 font-medium mb-2 block"
   
 
   return (
-    <div className='container mx-auto px-6 lg:px-24 py-16  bg-slate-800 dark:bg-slate-950 gap-4'>
+    <div className='w-full px-6 lg:px-24 py-16  bg-slate-800 dark:bg-slate-950 gap-4'>
       <h2 className="text-center text-3xl font-bold text-white tracking-widest mb-12 ">GET IN TOUCH</h2>
       <div className='flex flex-col lg:flex-row gap-12 text-white'>
       <div className='lg:w-1/2 flex flex-col justify-start  space-y-6'>

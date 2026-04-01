@@ -4,7 +4,7 @@ import projectData from "../Data/ProjectsData"
 
 export default function Projects() {
   return (
-    <section className='min-h-screen py-20 px-4'>
+    <section className='min-h-screen py-20 px-4 bg-slate-900 dark:bg-slate-800 '>
       <div className='max-w-7xl mx-auto'>
         <div className='text-center mb-16'>
           <h1 className='font-bold text-4xl md:text-5xl text-slate-100 mb-6'>Projects</h1>
