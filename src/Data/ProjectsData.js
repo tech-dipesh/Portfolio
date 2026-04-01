@@ -100,7 +100,7 @@ export default [
     Completed: "February 2025",
   },
   {
-    id: 3,
+    id: 4,
     name: "Beat Bridge",
     intro:
       "A fully-featured music player built entirely from scratch using vanilla JavaScript—no frameworks, no libraries, just pure DOM manipulation and custom logic.",

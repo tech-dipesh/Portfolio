@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router';
 import ShowMessage from '../Components/Reacttoast';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import Errorpage from '../Components/Errorpage';
 
 export default function Contact() {
   const [value, setValue]=useState({
@@ -17,12 +18,11 @@ export default function Contact() {
     Email: '',
     Message: ''
   })
-  const navigate=useNavigate();
-
   const submitForm=(e)=>{
     e.preventDefault();
+    console.log('value is', value)
     if(!value.Name){
-        setError(prev=>({prev, Name: 'Please Enter yourNname.'}))
+        setError(prev=>({prev, Name: 'Please Enter Name.'}))
         return
       }
       if(!value.Email){
@@ -32,12 +32,17 @@ export default function Contact() {
       if(!value.Message){
         setError(prev=>({prev, Message: 'Please Enter your Message.'}))
         return
+      }
+      if(value.Name.length<5){
+          setError(prev=>({prev, Name: 'Name Must Be 5 Letter'}))
+          return
+        }
+      if(value.Message.length<10){
+        setError(prev=>({prev, Message: 'Message Should Be At Least 10 letter.'}))
+        return
     }
     ShowMessage()
-    setTimeout(() => {
-        e.target.submit()
-    }, 2000);
-    navigate("/")
+    e.target.submit()   
   }
 
   const inputStyle="w-full py-2.5 px-4 text-slate-800 bg-slate-100  dark:text-slate-400 border border-slate-200 focus:border-slate-900 rounded-lg  text-sm outline-0 transition-all  dark:bg-slate-900 dark:border-slate-800"
@@ -56,32 +61,27 @@ export default function Contact() {
       </div>
     <div className="p-8 lg:w-1/2 bg-slate-700 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 my-2 rounded-xl">
         <h2 className="text-3xl text-slate-900 dark:text-white font-bold">Contact us</h2>
-        <form className="mt-8 space-y-5" action="https://formsubmit.co/dipeshgautambusiness+portfolio@gmail.com" 
+        <form className="mt-8 space-y-5" action="https://formspree.io/f/mreolgne" 
         onSubmit={(e)=>submitForm(e)} 
         method='POST'>
-            <input type="hidden" name="_next" value={window.location.origin} />
-            <input type="hidden" name="_captcha" value="false" />
+            {/* <input type="hidden" name="_next" value={window.location.origin} /> */}
+            {/* <input type="hidden" name="_captcha" value="false" /> */}
           <div>
             <label className={labelStyle}>Name</label>
             <input type='text' placeholder='Enter Name'
               name='Name'
-              required
               onChange={(e)=>(
                 setValue(prev=>({...prev, Name: e.target.value})),
                 setError(prev=>({...prev, Name: ''}))
               )}
               value={value.Name}
               className={inputStyle} />
-              {
-                error.Name && 
-                <div className='text-red-500'>Please Enter a Name</div>
-              }
+              <Errorpage error={error} name={'Name'}/>
           </div>
           <div>
             <label className={labelStyle}>Email</label>
             <input type='email' placeholder='Enter Email'
               name='Email'
-              required
               onChange={(e)=>(
                 setValue(prev=>({...prev, Email: e.target.value})),
                 setError(prev=>({...prev, Email: ''}))
@@ -89,10 +89,7 @@ export default function Contact() {
               )}
               value={value.Email}
               className={inputStyle} />
-               {
-                 error.Email && 
-                 <div className='text-red-500'>Please Enter a Email</div>
-                }
+              <Errorpage error={error} name={'Email'}/>
           </div>
           <div>
             <label className={labelStyle}>Message</label>
@@ -105,10 +102,7 @@ export default function Contact() {
               value={value.Message}
               className={inputStyle}>
               </textarea>
-               {
-                 error.Message && 
-                 <div className='text-red-500'>Please Enter a Message</div>
-                }
+            <Errorpage error={error} name={'Message'}/>
           </div>
           <div className="flex sm:flex-col md:flex-row items-center justify-between lg:gap-4">
           <Link to='./' className='bg-slate-900 py-2 px-3 rounded-lg hover:text-gray-700'><FontAwesomeIcon icon={faArrowLeft}/></Link>
