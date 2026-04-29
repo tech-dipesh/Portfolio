@@ -28,7 +28,9 @@ export default [
       "Company Management – Create, edit, and manage company profiles with employee listings",
       "Application Status – Recruiters can update applicant status from pending to hired or rejected",
       "Job Analytics – Track total job views and application counts for each job posting",
-      "Automated Expiry – Cron job runs daily to automatically close jobs older than 30 days"
+      "Automated Expiry – Cron job runs daily to automatically close jobs older than 30 days",
+      "Resume Analyser - AI-powered resume analyser (scoring out of 100 with feedback) to improve ATS optimisation",
+      "Robust Uptime Report– Designed 99% recent uptime hiring systems with optimized database connection pooling."
     ],
     techStack: [
       "Node.js",

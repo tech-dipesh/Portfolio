@@ -1,5 +1,4 @@
 import { useState } from "react"
-
 export default function useLocalStorage(storageName, initialValue){
   const [state, setState]=useState(
     JSON.parse(localStorage.getItem(storageName))?? initialValue)
@@ -10,8 +9,10 @@ export default function useLocalStorage(storageName, initialValue){
           localStorage.setItem(storageName, JSON.stringify(FunValue));
           setState(FunValue);
         }
-      localStorage.setItem(storageName, JSON.stringify(newValue));
-      setState(newValue)
+      else{
+        localStorage.setItem(storageName, JSON.stringify(newValue));
+        setState(newValue)
+      }
   }
   return [state, updateSecondValue]
 }
