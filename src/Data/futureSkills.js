@@ -12,19 +12,19 @@ export default [
     textColor: 'text-yellow-400'
   },
   {
-    skill: 'Open Source With Dockerize',
+    skill: 'Fundamental of Cloud Computing',
     bgColor: 'bg-purple-500/10',
     borderColor: 'border-purple-500/30',
     textColor: 'text-purple-400'
   },
   {
-    skill: 'Background Queue Task',
+    skill: 'Next.js (React Framework)',
     bgColor: 'bg-violet-500',
     borderColor: 'border-purple-500/30',
     textColor: 'text-white'
   },
   {
-    skill: 'Intro to System Design',
+    skill: 'Frontend Performance Optimization',
     bgColor: 'bg-emerald-500/10',
     borderColor: 'border-emerald-500/30',
     textColor: 'text-emerald-400'

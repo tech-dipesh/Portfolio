@@ -7,7 +7,7 @@ import C from "../assets/skills/c.webp"
 import Cpp from "../assets/skills/cpp.png"
 import TypeScript from "../assets/skills/typescript.png"
 
-import API from "../assets/skills/api.webp"
+import API from "../assets/skills/openapi.webp"
 import npm from "../assets/skills/npm.png"
 import Git from "../assets/skills/git.png"
 import Nodejs from "../assets/skills/nodejs.png"
@@ -23,7 +23,8 @@ import DevTools from "../assets/skills/devtools.webp"
 import Documentation from "../assets/skills/documentation.webp"
 import Parcel from "../assets/skills/parcel.webp"
 import PostgreSql from "../assets/skills/postgresql.webp"
-
+import Linux  from "../assets/skills/linux.webp"
+import Neovim  from "../assets/skills/neovim.svg"
 export const LanguagesList=[
   {
     name: 'JavaScript',
@@ -93,8 +94,16 @@ export const Tools=[
     name: 'Docker',
     icon: Docker
   },
+    {
+    name: 'Linux',
+    icon: Linux
+  },
   {
-    name: 'Api',
+    name: 'Neovim',
+    icon: Neovim
+  },
+  {
+    name: 'OpenAPI',
     icon: API
   },
   {
