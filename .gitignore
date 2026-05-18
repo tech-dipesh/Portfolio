@@ -31,3 +31,5 @@ image.png
 notes.md
 public/expand-knowledge-ui.png
 public/skills-page-ui.png
+.vercel
+.env*.local
