@@ -3,27 +3,27 @@ import SmallDeveloperIcon from "../assets/images/developer-small-icon.png"
 import futureSkills from '../Data/futureSkills'
 export default function FutureLearn() {
   return (
-    <section className='py-12 px-4'>
-      <div className='max-w-5xl mx-auto'>
-        <div className='flex items-center gap-4 mb-8'>
-          <div className='relative'>
+    <section className='py-8 md:py-12 px-4'>
+      <div className='max-w-5xl mx-auto w-full'>
+        <div className='flex items-center gap-3 md:gap-4 mb-6 md:mb-8'>
+          <div className='relative shrink-0'>
             <div className='absolute inset-0 bg-blue-500/20 rounded-full blur-xl'></div>
             <img 
               src={SmallDeveloperIcon} 
               alt="Icon" 
-              className='relative rounded-full h-12 w-12 object-cover border-2 border-slate-700 shadow-lg'
+              className='relative rounded-full h-10 w-10 md:h-12 md:w-12 object-cover border-2 border-slate-700 shadow-lg'
             />
           </div>
-          <h1 className='text-xl md:text-2xl text-slate-200 font-medium'>
+          <h1 className='text-lg md:text-2xl text-slate-200 font-medium'>
             Currently expanding my knowledge in
           </h1>
         </div>
-        <div className='bg-slate-900/80 backdrop-blur-sm border border-slate-800 rounded-2xl p-6 md:p-8'>
-          <h2 className='text-2xl md:text-3xl font-bold text-blue-400 mb-6'>
+        <div className='bg-slate-900/80 backdrop-blur-sm border border-slate-800 rounded-2xl p-4 md:p-8'>
+          <h2 className='text-xl md:text-3xl font-bold text-blue-400 mb-4 md:mb-6'>
             Advanced Machine Learning, Cloud Architecture & Web3
           </h2>
           
-          <div className='flex flex-wrap gap-3'>
+          <div className='flex flex-wrap gap-2 md:gap-3'>
             {futureSkills.map((skill, index) => (
               <div 
                 key={index}
@@ -31,11 +31,11 @@ export default function FutureLearn() {
                   ${skill.bgColor} 
                   ${skill.borderColor} 
                   ${skill.textColor}
-                  px-5 py-2.5 
+                  px-3 md:px-5 py-2 md:py-2.5
                   rounded-full 
                   border-2
                   font-medium
-                  text-sm md:text-base
+                  text-xs md:text-base
                   hover:scale-105 
                   hover:shadow-lg
                   transition-all 
@@ -48,7 +48,6 @@ export default function FutureLearn() {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   )

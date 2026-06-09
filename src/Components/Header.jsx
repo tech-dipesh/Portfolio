@@ -24,7 +24,7 @@ export default function Header() {
 
   return (
     <>
-  <header className="relative flex justify-between items-center lg:w-full bg-zinc-800 border-b border-slate-800 text-slate-900 dark:bg-slate-900 dark:text-slate-900 dark:border-slate-800 shadow-lg md:py-4 lg:px-24">
+  <header className="relative flex justify-between items-center lg:w-full bg-zinc-800 border-b border-slate-800 text-slate-900 dark:bg-slate-900 dark:text-slate-900 dark:border-slate-800 shadow-lg py-3 md:py-4 px-4 lg:px-24">
     <Link to='./'  className='h-10 w-10 rounded-full hover:opacity-80 transition-opacity'>
       <img src={logo} alt="Logo" className='rounded-full h-10 object-cover w-12'/>
     </Link>
@@ -49,10 +49,9 @@ export default function Header() {
         ))}
         </nav>
       <ThemeToggle/>
- 
 </header>
  {isMobileMenuOpen && (
-   <nav className="md:hidden mt-4 pb-4 border-t border-slate-600 pt-4">
+   <nav className="md:hidden pb-4 border-t border-slate-600 pt-4 px-4">
         <div className="flex flex-col gap-4">
           {links.map(link => (
             <NavLink 
