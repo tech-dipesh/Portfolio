@@ -1,0 +1,3 @@
+export const Whoami = "I'm a software developer who builds real things — not just tutorial projects. I built YetiJobs end-to-end with 50+ APIs, React, Node.js, PostgreSQL, and Docker, cutting search latency from 7ms to 0.9ms. I also built StateFlow with drag-and-drop, undo/redo, and dark mode. I've solved 250+ LeetCode problems in C++. Day and night, I think about better ways to solve problems — cleaner code, faster queries, more reliable systems. My strongest zones are backend logic, database design, and problem-solving. I don't use AI to write my code. What you see is what you get — a hungry, honest developer who ships.";
+
+export const skills = ['JavaScript', 'React', 'C++', 'Redux', 'Nodejs', 'TypeScript'];

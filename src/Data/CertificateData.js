@@ -4,7 +4,7 @@ export default [
     url:"https://drive.google.com/file/d/1dm50tkY0vqV_o72b8oGpKCVlFYHxn0yi/view?usp=sharing" 
   },
   {
-    title: ' Web Development Masterclass',
+    title: 'Web Development Masterclass',
     url: 'https://www.udemy.com/certificate/UC-01b424ec-55bc-4123-971f-a0e773357caf/'
   },
   {

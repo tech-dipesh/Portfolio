@@ -25,133 +25,79 @@ import Parcel from "../assets/skills/parcel.webp"
 import PostgreSql from "../assets/skills/postgresql.webp"
 import Linux  from "../assets/skills/linux.webp"
 import Neovim  from "../assets/skills/neovim.svg"
-export const LanguagesList=[
-  {
-    name: 'JavaScript',
-    icon: JavaScript
-  },
-  {
-    name: 'C',
-    icon: C
-  },
-  {
-    name: 'Cpp',
-    icon: Cpp
-  },
-  {
-    name: 'TypeScript',
-    icon: TypeScript
-  },
-  {
-    name: 'SQL',
-    icon: Database
-  },
-  
-]
+import Axios  from "../assets/skills/axios.webp"
+import Prisma  from "../assets/skills/prisma.svg"
+import AWS  from "../assets/skills/aws.webp"
+import Render  from "../assets/skills/render.webp"
+import Apache  from "../assets/skills/apache-bench.png"
 
-export const LibraryList=[
-  {
-    name: 'React',
-    icon: React
-  },
-  {
-    name: 'Context Api',
-    icon: Contextapi
-  },
-  {
-    name: 'Redux',
-    icon: Redux
-  },
-  {
-    name: 'Node.js',
-    icon: Nodejs
-  },
-  {
-    name: 'PostgreSql',
-    icon: PostgreSql
-  },
-  {
-    name: 'Tailwind',
-    icon: Tailwind
-  },
-  {
-    name: 'Css',
-    icon: Css
-  },
-  {
-    name: 'Express',
-    icon: Express
-  },
-  {
-    name: 'Mongodb',
-    icon: Mongodb
-  },
+export const LanguagesList = [
+  { name: 'JavaScript', icon: JavaScript },
+  { name: 'TypeScript', icon: TypeScript },
+  { name: 'C', icon: C },
+  { name: 'C++', icon: Cpp },
+  { name: 'SQL', icon: Database },
+];
 
-]
+export const LibraryList = [
+  { name: 'React', icon: React },
+  { name: 'Context API', icon: Contextapi },
+  { name: 'Redux', icon: Redux },
+  { name: 'Node.js', icon: Nodejs },
+  { name: 'Express', icon: Express },
+  { name: 'PostgreSQL', icon: PostgreSql },
+  { name: 'MongoDB', icon: Mongodb },
+  { name: 'Prisma', icon: Prisma },
+  { name: 'Tailwind CSS', icon: Tailwind },
+  { name: 'CSS', icon: Css },
+  { name: 'Axios', icon: Axios }
+];
 
-export const Tools=[
-  {
-    name: 'Docker',
-    icon: Docker
-  },
-    {
-    name: 'Linux',
-    icon: Linux
-  },
-  {
-    name: 'Neovim',
-    icon: Neovim
-  },
-  {
-    name: 'OpenAPI',
-    icon: API
-  },
-  {
-    name: 'Vscode',
-    icon: VsCode
-  },
-  {
-    name: 'Npm',
-    icon: npm
-  },
-  {
-    name: 'Git',
-    icon: Git
-  },
-  {
-    name: 'Vercel',
-    icon: Vercel
-  },
-  {
-    name: 'Vite',
-    icon: Vite
-  },
-  {
-    name: 'DevTools',
-    icon: DevTools
-  },
-  {
-    name: 'parcel',
-    icon: Parcel
-  },
-  {
-    name: 'Documentation',
-    icon: Documentation
-  },
-]
+export const Tools = [
+  { name: 'Docker', icon: Docker },
+  { name: 'Linux', icon: Linux },
+  { name: 'Neovim', icon: Neovim },
+  { name: 'OpenAPI', icon: API },
+  { name: 'VS Code', icon: VsCode },
+  { name: 'npm', icon: npm },
+  { name: 'Git', icon: Git },
+  { name: 'Vercel', icon: Vercel },
+  { name: 'Render', icon: Render },         // added
+  { name: 'Vite', icon: Vite },
+  { name: 'DevTools', icon: DevTools },
+  { name: 'Parcel', icon: Parcel },
+  { name: 'Documentation', icon: Documentation },
+  { name: 'Apache Bench', icon: Apache }, // added (load testing)
+  { name: 'AWS (EC2, S3, IAM)', icon: AWS },   // added
+];
 
-
-export const Achievements=[
+export const Achievements = [
   {
-    name: 'Codeathon 7.0 Winner ',
+    name: 'CodeaThon 7.0 Winner (university level, cash prize)',
     proof: 'https://drive.google.com/file/d/19h1wVZB8a6Fis89e7LebEkdeuG_-vOYF/view?usp=sharing'
   },
   {
-    name: 'BiblioPhile Award Winner',
+    name: 'BiblioPhile Award Winner (Chitkara University Library)',
     proof: 'https://drive.google.com/file/d/14BLCLvQWZnQmDc75lo4Wm9TcbCPk7DZo/view?usp=sharing'
   },
   {
-    name: 'CEED Member (Entrepreneurship Program) – Chitkara University',
+    name: 'CEED Member – Entrepreneurship Program, Chitkara University',
     proof: 'https://www.linkedin.com/company/chitkaraenterpriselab'
   },
-]
+  {
+    name: 'Selected Contributor – GirlScript Summer of Code 2026',
+    proof: 'https://gssoc.girlscript.tech/'   // or a link to your profile
+  },
+  {
+    name: 'Solved 250+ DSA problems on LeetCode',
+    proof: 'https://leetcode.com/tech-dipesh/'
+  },
+  {
+    name: '400+ GitHub commits & 20+ repositories',
+    proof: 'https://github.com/tech-dipesh'
+  },
+  {
+    name: 'AWS Educate Introduction to Cloud 101 – EC2, S3, IAM',
+    proof: 'https://www.credly.com/badges/e3439fc7-4a2c-439c-bc19-c4e855421844'
+  },
+];
