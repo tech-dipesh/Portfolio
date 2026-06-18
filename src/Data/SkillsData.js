@@ -89,7 +89,7 @@ export const Achievements = [
     proof: 'https://gssoc.girlscript.tech/'   // or a link to your profile
   },
   {
-    name: 'Solved 250+ DSA problems on LeetCode',
+    name: 'jolved 250+ DSA problems on LeetCode',
     proof: 'https://leetcode.com/tech-dipesh/'
   },
   {
@@ -102,6 +102,6 @@ export const Achievements = [
   },
   {
     name: "Selected for Round 2 of Polaris Fellowship 2026 – a national fellowship for ambitious builders and creators.",
-    proof: ""
+    proof: "https://drive.google.com/file/d/1gZ5_8c87zdHnkCKg-MZ_jf4-LaXV8Set/view?usp=sharing"
   }
 ];
