@@ -100,4 +100,8 @@ export const Achievements = [
     name: 'AWS Educate Introduction to Cloud 101 – EC2, S3, IAM',
     proof: 'https://www.credly.com/badges/e3439fc7-4a2c-439c-bc19-c4e855421844'
   },
+  {
+    name: "Selected for Round 2 of Polaris Fellowship 2026 – a national fellowship for ambitious builders and creators.",
+    proof: ""
+  }
 ];
