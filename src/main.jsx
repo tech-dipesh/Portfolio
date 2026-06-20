@@ -8,6 +8,7 @@ import Home from './Pages/Home'
 import Projects from './Pages/Projects.jsx'
 import Skills from './Pages/Skills.jsx'
 import Notfound from './Components/Notfound.jsx'
+import Blogs from './Pages/Blogs.jsx'
 const router=createBrowserRouter([
   {
     path: "/",
@@ -28,6 +29,10 @@ const router=createBrowserRouter([
     {
       path: "/contact",
       element: <Contact/>
+    },
+    {
+      path: "/blogs",
+      element: <Blogs/>
     },
     {
       path: "*",
