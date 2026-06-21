@@ -5,10 +5,11 @@ import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import Contact from "./Pages/Contact"
 import Home from './Pages/Home'
-import Projects from './Pages/Projects.jsx'
-import Skills from './Pages/Skills.jsx'
-import Notfound from './Components/Notfound.jsx'
-import Blogs from './Pages/Blogs.jsx'
+import Projects from './Pages/Projects'
+import Skills from './Pages/Skills'
+import Notfound from './Components/Notfound'
+import Blogs from './Pages/Blogs'
+import Blog from './Pages/Blog'
 const router=createBrowserRouter([
   {
     path: "/",
@@ -32,7 +33,13 @@ const router=createBrowserRouter([
     },
     {
       path: "/blogs",
-      element: <Blogs/>
+      element: <Blogs/>,
+        children: [
+          {
+            path: ":id",
+            element: <Blog/>
+          }
+        ]
     },
     {
       path: "*",

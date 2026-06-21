@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "First",
+    "slug": "first",
+    "excerpt": "Longer Title Content",
+    "tags": ["Frontend", "Backend"],
+    "readTime": "5 min read",
+    "date": "June 2026",
+    "featured": true,
+    "coverImage": "blog/first.webp"
+  }
+
+]
