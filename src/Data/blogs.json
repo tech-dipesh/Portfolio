@@ -9,6 +9,17 @@
     "date": "June 2026",
     "featured": true,
     "coverImage": "blog/first.webp"
+  },
+  {
+    "id": 2,
+    "title": "second",
+    "slug": "Second",
+    "excerpt": "Second Longer",
+    "tags": ["System Design", "Database"],
+    "readTime": "3 min read",
+    "date": "June 2026",
+    "featured": false,
+    "coverImage": "blog/first.webp"
   }
 
 ]
