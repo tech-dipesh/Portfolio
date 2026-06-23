@@ -15,37 +15,35 @@ const router=createBrowserRouter([
     path: "/",
     element: <App/>,
     children: [
-    {
-      index: true,
-      element: <Home/>
-    },
-    {
-      path:  '/projects',
-      element: <Projects/>
-    },
-    {
-      path:  '/skills',
-      element: <Skills/>
-    },
-    {
-      path: "/contact",
-      element: <Contact/>
-    },
-    {
-      path: "/blogs",
-      element: <Blogs/>,
-        children: [
-          {
-            path: ":id",
-            element: <Blog/>
-          }
-        ]
-    },
-    {
-      path: "*",
-      element: <Notfound/>
-    }
-  ]
+      {
+        index: true,
+        element: <Home/>
+      },
+      {
+        path:  '/projects',
+        element: <Projects/>
+      },
+      {
+        path:  '/skills',
+        element: <Skills/>
+      },
+      {
+        path: "/contact",
+        element: <Contact/>
+      },
+      {
+        path: "/blogs",
+        element: <Blogs/>,
+      },
+      {
+        path: "/blogs/:slug",
+        element: <Blog/>
+      },
+      {
+        path: "*",
+        element: <Notfound/>
+      }
+    ]
   }
 ])
 createRoot(document.getElementById('root')).render(
