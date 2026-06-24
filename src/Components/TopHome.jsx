@@ -19,7 +19,7 @@ export default function TopHome() {
     hours %= 12;
     hours = hours ? hours : 12;
     let minutes = date.getMinutes();
-    let getAmOrPm = hours >= 12 ? 'am' : 'pm';
+    let getAmOrPm = hours >= 12 ? 'pm' : 'am';
     minutes = minutes < 10 ? '0' + minutes : minutes;
     return `${hours}:${minutes} ${getAmOrPm}`
   }

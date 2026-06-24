@@ -10,6 +10,7 @@ import Skills from './Pages/Skills'
 import Notfound from './Components/Notfound'
 import Blogs from './Pages/Blogs'
 import Blog from './Pages/Blog'
+import Leetcode from './Pages/Leetcode'
 const router=createBrowserRouter([
   {
     path: "/",
@@ -30,6 +31,10 @@ const router=createBrowserRouter([
       {
         path: "/contact",
         element: <Contact/>
+      },
+      {
+        path: "/leetcode",
+        element: <Leetcode/>
       },
       {
         path: "/blogs",

@@ -1,118 +1,148 @@
-import { Send } from 'lucide-react';
-import { useState } from 'react'
-import { Link } from 'react-router';
-import ShowMessage from '../Components/Reacttoast';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import Errorpage from '../Components/Errorpage';
+import { Send } from "lucide-react";
+import { useState } from "react";
+import { Link } from "react-router";
+import ShowMessage from "../Components/Reacttoast";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import Errorpage from "../Components/Errorpage";
 
 export default function Contact() {
-  const [value, setValue]=useState({
-    Name: '',
-    Email: '',
-    Message: ''
-  })
+  const [value, setValue] = useState({
+    Name: "",
+    Email: "",
+    Message: "",
+  });
 
-  const [error, setError]=useState({
-    Name: '',
-    Email: '',
-    Message: ''
-  })
-  const submitForm=(e)=>{
+  const [error, setError] = useState({
+    Name: "",
+    Email: "",
+    Message: "",
+  });
+  const submitForm = (e) => {
     e.preventDefault();
-    console.log('value is', value)
-    if(!value.Name){
-      setError(prev=>({prev, Name: 'Please Enter Name.'}))
-      return
+    console.log("value is", value);
+    if (!value.Name) {
+      setError((prev) => ({ ...prev, Name: "Please Enter Name." }));
+      return;
     }
-    if(!value.Email){
-      setError(prev=>({prev, Email: 'Please Enter your Email.'}))
-      return
+    if (!value.Email) {
+      setError((prev) => ({ ...prev, Email: "Please Enter your Email." }));
+      return;
     }
-    if(!value.Message){
-      setError(prev=>({prev, Message: 'Please Enter your Message.'}))
-      return
+    if (!value.Message) {
+      setError((prev) => ({ ...prev, Message: "Please Enter your Message." }));
+      return;
     }
-    if(value.Name.length<5){
-      setError(prev=>({prev, Name: 'Name Must Be 5 Letter'}))
-      return
+    if (value.Name.length < 5) {
+      setError((prev) => ({ ...prev, Name: "Name Must Be 5 Letter" }));
+      return;
     }
-    if(value.Message.length<10){
-      setError(prev=>({prev, Message: 'Message Should Be At Least 10 letter.'}))
-      return
+    if (value.Message.length < 10) {
+      setError((prev) => ({
+        ...prev,
+        Message: "Message Should Be At Least 10 letter.",
+      }));
+      return;
     }
-    ShowMessage()
-    e.target.submit()   
-  }
+    ShowMessage();
+    e.target.submit();
+  };
 
-  const inputStyle="w-full py-2.5 px-4 text-slate-800 bg-slate-100 dark:text-slate-400 border border-slate-200 focus:border-slate-900 rounded-lg text-sm outline-0 transition-all dark:bg-slate-900 dark:border-slate-800"
-  const labelStyle="text-slate-400 text-sm font-medium mb-2 block"
-
+  const inputStyle =
+    "w-full py-2.5 px-4 text-slate-800 bg-slate-100 dark:text-slate-400 border border-slate-200 focus:border-slate-900 rounded-lg text-sm outline-0 transition-all dark:bg-slate-900 dark:border-slate-800";
+  const labelStyle = "text-slate-400 text-sm font-medium mb-2 block";
 
   return (
-    <div className='w-full px-4 md:px-6 lg:px-24 py-10 md:py-16 bg-slate-800 dark:bg-slate-950 gap-4'>
-      <h2 className="text-center text-2xl md:text-3xl font-bold text-white tracking-widest mb-8 md:mb-12">GET IN TOUCH</h2>
-      <div className='flex flex-col lg:flex-row gap-8 md:gap-12 text-white'>
-        <div className='w-full lg:w-1/2 flex flex-col justify-start space-y-6'>
+    <div className="w-full px-4 md:px-6 lg:px-24 py-10 md:py-16 bg-slate-800 dark:bg-slate-950 gap-4">
+      <h2 className="text-center text-2xl md:text-3xl font-bold text-white tracking-widest mb-8 md:mb-12">
+        GET IN TOUCH
+      </h2>
+      <div className="flex flex-col lg:flex-row gap-8 md:gap-12 text-white">
+        <div className="w-full lg:w-1/2 flex flex-col justify-start space-y-6">
           <h3>I'm avaible for intern roles & freelance projects.</h3>
           <h3>You can send me the message if you've any doubt.</h3>
           <p>I'll try to reponse your message.</p>
-          <Link to='https://mail.google.com/mail/?view=cm&to=dipsharmadev+portfolio@gmail.com&su=Portfolio%20Message' className='bg-zinc-900 p-4 rounded-xl flex items-center gap-2 w-fit max-w-full overflow-hidden text-sm md:text-base'>dipsharmadev@gmail.com <Send/></Link>
+          <Link
+            to="https://mail.google.com/mail/?view=cm&to=dipsharmadev+portfolio@gmail.com&su=Portfolio%20Message"
+            className="bg-zinc-900 p-4 rounded-xl flex items-center gap-2 w-fit max-w-full overflow-hidden text-sm md:text-base"
+          >
+            dipsharmadev@gmail.com <Send />
+          </Link>
         </div>
         <div className="p-5 md:p-8 w-full lg:w-1/2 bg-slate-700 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 my-2 rounded-xl">
-          <h2 className="text-2xl md:text-3xl text-slate-900 dark:text-white font-bold">Contact us</h2>
-          <form className="mt-6 md:mt-8 space-y-5" action="https://formspree.io/f/mreolgne" 
-            onSubmit={(e)=>submitForm(e)} 
-            method='POST'>
+          <h2 className="text-2xl md:text-3xl text-slate-900 dark:text-white font-bold">
+            Contact us
+          </h2>
+          <form
+            className="mt-6 md:mt-8 space-y-5"
+            action="https://formspree.io/f/mreolgne"
+            onSubmit={(e) => submitForm(e)}
+            method="POST"
+          >
             <div>
               <label className={labelStyle}>Name</label>
-              <input type='text' placeholder='Enter Name'
-                name='Name'
-                onChange={(e)=>(
-                  setValue(prev=>({...prev, Name: e.target.value})),
-                  setError(prev=>({...prev, Name: ''}))
+              <input
+                type="text"
+                placeholder="Enter Name"
+                name="Name"
+                onChange={(e) => (
+                  setValue((prev) => ({ ...prev, Name: e.target.value })),
+                  setError((prev) => ({ ...prev, Name: "" }))
                 )}
                 value={value.Name}
-                className={inputStyle} />
-              <Errorpage error={error} name={'Name'}/>
+                className={inputStyle}
+              />
+              <Errorpage error={error} name={"Name"} />
             </div>
             <div>
               <label className={labelStyle}>Email</label>
-              <input type='email' placeholder='Enter Email'
-                name='Email'
-                onChange={(e)=>(
-                  setValue(prev=>({...prev, Email: e.target.value})),
-                  setError(prev=>({...prev, Email: ''}))
+              <input
+                type="email"
+                placeholder="Enter Email"
+                name="Email"
+                onChange={(e) => (
+                  setValue((prev) => ({ ...prev, Email: e.target.value })),
+                  setError((prev) => ({ ...prev, Email: "" }))
                 )}
                 value={value.Email}
-                className={inputStyle} />
-              <Errorpage error={error} name={'Email'}/>
+                className={inputStyle}
+              />
+              <Errorpage error={error} name={"Email"} />
             </div>
             <div>
               <label className={labelStyle}>Message</label>
-              <textarea placeholder='Enter Message' rows="6"
-                name='Message'
-                onChange={(e)=>(
-                  setValue(prev=>({...prev, Message: e.target.value})),
-                  setError(prev=>({...prev, Message: ''}))
+              <textarea
+                placeholder="Enter Message"
+                rows="6"
+                name="Message"
+                onChange={(e) => (
+                  setValue((prev) => ({ ...prev, Message: e.target.value })),
+                  setError((prev) => ({ ...prev, Message: "" }))
                 )}
                 value={value.Message}
-                className={inputStyle}>
-              </textarea>
-              <Errorpage error={error} name={'Message'}/>
+                className={inputStyle}
+              ></textarea>
+              <Errorpage error={error} name={"Message"} />
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 md:gap-4">
-              <Link to='./' className='bg-slate-900 py-2 px-3 rounded-lg hover:text-gray-700'><FontAwesomeIcon icon={faArrowLeft}/></Link>
-              <div className='text-white bg-slate-900 flex font-medium hover:bg-slate-800 tracking-wide text-sm px-4 py-2.5 border-0 outline-0 cursor-pointer w-full sm:w-auto justify-center'>
-                <input type='submit'
-                  value='Send Message'
-                  className="flex mx-4 cursor-pointer"/>
-                <Send className='flex mx-2'/>
+              <Link
+                to="./"
+                className="bg-slate-900 py-2 px-3 rounded-lg hover:text-gray-700"
+              >
+                <FontAwesomeIcon icon={faArrowLeft} />
+              </Link>
+              <div className="text-white bg-slate-900 flex font-medium hover:bg-slate-800 tracking-wide text-sm px-4 py-2.5 border-0 outline-0 cursor-pointer w-full sm:w-auto justify-center">
+                <input
+                  type="submit"
+                  value="Send Message"
+                  className="flex mx-4 cursor-pointer"
+                />
+                <Send className="flex mx-2" />
               </div>
             </div>
           </form>
         </div>
       </div>
     </div>
-  )
+  );
 }
