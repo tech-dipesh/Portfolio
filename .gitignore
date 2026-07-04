@@ -27,9 +27,13 @@ dist-ssr
 package-lock.json
 ./package-lock.json
 /package-lock.json
+
 image.png
 notes.md
 public/expand-knowledge-ui.png
 public/skills-page-ui.png
+
 .vercel
 .env*.local
+pnpm-lock.yml
+pnpm-lock.yaml

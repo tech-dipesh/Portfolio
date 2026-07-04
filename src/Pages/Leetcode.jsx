@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import HeatmapCell from '../Components/Leetcode/heatmap'
+import HeatmapCell from '../Components/Leetcode/Heatmap'
 import MonthLabels from '../Components/Leetcode/Monthlabel'
 import StatRing from '../Components/Leetcode/Statring'
 import buildGrid from '../services/Buildgrid.js'
