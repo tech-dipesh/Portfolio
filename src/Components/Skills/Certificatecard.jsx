@@ -1,12 +1,12 @@
 import { faCertificate, faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router";
+import Link from 'next/link'
 
 
 export default function CertificateCart({title, url}) {
   return (
     <Link
-      to={url}
+      href={url}
       target="_blank"
       className="flex items-center gap-3 px-5 py-4 bg-slate-900/50 border border-slate-800 rounded-xl 
                  hover:bg-slate-900 transition-all duration-300 cursor-pointer"

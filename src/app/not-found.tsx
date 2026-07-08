@@ -1,8 +1,5 @@
-
 import React from 'react'
-import Footer from "./Footer"
-import Header from "./Header"
-import { Link } from 'react-router'
+import Link from 'next/link'
 import { ShieldAlert } from 'lucide-react'
 export default function Notfound() {
   return (
@@ -14,7 +11,7 @@ export default function Notfound() {
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800">404</h1>
           <h2 className="text-xl md:text-2xl font-semibold text-gray-600">Page Not Found</h2>
           <p className="text-gray-50 text-sm md:text-base">The Page You're Looking for doesn't Exist.</p>
-          <Link to="/" className='opacitiy-85 cursor-pointer bg-blue-500 font-semibold py-2 px-4 rounded m-2 inline-block'> Go to Homepage</Link>
+          <Link href="/" className='opacitiy-85 cursor-pointer bg-blue-500 font-semibold py-2 px-4 rounded m-2 inline-block'> Go to Homepage</Link>
         </div>
     </main>
   )

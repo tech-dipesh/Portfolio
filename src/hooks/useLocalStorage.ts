@@ -1,7 +1,18 @@
 import { useState } from "react"
 export default function useLocalStorage(storageName, initialValue){
-  const [state, setState]=useState(
-    JSON.parse(localStorage.getItem(storageName))?? initialValue)
+const [state, setState]=useState(=>{
+  if(typeof window ===undefined){
+    return initialValue;
+  }
+  try {
+    const item = localStorage.getItem(storageName);
+    return item ? JSON.parse(item) : initialValue;
+  } catch (err) {
+    console.error(err);
+    return initialValue;
+  }
+}
+            )
 
   const updateSecondValue=(newValue)=>{
       if(typeof newValue=='function'){

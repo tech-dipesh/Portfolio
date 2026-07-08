@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import Link from 'next/link'
 
 
 export default function BlogCard({ blog }) {
@@ -37,7 +37,7 @@ export default function BlogCard({ blog }) {
           {blog.readTime}
         </span>
 
-        <Link className="flex items-center gap-2 text-blue-400 font-medium" to={blog.slug}>
+        <Link className="flex items-center gap-2 text-blue-400 font-medium" href={blog.slug}>
           <span>Read Article</span>
           <span className="transition-transform duration-300 group-hover:translate-x-1">
             →

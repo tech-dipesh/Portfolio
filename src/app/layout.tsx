@@ -3,8 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import Header from '@/c/Header'
+import Footer from '@/c/Footer'
 import { Analytics } from '@vercel/analytics/react';
 
 import { ToastContainer } from 'react-toastify'

@@ -5,7 +5,7 @@ import { faClipboard, faCopy } from '@fortawesome/free-regular-svg-icons'
 import { faArrowRight, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
-import { Link } from 'react-router';
+import Link from 'next/link'
 import {Whoami, skills} from '../Data/MiscellaneousData.js'
 export default function TopHome() {
   const [isCopy, setIsCopy] = useState(false);
@@ -36,7 +36,7 @@ export default function TopHome() {
 
       <div className='flex justify-center my-8'>
         <div className='p-6 rounded-xl w-fit bg-slate-800 hover:bg-slate-700 transition-colors shadow-xl border border-slate-700'>    <div className='flex flex-col sm:flex-row items-stretch sm:items-center sm:justify-center w-full gap-3 sm:gap-4'>
-          <Link to='./contact' className='flex items-center justify-center gap-2 cursor-pointer bg-slate-800/50 px-4 sm:px-6 py-3 rounded-full border border-slate-700/50 w-full sm:w-auto'>
+          <Link href='./contact' className='flex items-center justify-center gap-2 cursor-pointer bg-slate-800/50 px-4 sm:px-6 py-3 rounded-full border border-slate-700/50 w-full sm:w-auto'>
             <h2 className='text-slate-100 font-semibold text-base sm:text-lg'>Let's Connect</h2>
             <FontAwesomeIcon icon={faArrowRight} className='text-blue-400' />
           </Link>
@@ -63,13 +63,13 @@ export default function TopHome() {
             <span>{getWithAmPm(new Date())}</span>
           </div>
           <div className='flex gap-8 text-2xl text-gray-300'>
-            <Link to='https://github.com/tech-dipesh' target='_blank'>
+            <Link href='https://github.com/tech-dipesh' target='_blank'>
               <FontAwesomeIcon icon={faGithub} className='hover:text-white cursor-pointer transition-colors' />
             </Link>
-            <Link to='https://x.com/tec_dipesh' target='_blank'>
+            <Link href='https://x.com/tec_dipesh' target='_blank'>
               <FontAwesomeIcon icon={faXTwitter} className='hover:text-white cursor-pointer transition-colors' />
             </Link>
-            <Link to='https://linkedin.com/in/tech-dipesh' target='_blank'>
+            <Link href='https://linkedin.com/in/tech-dipesh' target='_blank'>
               <FontAwesomeIcon icon={faLinkedin} className='hover:text-white cursor-pointer transition-colors' />
             </Link>
           </div>

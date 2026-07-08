@@ -62,13 +62,13 @@ export const Tools = [
   { name: 'npm', icon: npm },
   { name: 'Git', icon: Git },
   { name: 'Vercel', icon: Vercel },
-  { name: 'Render', icon: Render },         // added
+  { name: 'Render', icon: Render },  
   { name: 'Vite', icon: Vite },
   { name: 'DevTools', icon: DevTools },
   { name: 'Parcel', icon: Parcel },
   { name: 'Documentation', icon: Documentation },
-  { name: 'Apache Bench', icon: Apache }, // added (load testing)
-  { name: 'AWS (EC2, S3, IAM)', icon: AWS },   // added
+  { name: 'Apache Bench', icon: Apache },
+  { name: 'AWS (EC2, S3, IAM)', icon: AWS },
 ];
 
 export const Achievements = [

@@ -1,4 +1,4 @@
-import Projectcart from "@/components/ProjectCard"
+import Projectcart from "./ProjectCard"
 
 import projectData from "../Data/ProjectsData"
 

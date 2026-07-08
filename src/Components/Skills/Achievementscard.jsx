@@ -1,11 +1,11 @@
 import { faTrophy, faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { Profiler } from 'react'
-import { Link } from 'react-router'
+import Link from 'next/link'
 
 export default function Achievementscard({name,proof}) {
   return (
-    <Link to={proof}
+    <Link href={proof}
     target='_blank'
     className='flex items-center gap-3 px-5 py-4 bg-yellow-500/10 rounded-xl
     transition-all duration-300 cursor-pointer group:'

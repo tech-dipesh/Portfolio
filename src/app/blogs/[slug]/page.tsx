@@ -1,9 +1,7 @@
-
-import { useParams } from "react-router";
 import blogs from "../Data/blogs.json";
 
-export default function Blog() {
-  const { slug, id } = useParams();
+export default function Blog({params}) {
+  const { slug, id } = params
 
   const blog = blogs.find((blog) => blog.slug === slug);
 

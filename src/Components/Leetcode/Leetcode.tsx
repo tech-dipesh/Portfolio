@@ -4,7 +4,8 @@ import MonthLabels from '../Components/Leetcode/Monthlabel'
 import StatRing from '../Components/Leetcode/Statring'
 import buildGrid from '../services/Buildgrid.js'
 
-import { Link } from 'react-router'
+
+import Link from 'next/link'
 
 const BASE = 'https://alfa-leetcode-api.onrender.com/tech-dipesh'
 
@@ -69,7 +70,7 @@ export default function Leetcode() {
         {error && (
           <div className='text-center py-32 space-y-3'>
             <p className='text-slate-400'>API may be cold-starting (Render free tier). Try refreshing in a moment.</p>
-            <Link to='https://leetcode.com/tech-dipesh' target='_blank' className='text-orange-400 text-sm hover:underline'>
+            <Link href='https://leetcode.com/tech-dipesh' target='_blank' className='text-orange-400 text-sm hover:underline'>
               View on LeetCode →
             </Link>
           </div>
@@ -97,7 +98,7 @@ export default function Leetcode() {
                 <div className='hidden md:flex flex-col items-center gap-1 shrink-0 text-center'>
                   <p className='text-slate-500 text-xs uppercase tracking-wider'>Global Rank</p>
                   <p className='text-xl font-bold text-slate-200'>#{profile?.ranking?.toLocaleString()}</p>
-                  <Link to='https://leetcode.com/tech-dipesh' target='_blank' className='text-orange-400 text-xs hover:underline mt-1'>
+                  <Link href='https://leetcode.com/tech-dipesh' target='_blank' className='text-orange-400 text-xs hover:underline mt-1'>
                     View Profile →
                   </Link>
                 </div>

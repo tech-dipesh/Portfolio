@@ -1,6 +1,6 @@
 import { Send } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router";
+import Link from 'next/link'
 import ShowMessage from "../Components/Reacttoast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
@@ -63,7 +63,7 @@ export default function Contact() {
           <h3>You can send me the message if you've any doubt.</h3>
           <p>I'll try to reponse your message.</p>
           <Link
-            to="https://mail.google.com/mail/?view=cm&to=dipsharmadev+portfolio@gmail.com&su=Portfolio%20Message"
+            href="https://mail.google.com/mail/?view=cm&to=dipsharmadev+portfolio@gmail.com&su=Portfolio%20Message"
             className="bg-zinc-900 p-4 rounded-xl flex items-center gap-2 w-fit max-w-full overflow-hidden text-sm md:text-base"
           >
             dipsharmadev@gmail.com <Send />

@@ -1,9 +1,9 @@
-import Projects from './Projects';
-import Contact from './Contact';
-import FutureLearn from './Future-Learn';
-import Skills from './Skills';
-import TopHome from '../Components/TopHome';
-import Github from '../Components/Github';
+import TopHome from '@/c/Home/TopHome';
+import Projects from '@/c/Projects';
+import Skills from '@/c/Skills/Skills';
+import FutureLearn from '@/Home/Future-Learn';
+import Github from '@/c/Github';
+import Contact from '@/c/Contact/Contact';
 
 function App() {
   return (

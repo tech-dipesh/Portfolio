@@ -1,10 +1,3 @@
-import StateImage from "../assets/images/state-flow.png";
-import AirBnb from "../assets/images/airbnb.png";
-import MusicPlayer from "../assets/images/beat-bridge.png";
-import Yetijobs from "../assets/images/yeti-jobs.png";
-
-import React from "../assets/skills/react.png"
-import Tailwind from "../assets/skills/tailwind.png"
 export default[ 
   {
     id: 1,
@@ -16,7 +9,7 @@ export default[
     liveDemo: "https://yeti-jobs.vercel.app/",
     Description:
       "Scalable job platform connecting seekers and recruiters. Backend: 50+ APIs, Node.js/Express, JWT/RBAC, PostgreSQL with composite & GIN indexes (search latency from 7ms → 0.9ms). Frontend: React, TypeScript, Context API, Tailwind. DevOps: Docker (1.99GB → 520MB), GitHub Actions CI/CD, cron job to prevent cold starts (50+ sec → <2 sec). Load tested with Apache Bench (1000 requests/14.9s at 100 concurrent users, 0 failures).",
-    image: Yetijobs,
+    image: "/assets/images/yeti-jobs.png",
     features: [
       "Job Search – Full‑text search with composite indexing – query time reduced from 7ms to 0.9ms (30% faster)",
       "Apply/Withdraw – One‑click job applications with status tracking and role‑based UI (admin, recruiter, job seeker)",
@@ -57,7 +50,7 @@ export default[
     liveDemo: "https://state-flows.vercel.app/",
     Description:
       "Full‑featured project management tool with Kanban board, filtering, sorting, persistent local storage, real‑time charts, and full responsive design. Built from scratch using React hooks, custom undo/redo engine (past/present/future), and `@dnd-kit` for drag‑drop. Achieves 50+ undo/redo operations with no performance degradation.",
-    image: StateImage,
+    image: "/assets/images/state-flow.png",
     features: [
       "Drag‑and‑Drop Board – Visual task movement with instant visual feedback and persistent localStorage save",
       "Undo/Redo Engine – Custom hook supporting 50+ operations without lag (tracks past/present/future)",
@@ -88,7 +81,7 @@ export default[
     liveDemo: "https://mega-project-listing.onrender.com/",
     Description:
       "This was my first backend‑focused project using MVC pattern. It handles secure authentication (Passport.js), image uploads to Cloudinary (with Multer), live maps with forward geocoding (address → coordinates), and full CRUD for listings and reviews. Deployed on Render with MongoDB Atlas.",
-    image: AirBnb,
+    image: "/assets/images/airbnb.png",
     features: [
       "User Authentication & Authorization – Passport.js local strategy, session management, and route‑based permissions (owner only can edit/delete)",
       "Cloud Image Upload – Multer + Cloudinary storage, automatic compression and public URL return",
@@ -122,7 +115,7 @@ export default[
     liveDemo: "https://state-flows.vercel.app/",  // Note: you might want to update the liveDemo URL to the actual music player; I kept as original but you can change
     Description:
       "Complete audio player with custom queue logic, sleep timer, volume/speed controls, play count tracking, and full keyboard control. All state persists via localStorage. Built entirely manually – no AI or tutorials – demonstrating deep understanding of DOM manipulation, event handling, and modular JavaScript (ES6 modules).",
-    image: MusicPlayer,
+    image: "/assets/images/beat-bridge.png",
     features: [
       "Smart Queue & Playlist – Add songs to queue or select from playlists; auto‑advance after current song ends",
       "Sleep Timer & Custom Controls – Set predefined (15/30/60 min) or custom timers; volume/speed sliders; bookmarks; play count tracking",
