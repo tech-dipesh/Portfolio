@@ -1,3 +1,5 @@
+
+"use client"
 import React from 'react'
 const fqaLists=[
   {question: "What's your name", answer: "My Legal Name is Dipendra Sharma but i prefer to use a Dipesh Sharma"},

@@ -1,6 +1,6 @@
 import Projectcart from "./ProjectCard"
 
-import projectData from "../Data/ProjectsData"
+import projectData from "@/Data/ProjectsData"
 
 export default function Projects() {
   return (

@@ -1,9 +1,11 @@
+"use client"
 import React from 'react'
 import { Moon, Sun } from 'lucide-react'
 import useLocalStorage from '../hooks/useLocalStorage'
 export default function ThemeToggle({style=''}) {
   const [isDark, setIsDark] = useLocalStorage('theme', false)
   const toggleTheme = () => {
+    if(window==="undefined")return;
     setIsDark(!isDark)
     document.documentElement.classList.toggle('dark')
   }
@@ -16,7 +18,7 @@ ${style}
 `}
       onClick={toggleTheme}
     >
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4">                                              
         <div 
           className={`absolute top-0.5 left-0.5 w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300 flex items-center justify-center ${
 isDark ? 'translate-x-7' : 'translate-x-0'

@@ -1,5 +1,7 @@
+
+"use client"
 import BlogCard from "../Components/BlogCard";
-import blogs from "../Data/blogs.json";
+import blogs from "@/Data/blogs.json";
 
 export default function Blogs() {
   const featured = blogs.find(blog => blog.featured);

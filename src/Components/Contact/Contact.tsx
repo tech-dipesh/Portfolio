@@ -1,10 +1,11 @@
+"use client"
 import { Send } from "lucide-react";
 import { useState } from "react";
 import Link from 'next/link'
-import ShowMessage from "../Components/Reacttoast";
+import ShowMessage from "@/c/Reacttoast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import Errorpage from "../Components/Errorpage";
+import Errorpage from "@/c/Errorpage";
 
 export default function Contact() {
   const [value, setValue] = useState({
@@ -126,7 +127,7 @@ export default function Contact() {
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 md:gap-4">
               <Link
-                to="./"
+                href="./"
                 className="bg-slate-900 py-2 px-3 rounded-lg hover:text-gray-700"
               >
                 <FontAwesomeIcon icon={faArrowLeft} />

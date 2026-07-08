@@ -1,8 +1,8 @@
-import Skillcart from "../Components/Skills/Skillcard";
-import CertificateCart from "../Components/Skills/Certificatecard";
-import {  Achievements, LanguagesList, LibraryList, Tools } from "../Data/SkillsData";
-import CertificateData from "../Data/CertificateData";
-import Achievementscard from "../Components/Skills/Achievementscard";
+import Skillcart from "./Skillcard";
+import CertificateCart from "./Certificatecard";
+import Achievementscard from "./Achievementscard";
+import {  Achievements, LanguagesList, LibraryList, Tools } from "@/Data/SkillsData";
+import CertificateData from "@/Data/CertificateData";
 export default function Skills() {
   return (
     <div className='min-h-screen py-10 md:py-20 px-3 md:px-4 bg-slate-900 dark:bg-slate-800'>

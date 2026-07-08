@@ -1,10 +1,8 @@
-import blogs from "../Data/blogs.json";
+import blogs from "@/Data/blogs.json";
 
 export default function Blog({params}) {
   const { slug, id } = params
-
   const blog = blogs.find((blog) => blog.slug === slug);
-
   if (!blog) {
     return (
       <section className="min-h-screen flex items-center justify-center bg-slate-900">

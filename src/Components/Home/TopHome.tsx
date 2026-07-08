@@ -1,12 +1,14 @@
+"use client"
 import  { useState } from 'react'
-import Profile from "../assets/profile.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClipboard, faCopy } from '@fortawesome/free-regular-svg-icons'
 import { faArrowRight, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
 import Link from 'next/link'
-import {Whoami, skills} from '../Data/MiscellaneousData.js'
+import Image from 'next/image'
+
+import {Whoami, skills} from '@/Data/MiscellaneousData'
 export default function TopHome() {
   const [isCopy, setIsCopy] = useState(false);
   const clickCopy = () => {
@@ -29,7 +31,7 @@ export default function TopHome() {
       <h3 className='my-4 md:my-6 text-white dark:text-gray-200 lg:my-8 md:gap-2 justify-center flex text-xl md:text-2xl lg:text-3xl font-bold px-4 text-center w-full'>I Design the Sytem that Work For Everyone.</h3>
       <div className='flex flex-col w-full px-4 md:flex-row items-center gap-4 justify-center text-base md:text-lg text-slate-200'>
         <h3>Hello I'm Dipendra Sharma, </h3>
-        <img src={Profile} alt="Profile" className='rounded-full h-32 w-32 object-cover border-4 border-blue-500 shadow-lg' />
+        <Image src={"/assets/profile.png"} alt="Profile" className='rounded-full h-32 w-32 object-cover border-4 border-blue-500 shadow-lg' height={124} width={124}/>
         <span className='text-slate-300'>a Software aficionado</span>
       </div>
 

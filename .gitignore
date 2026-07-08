@@ -14,7 +14,7 @@ dist-ssr
 
 # Editor directories and files
 .vscode/*
-!.vscode/extensions.json
+!ext.vscode/extensions.json
 .idea
 .DS_Store
 *.suo
@@ -37,3 +37,4 @@ public/skills-page-ui.png
 .env*.local
 pnpm-lock.yml
 pnpm-lock.yaml
+.next/

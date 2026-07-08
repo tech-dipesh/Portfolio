@@ -1,5 +1,5 @@
-import { Link } from "react-router";
-import Github from "../assets/social-media/github.png"
+import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Projectcart({image, Project}) {
   return (
@@ -11,13 +11,14 @@ export default function Projectcart({image, Project}) {
           </p>
           
           <Link 
-            to={Project.liveDemo} 
+            href={Project.liveDemo} 
             className='block relative overflow-hidden rounded-lg group-hover:shadow-2xl group-hover:shadow-blue-500/10 transition-all duration-300'
           >
-            <img 
+            <Image 
               src={image} 
               alt={Project.name} 
               className="w-full max-w-full rounded-lg transform group-hover:scale-105 transition-transform duration-500"
+            height={600} width={800}
             />
           </Link>
         </div>
@@ -25,11 +26,11 @@ export default function Projectcart({image, Project}) {
       <div className="flex-1 min-w-0 flex flex-col gap-5 relative">
         
         <Link 
-          to={Project.githubLink} 
+          href={Project.githubLink} 
           target="_blank"
           className='absolute -top-2 -right-2 w-10 h-10 md:w-12 md:h-12 bg-slate-800 border border-slate-700 rounded-full flex items-center justify-center hover:bg-slate-700 hover:border-slate-600 transition-all duration-300 hover:scale-110 z-10'
         >
-          <img src={Github} alt="Github" className="w-5 h-5 md:w-6 md:h-6"/>
+          <Image src={"/assets/social-media/github.png"} alt="Github" className="w-5 h-5 md:w-6 md:h-6" height={20} width={20}/>
         </Link>
         <div className='pt-4 pr-10'>
           <div className='flex items-center gap-3 mb-2'>

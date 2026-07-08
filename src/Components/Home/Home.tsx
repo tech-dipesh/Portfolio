@@ -1,3 +1,5 @@
+
+"use client"
 import Projects from '@/c/Projects/Projects';
 import Contact from '@/c/Contact/Contact'
 import FutureLearn from '@/c/Home/Future-Learn';

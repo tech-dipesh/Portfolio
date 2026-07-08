@@ -1,3 +1,5 @@
-export const Whoami = "I'm a software developer who builds real things — not just tutorial projects. I built YetiJobs end-to-end with 50+ APIs, React, Node.js, PostgreSQL, and Docker, cutting search latency from 7ms to 0.9ms. I also built StateFlow with drag-and-drop, undo/redo, and dark mode. I've solved 250+ LeetCode problems in C++. Day and night, I think about better ways to solve problems — cleaner code, faster queries, more reliable systems. My strongest zones are backend logic, database design, and problem-solving. I don't use AI to write my code. What you see is what you get — a hungry, honest developer who ships.";
+export const Whoami = `Hi, I’m Dipendra, a Computer Science student focused on backend development and scalable systems. I enjoy building full-stack applications, working with APIs, databases, and solving real-world engineering problems.
+My best project is Yeti Jobs, a production-level job portal where I designed the backend architecture, built REST APIs, structured PostgreSQL schema, and handled authentication and deployment.
+I’ve also solved 250+ DSA problems on LeetCode, which strengthened my problem-solving and coding efficiency.`;
 
 export const skills = ['JavaScript', 'React', 'C++', 'Redux', 'Nodejs', 'TypeScript'];

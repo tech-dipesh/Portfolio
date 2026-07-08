@@ -1,7 +1,7 @@
 import TopHome from '@/c/Home/TopHome';
-import Projects from '@/c/Projects';
+import Projects from '@/c/Projects/Projects';
 import Skills from '@/c/Skills/Skills';
-import FutureLearn from '@/Home/Future-Learn';
+import FutureLearn from '@/c/Home/Future-Learn';
 import Github from '@/c/Github';
 import Contact from '@/c/Contact/Contact';
 

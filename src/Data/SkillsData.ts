@@ -1,76 +1,42 @@
-import React from "../assets/skills/react.png"
-import Redux from "../assets/skills/redux.webp"
-import Tailwind from "../assets/skills/tailwind.png"
-import Css from "../assets/skills/css.png"
-import JavaScript from "../assets/skills/javascript.png"
-import C from "../assets/skills/c.webp"
-import Cpp from "../assets/skills/cpp.png"
-import TypeScript from "../assets/skills/typescript.png"
-
-import API from "../assets/skills/openapi.webp"
-import npm from "../assets/skills/npm.png"
-import Git from "../assets/skills/git.png"
-import Nodejs from "../assets/skills/nodejs.png"
-import Mongodb from "../assets/skills/mongo-db.png"
-import Database from "../assets/skills/database.webp"
-import Express from "../assets/skills/express.png"
-import Contextapi from "../assets/skills/context-api.png"
-import Vercel from "../assets/skills/vercel.webp"
-import Vite from "../assets/skills/vite.png"
-import VsCode from "../assets/skills/vs-code.png"
-import Docker from "../assets/skills/docker.png"
-import DevTools from "../assets/skills/devtools.webp"
-import Documentation from "../assets/skills/documentation.webp"
-import Parcel from "../assets/skills/parcel.webp"
-import PostgreSql from "../assets/skills/postgresql.webp"
-import Linux  from "../assets/skills/linux.webp"
-import Neovim  from "../assets/skills/neovim.svg"
-import Axios  from "../assets/skills/axios.webp"
-import Prisma  from "../assets/skills/prisma.svg"
-import AWS  from "../assets/skills/aws.webp"
-import Render  from "../assets/skills/render.webp"
-import Apache  from "../assets/skills/apache-bench.png"
-
 export const LanguagesList = [
-  { name: 'JavaScript', icon: JavaScript },
-  { name: 'TypeScript', icon: TypeScript },
-  { name: 'C', icon: C },
-  { name: 'C++', icon: Cpp },
-  { name: 'SQL', icon: Database },
+  { name: 'JavaScript', icon: '/assets/skills/javascript.png' },
+  { name: 'TypeScript', icon: '/assets/skills/typescript.png' },
+  { name: 'C', icon: '/assets/skills/c.webp' },
+  { name: 'C++', icon: '/assets/skills/cpp.png' },
+  { name: 'SQL', icon: '/assets/skills/database.webp' },
 ];
 
 export const LibraryList = [
-  { name: 'React', icon: React },
-  { name: 'Context API', icon: Contextapi },
-  { name: 'Redux', icon: Redux },
-  { name: 'Node.js', icon: Nodejs },
-  { name: 'Express', icon: Express },
-  { name: 'PostgreSQL', icon: PostgreSql },
-  { name: 'MongoDB', icon: Mongodb },
-  { name: 'Prisma', icon: Prisma },
-  { name: 'Tailwind CSS', icon: Tailwind },
-  { name: 'CSS', icon: Css },
-  { name: 'Axios', icon: Axios }
+  { name: 'React', icon: '/assets/skills/react.png' },
+  { name: 'Context API', icon: '/assets/skills/context-api.png' },
+  { name: 'Redux', icon: '/assets/skills/redux.webp' },
+  { name: 'Node.js', icon: '/assets/skills/nodejs.png' },
+  { name: 'Express', icon: '/assets/skills/express.png' },
+  { name: 'PostgreSQL', icon: '/assets/skills/postgresql.webp' },
+  { name: 'MongoDB', icon: '/assets/skills/mongo-db.png' },
+  { name: 'Prisma', icon: '/assets/skills/prisma.svg' },
+  { name: 'Tailwind CSS', icon: '/assets/skills/tailwind.png' },
+  { name: 'CSS', icon: '/assets/skills/css.png' },
+  { name: 'Axios', icon: '/assets/skills/axios.webp' },
 ];
 
 export const Tools = [
-  { name: 'Docker', icon: Docker },
-  { name: 'Linux', icon: Linux },
-  { name: 'Neovim', icon: Neovim },
-  { name: 'OpenAPI', icon: API },
-  { name: 'VS Code', icon: VsCode },
-  { name: 'npm', icon: npm },
-  { name: 'Git', icon: Git },
-  { name: 'Vercel', icon: Vercel },
-  { name: 'Render', icon: Render },  
-  { name: 'Vite', icon: Vite },
-  { name: 'DevTools', icon: DevTools },
-  { name: 'Parcel', icon: Parcel },
-  { name: 'Documentation', icon: Documentation },
-  { name: 'Apache Bench', icon: Apache },
-  { name: 'AWS (EC2, S3, IAM)', icon: AWS },
+  { name: 'Docker', icon: '/assets/skills/docker.png' },
+  { name: 'Linux', icon: '/assets/skills/linux.webp' },
+  { name: 'Neovim', icon: '/assets/skills/neovim.svg' },
+  { name: 'OpenAPI', icon: '/assets/skills/openapi.webp' },
+  { name: 'VS Code', icon: '/assets/skills/vs-code.png' },
+  { name: 'npm', icon: '/assets/skills/npm.png' },
+  { name: 'Git', icon: '/assets/skills/git.png' },
+  { name: 'Vercel', icon: '/assets/skills/vercel.webp' },
+  { name: 'Render', icon: '/assets/skills/render.webp' },
+  { name: 'Vite', icon: '/assets/skills/vite.png' },
+  { name: 'DevTools', icon: '/assets/skills/devtools.webp' },
+  { name: 'Parcel', icon: '/assets/skills/parcel.webp' },
+  { name: 'Documentation', icon: '/assets/skills/documentation.webp' },
+  { name: 'Apache Bench', icon: '/assets/skills/apache-bench.png' },
+  { name: 'AWS (EC2, S3, IAM)', icon: '/assets/skills/aws.webp' },
 ];
-
 export const Achievements = [
   {
     name: 'CodeaThon 7.0 Winner (university level, cash prize)',

@@ -1,6 +1,8 @@
+
+"use client"
 import React from 'react'
-import SmallDeveloperIcon from "../assets/images/developer-small-icon.png"
-import futureSkills from '../Data/futureSkills'
+import Image from 'next/image'
+import futureSkills from '@/Data/futureSkills'
 export default function FutureLearn() {
   return (
     <section className='py-8 md:py-12 px-4'>
@@ -8,10 +10,12 @@ export default function FutureLearn() {
         <div className='flex items-center gap-3 md:gap-4 mb-6 md:mb-8'>
           <div className='relative shrink-0'>
             <div className='absolute inset-0 bg-blue-500/20 rounded-full blur-xl'></div>
-            <img 
-              src={SmallDeveloperIcon} 
+            <Image 
+              src={"/assets/images/developer-small-icon.png"} 
               alt="Icon" 
               className='relative rounded-full h-10 w-10 md:h-12 md:w-12 object-cover border-2 border-slate-700 shadow-lg'
+              height={40}
+              width={40}
             />
           </div>
           <h1 className='text-lg md:text-2xl text-slate-200 font-medium'>
