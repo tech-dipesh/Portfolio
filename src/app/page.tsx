@@ -1,20 +1,20 @@
-import Header from './Components/Header'
-import { Outlet } from 'react-router'
-import Footer from './Components/Footer'
-import { Analytics } from "@vercel/analytics/react"
-import { ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css';
+import Projects from './Projects';
+import Contact from './Contact';
+import FutureLearn from './Future-Learn';
+import Skills from './Skills';
+import TopHome from '../Components/TopHome';
+import Github from '../Components/Github';
 
 function App() {
   return (
-    <>
-    <Analytics/>
-    <ToastContainer/>
-    <Header/>
-    <Outlet/>
-    <Footer/>
-    </>
-  )
+    <div className=' text-black dark:text-slate-100 bg-slate-900 dark:bg-slate-800 p-4'>
+      <TopHome/>
+      <Projects />
+      <Skills/>
+      <FutureLearn />
+      <Github/>
+      <Contact />
+    </div>  )
 }
 
 export default App

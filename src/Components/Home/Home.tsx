@@ -1,9 +1,9 @@
-import Projects from './Projects';
+import Projects from '@/components/Projects/Projects';
 import Contact from './Contact';
 import FutureLearn from './Future-Learn';
 import Skills from './Skills';
-import TopHome from '../Components/TopHome';
-import Github from '../Components/Github';
+import TopHome from '@/components/TopHome';
+import Github from '@/components/Github';
 
 export default function Home() {
   return (
