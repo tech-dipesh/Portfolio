@@ -6,22 +6,10 @@ export default [
     textColor: 'text-blue-400'
   },
   {
-    skill: 'Terraform (IaC)',
+    skill: 'Redis',
     bgColor: 'bg-purple-500/10',
     borderColor: 'border-purple-500/30',
     textColor: 'text-purple-400'
-  },
-  {
-    skill: 'GraphQL / Apollo',
-    bgColor: 'bg-pink-500/10',
-    borderColor: 'border-pink-500/30',
-    textColor: 'text-pink-400'
-  },
-  {
-    skill: 'Prometheus + Grafana',
-    bgColor: 'bg-orange-500/10',
-    borderColor: 'border-orange-500/30',
-    textColor: 'text-orange-400'
   },
   {
     skill: 'CI/CD (GitLab CI / ArgoCD)',

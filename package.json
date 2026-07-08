@@ -1,17 +1,18 @@
 {
-  "name": "portfolio",
+  "name": "portfolio_ts",
+  "version": "0.1.0",
   "private": true,
-  "version": "0.0.2",
-  "type": "module",
   "scripts": {
-    "start": "vite",
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^7.3.0",
+    "next": "16.2.10",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+"@fortawesome/fontawesome-svg-core": "^7.3.0",
     "@fortawesome/free-brands-svg-icons": "^7.3.0",
     "@fortawesome/free-regular-svg-icons": "^7.3.0",
     "@fortawesome/free-solid-svg-icons": "^7.3.0",
@@ -19,25 +20,19 @@
     "@tailwindcss/vite": "^4.3.2",
     "@vercel/analytics": "^1.6.1",
     "lucide-react": "^0.563.0",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7",
     "react-github-calendar": "^5.0.6",
     "react-router": "^7.18.1",
     "react-toastify": "^11.1.0",
     "tailwindcss": "^4.3.2"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.4",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "eslint-config-next": "16.2.10",
+    "tailwindcss": "^4",
+    "typescript": "^5",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.2.0",
-    "eslint": "^9.39.4",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.4.26",
-    "globals": "^16.5.0",
-    "vite": "npm:rolldown-vite@7.2.5"
-  },
-  "overrides": {
-    "vite": "npm:rolldown-vite@7.2.5"
+    "eslint": "^9.39.4"
   }
 }
