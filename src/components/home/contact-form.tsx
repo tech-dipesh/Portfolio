@@ -1,6 +1,6 @@
 "use client";
-import type {FormEvent} from 'react'
-import {useEffect,  useState} from "react";
+import type {SubmitEvent} from 'react'
+import {  useState} from "react";
 import { Send, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { contactConfig } from "@/config/contact";
@@ -23,12 +23,12 @@ export function ContactForm() {
     setFields((prev) => ({ ...prev, [key]: value }));
   };
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
     setStatus("sending");
 
     try {
-      const response = await fetch(contactConfig.formspreeEndpoint, {
+      const response = await fetch(contactConfig.formspreeEndpoint!, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify(fields),

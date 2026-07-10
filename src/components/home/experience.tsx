@@ -1,6 +1,6 @@
 "use client";
 
-import {useState, useEffect} from 'react'
+import {useState } from 'react'
 import { experience } from "@/config/experience";
 import { cn } from "@/lib/utils";
 

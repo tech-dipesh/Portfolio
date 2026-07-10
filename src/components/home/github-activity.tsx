@@ -1,4 +1,4 @@
-import { Github } from "lucide-react";
+import { FaGithub } from 'react-icons/fa';
 import { PinnedRepos } from "@/components/home/pinned-repos";
 import { ContributionHeatmap } from "@/components/home/contribution-heatmap";
 import { siteConfig } from "@/config/site";
@@ -17,7 +17,7 @@ export function GithubActivity() {
           rel="noreferrer"
           className="flex items-center gap-2 text-sm text-ink-muted transition-colors hover:text-ink"
         >
-          <Github className="h-4 w-4" />
+          <FaGithub className="h-4 w-4" size={16}/>
           @tech-dipesh
         </a>
       </div>
