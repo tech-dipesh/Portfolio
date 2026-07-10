@@ -1,3 +1,3 @@
 export const contactConfig = {
-  formspreeEndpoint: "https://formspree.io/f/xojogezp",
+  formspreeEndpoint: process.env.NEXT_PUBLIC_FORM,
 };

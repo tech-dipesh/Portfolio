@@ -1,14 +1,14 @@
 "use client";
 
 import {forwardRef} from 'react'
-import type {ReactNode,   ElementRef, ComponentPropsWithoutRef} from 'react'
+import type {ReactNode, ComponentPropsWithoutRef, ComponentRef} from 'react'
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { Command as CommandPrimitive } from "cmdk";
 import { Search } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const Command = forwardRef<
-  ElementRef<typeof CommandPrimitive>,
+  ComponentRef<typeof CommandPrimitive>,
   ComponentPropsWithoutRef<typeof CommandPrimitive>
 >(({ className, ...props }, ref) => (
   <CommandPrimitive
@@ -39,15 +39,15 @@ function CommandDialog({ children, ...props }: CommandDialogProps) {
 }
 
 const CommandInput = forwardRef<
-  ElementRef<typeof CommandPrimitive.Input>,
-  ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
+ComponentRef<typeof CommandPrimitive.Input>,
+ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
 >(({ className, ...props }, ref) => (
   <div className="flex items-center gap-3 border-b border-border px-4 focus-within:bg-raised/40">
     <Search className="h-4 w-4 shrink-0 text-accent-soft" />
     <CommandPrimitive.Input
       ref={ref}
       className={cn(
-        "flex h-14 w-full bg-transparent text-sm text-ink outline-none placeholder:text-ink-faint disabled:cursor-not-allowed disabled:opacity-50",
+        "flex h-14 w-full bg-transparent text-sm text-ink outline-none ring-0 focus:ring-0 focus:outline-none placeholder:text-ink-faint",
         className,
       )}
       {...props}
@@ -57,8 +57,8 @@ const CommandInput = forwardRef<
 CommandInput.displayName = CommandPrimitive.Input.displayName;
 
 const CommandList = forwardRef<
-  ElementRef<typeof CommandPrimitive.List>,
-  ComponentPropsWithoutRef<typeof CommandPrimitive.List>
+ComponentRef<typeof CommandPrimitive.List>,
+ComponentPropsWithoutRef<typeof CommandPrimitive.List>
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.List
     ref={ref}
@@ -69,16 +69,16 @@ const CommandList = forwardRef<
 CommandList.displayName = CommandPrimitive.List.displayName;
 
 const CommandEmpty = forwardRef<
-  ElementRef<typeof CommandPrimitive.Empty>,
-  ComponentPropsWithoutRef<typeof CommandPrimitive.Empty>
+ComponentRef<typeof CommandPrimitive.Empty>,
+ComponentPropsWithoutRef<typeof CommandPrimitive.Empty>
 >((props, ref) => (
   <CommandPrimitive.Empty ref={ref} className="py-8 text-center text-sm text-ink-faint" {...props} />
 ));
 CommandEmpty.displayName = CommandPrimitive.Empty.displayName;
 
 const CommandGroup = forwardRef<
-  ElementRef<typeof CommandPrimitive.Group>,
-  ComponentPropsWithoutRef<typeof CommandPrimitive.Group>
+ComponentRef<typeof CommandPrimitive.Group>,
+ComponentPropsWithoutRef<typeof CommandPrimitive.Group>
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.Group
     ref={ref}
@@ -92,8 +92,8 @@ const CommandGroup = forwardRef<
 CommandGroup.displayName = CommandPrimitive.Group.displayName;
 
 const CommandItem = forwardRef<
-  ElementRef<typeof CommandPrimitive.Item>,
-  ComponentPropsWithoutRef<typeof CommandPrimitive.Item>
+ComponentRef<typeof CommandPrimitive.Item>,
+ComponentPropsWithoutRef<typeof CommandPrimitive.Item>
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.Item
     ref={ref}
