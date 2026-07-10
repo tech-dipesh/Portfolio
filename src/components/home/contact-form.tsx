@@ -1,6 +1,6 @@
 "use client";
-
-import * as React from "react";
+import type {FormEvent} from 'react'
+import {useEffect,  useState} from "react";
 import { Send, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { contactConfig } from "@/config/contact";
@@ -16,14 +16,14 @@ interface ContactFields {
 const emptyFields: ContactFields = { name: "", email: "", message: "" };
 
 export function ContactForm() {
-  const [fields, setFields] = React.useState<ContactFields>(emptyFields);
-  const [status, setStatus] = React.useState<SubmitState>("idle");
+  const [fields, setFields] = useState<ContactFields>(emptyFields);
+  const [status, setStatus] = useState<SubmitState>("idle");
 
   const updateField = <K extends keyof ContactFields>(key: K, value: ContactFields[K]) => {
     setFields((prev) => ({ ...prev, [key]: value }));
   };
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setStatus("sending");
 

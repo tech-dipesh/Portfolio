@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import {useState, useRef} from 'react'
 import { FileDown, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,8 +14,8 @@ import { resumeVariants } from "@/config/resume";
 import { cn } from "@/lib/utils";
 
 export function ResumePicker({ className }: { className?: string }) {
-  const [open, setOpen] = React.useState(false);
-  const closeTimer = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [open, setOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const openNow = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);

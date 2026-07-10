@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import {useState} from 'react'
 import { Github, Linkedin, Twitter, Copy, Check, Code, Swords } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/components/home/contact-form";
@@ -15,7 +15,7 @@ const socials = [
 ];
 
 export function Contact() {
-  const [copied, setCopied] = React.useState(false);
+  const [copied, setCopied] = useState(false);
 
   const copyEmail = async () => {
     await navigator.clipboard.writeText(siteConfig.email);

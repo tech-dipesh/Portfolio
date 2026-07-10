@@ -25,4 +25,9 @@ export const resumeVariants: ResumeVariant[] = [
     description: "Docker, CI/CD, and infrastructure work",
     file: "/devops.pdf",
   },
-];
+  {
+  id: "dsa",
+  label: "DSA Resume",
+  description: "Problem-solving and algorithms focus for big-tech DSA interviews",
+  file: "/dsa.pdf",
+}];

@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import {useEffect,  useState} from "react";
 import { CheckCircle2, Loader2, Circle } from "lucide-react";
 
 interface PipelineStep {
@@ -19,9 +19,9 @@ const pipeline: PipelineStep[] = [
 type StepStatus = "done" | "active" | "pending";
 
 export function CodePlayground() {
-  const [activeIndex, setActiveIndex] = React.useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % (pipeline.length + 1));
     }, 1800);

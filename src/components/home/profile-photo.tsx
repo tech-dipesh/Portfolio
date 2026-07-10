@@ -1,10 +1,10 @@
 "use client";
 
-import * as React from "react";
+import {useState} from 'react'
 import Image from "next/image";
 
 export function ProfilePhoto() {
-  const [failed, setFailed] = React.useState(false);
+  const [failed, setFailed] = useState(false);
 
   return (
     <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border-2 border-accent/40 shadow-glow">

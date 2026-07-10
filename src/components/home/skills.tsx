@@ -1,15 +1,15 @@
 "use client";
 
-import * as React from "react";
+import {useState, useEffect} from 'react'
 import { Sparkles, Trophy } from "lucide-react";
 import { Icon } from "@/components/ui/icon";
 import { Skeleton } from "@/components/ui/skeleton";
 import { skillGroups, futureSkills, achievements } from "@/config/skills";
 
 export function Skills() {
-  const [loading, setLoading] = React.useState(true);
+  const [loading, setLoading] = useState(true);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 500);
     return () => clearTimeout(timer);
   }, []);

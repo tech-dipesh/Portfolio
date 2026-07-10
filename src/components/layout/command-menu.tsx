@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import {useEffect, useCallback, useState} from "react";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import {
@@ -60,11 +60,11 @@ function ItemIcon({ icon: IconComponent, tone = "neutral" }: { icon: LucideIcon;
 }
 
 export function CommandMenu({ open, onOpenChange }: CommandMenuProps) {
-  const [view, setView] = React.useState<PaletteView>("root");
+  const [view, setView] = useState<PaletteView>("root");
   const router = useRouter();
   const { setTheme, theme } = useTheme();
 
-  React.useEffect(() => {
+  useEffect(() => {
     function handleKeydown(event: KeyboardEvent) {
       if (event.key === "k" && (event.metaKey || event.ctrlKey)) {
         event.preventDefault();
@@ -75,7 +75,7 @@ export function CommandMenu({ open, onOpenChange }: CommandMenuProps) {
     return () => document.removeEventListener("keydown", handleKeydown);
   }, [open, onOpenChange]);
 
-  const close = React.useCallback(() => {
+  const close = useCallback(() => {
     onOpenChange(false);
     setView("root");
   }, [onOpenChange]);

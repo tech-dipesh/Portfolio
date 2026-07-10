@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import {useEffect , useState} from "react";
 import { Trophy, Flame, Award, Target } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { leetcodeSnapshot, leetcodeLanguages } from "@/config/leetcode";
@@ -12,9 +12,9 @@ const difficultyMeta = [
 ];
 
 export function LeetcodeStats() {
-  const [loading, setLoading] = React.useState(true);
+  const [loading, setLoading] = useState(true);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 600);
     return () => clearTimeout(timer);
   }, []);

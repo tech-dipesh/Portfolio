@@ -1,11 +1,11 @@
 "use client";
 
-import * as React from "react";
+import {useState, useEffect} from 'react'
 import { experience } from "@/config/experience";
 import { cn } from "@/lib/utils";
 
 export function Experience() {
-  const [activeId, setActiveId] = React.useState(experience[0]?.id ?? "");
+  const [activeId, setActiveId] = useState(experience[0]?.id ?? "");
   const active = experience.find((entry) => entry.id === activeId) ?? experience[0];
 
   if (!active) return null;

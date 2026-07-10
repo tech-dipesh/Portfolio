@@ -1,11 +1,11 @@
 "use client";
 
-import * as React from "react";
+import {useEffect,  useState} from "react";
 import Image from "next/image";
 import { LayoutDashboard } from "lucide-react";
 
 export function ProjectPreview({ src, alt }: { src: string; alt: string }) {
-  const [failed, setFailed] = React.useState(false);
+  const [failed, setFailed] = useState(false);
 
   if (failed) {
     return (
