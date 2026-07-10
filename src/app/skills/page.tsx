@@ -1,6 +1,5 @@
-import Skills from '@/c/Skills'
-export default function page() {
-  return (
-    <Skills/>
-  );
+import { redirect } from "next/navigation";
+
+export default function SkillsRedirect() {
+  redirect("/#skills");
 }

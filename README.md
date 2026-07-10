@@ -1,129 +1,103 @@
-# Dipendra Sharma - Portfolio
-> Personal portfolio website showcasing my projects, skills, certificates, and professional journey as a full-stack developer.
+# Dipendra Sharma — Portfolio
 
-🔗 **Live Demo:** [https://tech-dipesh.vercel.app](https://tech-dipesh.vercel.app)
-Github Demo: https://github.com/tech-dipesh/
+Personal portfolio built with Next.js App Router, TypeScript, and Tailwind CSS.
+
+## Stack
+
+- Next.js 16 (App Router, `src/` directory)
+- TypeScript, strict mode, no `any` — generics used wherever a value's shape varies
+- Tailwind CSS with a custom violet-on-black design token system
+- Hand-built shadcn-style primitives on top of Radix UI (`components/ui`)
+- `next-themes` for light / dark / system mode
+- `cmdk` + Radix Dialog for the ⌘K command menu
+- Lucide React for every icon, no image-based logos
+- Markdown blog posts via `gray-matter` + `react-markdown`, no CMS
+
+## Getting started
+
+```bash
+pnpm install
+pnpm dev
+```
+
+Runs on `http://localhost:3000`.
+
+```bash
+pnpm build   # production build
+pnpm lint    # eslint, flat config
+```
+
+## Where to drop your own content
+
+**Contact form** — the form on the homepage posts to Formspree. Create a free
+form at [formspree.io](https://formspree.io), then swap the endpoint in
+`src/config/contact.ts`:
+
+```ts
+export const contactConfig = {
+  formspreeEndpoint: "https://formspree.io/f/YOUR_FORM_ID",
+};
+```
+
+**Project screenshots** — until these exist, each project card falls back to an
+abstract mock UI automatically. Drop real screenshots in:
+
+```
+public/projects/yeti-jobs.png
+public/projects/stateflow.png
+public/projects/home-finder.png
+public/projects/beat-bridge.png
+```
+
+**Resume PDFs** — the resume picker (navbar dropdown + ⌘K → "Download resume")
+expects these exact filenames:
+
+```
+public/resume/resume.pdf     (main)
+public/resume/frontend.pdf
+public/resume/backend.pdf
+public/resume/devops.pdf
+```
+
+**Blog posts** — add a new `.md` file to `src/content/blogs/` with frontmatter:
+
+```md
+---
+title: "Post title"
+excerpt: "One sentence summary"
+tags: ["Tag One", "Tag Two"]
+readTime: "5 min read"
+date: "2026-07-09"
+featured: false
 ---
 
-## 📋 Table of Contents
-- [Overview](#overview)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Installation & Setup](#installation--setup)
-- [Challenges & Solutions](#challenges--solutions)
-- [Libraries Used](#libraries-used)
-- [Future Improvements](#future-improvements)
+Body content in markdown.
+```
 
----
+The blog list and `/blogs/[slug]` route pick it up automatically, no code
+changes needed.
 
-## 📖 Overview
-A modern, responsive portfolio website built with React and TailwindCSS to showcase my development projects, technical skills, certificates, and professional experience. Features dark/light mode, GitHub contribution graph, and contact form integration.
+## Content sources
 
+Project, skill, experience, and LeetCode data all live in `src/config/*.ts`,
+typed against the interfaces in `src/lib/types.ts`. LeetCode and GitHub stats
+are a static snapshot with an `asOf` field rather than a live API call, since
+this is a static, backend-free site — update `src/config/leetcode.ts` by hand
+when the numbers move.
 
-## Features
-
-| Feature | Description |
-|---------|-------------|
-| **Responsive Design** | Fully responsive layout with hamburger menu for mobile devices |
-| **Dark/Light Mode** | Theme toggle with localStorage persistence using custom hook |
-| **Project Gallery** | Interactive cards displaying 3+ projects with live links |
-| **Skills Section** | Technical skills categorized with icons (Parcel, DevTools, Documentation) |
-| **Certificates** | Professional certifications including C++, DSA, PostgreSQL |
-| **GitHub Activity** | Contribution graph integrated with react-github-calendar |
-| **Contact Form** | FormSubmit integration with toast notifications |
-| **Analytics** | Vercel Analytics for visitor tracking |
-| **Github API** | Integrate GitHub API for live project stats |
-
----
-
-##  Tech Stack
-
-| Category | Technologies |
-|----------|-------------|
-| **Frontend** | React 19, TailwindCSS v4, React Router |
-| **Icons** | Lucide React, FontAwesome |
-| **State Management** | Custom hooks (useLocalStorage) |
-| **Analytics** | Vercel Analytics |
-| **Form Handling** | FormSubmit API, React Toastify |
-| **UI Components** | Dnd-Kit (drag & drop), React GitHub Calendar |
-
----
-
-## Project Structure
+## Structure
 
 ```
 src/
-├── components/
-│   ├── Header.jsx          # Navigation with hamburger menu
-│   ├── Footer.jsx          # Site footer
-│   ├── ProjectCard.jsx     # Reusable project display
-│   ├── CertificateCard.jsx # Certificate display component
-│   └── Skills.jsx          # Skills section with icons
-├── pages/
-│   ├── Home.jsx            # Landing page
-│   ├── Projects.jsx        # Projects gallery
-│   ├── Skills.jsx          # Skills & tools
-│   ├── Certificates.jsx    # Certifications
-│   └── Contact.jsx         # Contact form
-├── hooks/
-│   └── useLocalStorage.js  # Custom localStorage hook
-├── assets/                 # Images and static files
-└── App.jsx                 # Main app with routes
+  app/            routes: home, /leetcode, /blogs, /blogs/[slug]
+  components/
+    layout/       navbar, theme toggle, resume picker, command menu
+    home/         hero, projects, experience, skills, contact
+    leetcode/     stats visualization
+    blogs/        post card
+    ui/           hand-built primitives (button, card, command, dropdown...)
+  config/         typed content — edit these files to change what's on the site
+  content/blogs/  markdown blog posts
+  lib/            types, utils, blog loader
+  providers/      theme provider
 ```
-
-## Installation & Setup
-
-### Prerequisites
-- Node.js (v18+)
-- npm or yarn
-
-### Steps
-
-```bash
-git clone https://github.com/tech-dipesh/portfolio.git
-cd portfolio
-npm install
-npm run dev
-```
-
-
-## Challenges & Solutions
-
-| Challenge | Solution |
-|-----------|----------|
-| **Dark mode not working** | Implemented TailwindCSS v4 custom variant: `@custom-variant dark (&:where(.dark, .dark *))` |
-| **Theme persistence** | Created custom `useLocalStorage` hook to store user preference |
-| **Responsive header** | Added hamburger menu with mobile-first approach |
-| **Form submission** | Integrated FormSubmit API with React Toastify for user feedback |
-
----
-
-## 📦 Libraries Used
-
-| Library | Purpose |
-|---------|---------|
-| `react-router` | Client-side routing |
-| `tailwindcss` | Styling and dark mode |
-| `lucide-react` | Modern icons |
-| `@fortawesome/react-fontawesome` | FontAwesome icons |
-| `react-toastify` | Toast notifications |
-| `react-github-calendar` | GitHub contribution graph |
-| `@vercel/analytics` | Visitor analytics |
-| `dnd-kit` | Drag-and-drop functionality |
-
----
-
-## Future Improvements
-- Add blog section for technical articles
-- Add animations with Framer Motion
-- Implement i18n for multiple languages
-
-
-
-## Acknowledgements
-- TailwindCSS v4 for simplified theming
-- FormSubmit for easy form handling
-- Vercel for seamless deployment
-
-## 🙏 Thanks.

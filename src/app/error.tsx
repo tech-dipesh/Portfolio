@@ -1,43 +1,32 @@
-"use client"
-import React, {useEffect} from 'react'
+"use client";
+
+import { useEffect } from "react";
+import Link from "next/link";
 import { AlertTriangle } from "lucide-react";
-import Link from 'next/link'
-interface ErrorProps {
-  error: Error & { digest?: string }
-  reset: () => void
-}
+import { Button } from "@/components/ui/button";
 
-export default function Error({ error, reset }: ErrorProps) {
+export default function Error({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
   useEffect(() => {
-    console.log("error", error);
-    return () => {
-      return
-    }
-  }, [error])
+    console.error(error);
+  }, [error]);
 
-return (
-  <div className="min-h-screen flex flex-col">
-    <div className="flex-1 flex flex-col items-center justify-center px-4">
-      <div className="text-center max-w-md w-full">
-        <div className="flex justify-center mb-6">
-          <AlertTriangle className="w-20 h-20 text-blue-500" />
-        </div>
-        <h1 className="text-6xl md:text-8xl font-bold text-blue-500 mb-4">404</h1>
-        <h2 className="text-xl md:text-2xl font-semibold text-gray-700 mb-2">Page Not Found</h2>
-        <p className="text-gray-600 mb-6">Error Occured Don't Worry we'll fix it.</p>
-        {error && (
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6 text-left">
-            <p className='text-sm text-red-600 font-mono justify-center break-words whitespace-normal'>{error.data || error.statusText || error.message}</p>
-          </div>
-        )}
-        <Link
-          href="/"
-          className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors"
-        >
-          Go to Homepage
-        </Link>
+  return (
+    <div className="container flex min-h-[60vh] flex-col items-center justify-center text-center">
+      <div className="flex h-14 w-14 items-center justify-center rounded-full border border-border bg-surface">
+        <AlertTriangle className="h-6 w-6 text-accent" />
+      </div>
+      <h1 className="mt-6 text-2xl font-semibold tracking-tight">Something broke on this page.</h1>
+      <p className="mt-2 max-w-sm text-sm text-ink-muted">
+        That was unexpected. Try again, or head back to the homepage if it keeps happening.
+      </p>
+      <div className="mt-6 flex gap-3">
+        <Button variant="accent" onClick={reset}>
+          Try again
+        </Button>
+        <Button variant="outline" asChild>
+          <Link href="/">Go home</Link>
+        </Button>
       </div>
     </div>
-  </div>
-)
+  );
 }

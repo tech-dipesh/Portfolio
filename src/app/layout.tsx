@@ -1,47 +1,36 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata, ReactNode } from "next";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+import { ThemeProvider } from "@/providers/theme-provider";
+import { SiteChrome } from "@/components/layout/site-chrome";
+import { siteConfig } from "@/config/site";
 import "./globals.css";
 
-
-import Header from '@/c/Header'
-import Footer from '@/c/Footer'
-import { Analytics } from '@vercel/analytics/react';
-
-import { ToastContainer } from 'react-toastify'
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Dipendra Sharma | Portfolio ",
-  description: "Full‑stack developer focused on React, Node.js, PostgreSQL, and cloud infrastructure. I turn complex problems into simple, elegant products.",
-  icons: {
-    icon: "/logo.png"
-  }
+  metadataBase: new URL(siteConfig.url),
+  title: siteConfig.title,
+  description: siteConfig.description,
+  openGraph: {
+    title: siteConfig.title,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.description,
+  },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
-        <Header/>
-        {children}
-        <Analytics/>
-        <ToastContainer/>
-        <Footer/>
+    <html lang="en" suppressHydrationWarning className={`${GeistSans.variable} ${GeistMono.variable}`}>
+      <body className="min-h-screen bg-base font-sans text-ink antialiased">
+        <ThemeProvider>
+          <SiteChrome>{children}</SiteChrome>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -1,6 +1,5 @@
-import Projects from '@/components/Projects/Projects'
-export default function page() {
-  return (
-   <Projects/>   
-  );
+import { redirect } from "next/navigation";
+
+export default function ProjectsRedirect() {
+  redirect("/#projects");
 }
