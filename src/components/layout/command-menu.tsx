@@ -8,6 +8,7 @@ import {
   Layers,
   GitBranch,
   Mail,
+  Calendar,
   Copy,
   FileDown,
   Sun,
@@ -120,6 +121,9 @@ export function CommandMenu({ open, onOpenChange }: CommandMenuProps) {
               </CommandItem>
               <CommandItem onSelect={() => goTo("/certifications")}>
                 <ItemIcon icon={Award} /> Certifications
+              </CommandItem>
+              <CommandItem onSelect={() => goTo("/#schedule")}>
+                <ItemIcon icon={Calendar} /> Calendar
               </CommandItem>
               <CommandItem onSelect={() => goTo("/uses")}>
                 <ItemIcon icon={TerminalSquare} /> Uses

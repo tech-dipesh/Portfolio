@@ -14,10 +14,11 @@ export const dotfileGroups: DotfileGroup[] = [
   {
     label: "Editor",
     entries: [
-      { label: "Editor", value: "Neovim" },
-      { label: "Workflow", value: "Terminal-only, no GUI IDE" },
+      { label: "Editor", value: "Zed" },
+      { label: "Secondary editor", value: "Neovim" },
+      { label: "Workflow", value: "Vim-based key bindings" },
     ],
-    note: "Still building muscle memory on the harder motions, but most day-to-day commands are second nature now. Productivity jumps again once the Linux migration is done.",
+    note: "Migrated from Neovim to Zed after persistent LSP bugs, slow load times, and weak support for academic languages. Zed's speed and native Vim bindings fixed that. Still sharpening advanced Vim motions, with another productivity jump expected once the Linux migration lands.",
   },
   {
     label: "Terminal & Browser",
@@ -27,6 +28,16 @@ export const dotfileGroups: DotfileGroup[] = [
       { label: "Primary browser", value: "Brave" },
       { label: "Secondary browser", value: "Firefox" },
     ],
-    note: "About 90% of my time lives in Git Bash — it's where Neovim runs and where the actual work happens. Browsers only come out for research and visual content, everything else stays in the terminal.",
+    note: "About 90% of my time lives in Git Bash — it's where the editor runs and where the actual work happens. Browsers only come out for research and visual content, everything else stays in the terminal.",
+  },
+  {
+    label: "Development Tools",
+    entries: [
+      { label: "Container platform", value: "Docker" },
+      { label: "Database GUI", value: "TablePlus" },
+      { label: "API client", value: "Bruno" },
+      { label: "Media player", value: "VLC" },
+    ],
+    note: "Docker runs almost everything locally — Postgres, Redis, Ubuntu environments, and full project containers — for dev-to-deploy parity. TablePlus replaced pgAdmin for daily database work, and Bruno replaced Postman for a faster, local-first API workflow. VLC handles every format better than Windows' native player ever did.",
   },
 ];

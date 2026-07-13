@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Cpu, Terminal, Globe } from "lucide-react";
+import { Cpu, TerminalSquare, Globe, Wrench } from "lucide-react";
 import { dotfileGroups } from "@/config/dotfiles";
 import { siteConfig } from "@/config/site";
 
-const groupIcons = [Cpu, Terminal, Globe];
+const groupIcons = [Cpu, TerminalSquare, Globe, Wrench];
 
 export const metadata: Metadata = {
   title: `Uses — ${siteConfig.name}`,
@@ -22,7 +22,7 @@ export default function UsesPage() {
         </p>
       </div>
 
-      <div className="mt-10 grid gap-5 md:grid-cols-3">
+      <div className="mt-10 grid gap-5 md:grid-cols-2">
         {dotfileGroups.map((group, index) => {
           const GroupIcon = groupIcons[index % groupIcons.length] ?? Cpu;
           return (

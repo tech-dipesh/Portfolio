@@ -29,7 +29,6 @@ export async function getCalEventTypes(): Promise<CalEventType[]> {
       },
     );
 
-    console.log("response", response);
     if (!response.ok) return [];
 
     const payload = (await response.json()) as CalApiResponse;
