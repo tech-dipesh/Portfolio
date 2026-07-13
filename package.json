@@ -1,14 +1,16 @@
 {
-  "name": "dipendra-portfolio",
-  "version": "1.0.0",
+  "name": "portfolio",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "type": "tsc --noEmit"
   },
   "dependencies": {
+    "@calcom/embed-react": "^1.5.3",
     "@radix-ui/react-dialog": "^1.1.6",
     "@radix-ui/react-dropdown-menu": "^2.1.6",
     "@radix-ui/react-slot": "^1.1.2",

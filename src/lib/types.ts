@@ -103,6 +103,13 @@ export interface DotfileGroup {
   note?: string;
 }
 
+export interface CalEventType {
+  title: string;
+  slug: string;
+  lengthMinutes: number;
+  description: string;
+}
+
 export interface NavLink {
   label: string;
   href: string;

@@ -29,6 +29,18 @@ pnpm lint    # eslint, flat config
 
 ## Where to drop your own content
 
+**Cal.com booking** — the "Schedule a call" section fetches your real event
+types from the Cal.com API. Create an API key at
+[Cal.com → Settings → Developer → API Keys](https://app.cal.com/settings/developer/api-keys),
+then add it to `.env.local` (copy `.env.local.example`):
+
+```bash
+CAL_API_KEY=cal_live_xxxxxxxxxxxx
+```
+
+Your Cal.com username is set in `src/config/cal.ts`. Without the key, the
+section falls back to a single "Book on Cal.com" button instead of breaking.
+
 **Contact form** — the form on the homepage posts to Formspree. Create a free
 form at [formspree.io](https://formspree.io), then swap the endpoint in
 `src/config/contact.ts`:

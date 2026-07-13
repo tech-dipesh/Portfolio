@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: siteConfig.title,
     description: siteConfig.description,
     url: siteConfig.url,
-    siteName: siteConfig.name,
+    siteName: "Dipendra Portfolio", 
     type: "website",
   },
   twitter: {
