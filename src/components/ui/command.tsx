@@ -7,10 +7,7 @@ import { Command as CommandPrimitive } from "cmdk";
 import { Search } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const Command = forwardRef<
-  ComponentRef<typeof CommandPrimitive>,
-  ComponentPropsWithoutRef<typeof CommandPrimitive>
->(({ className, ...props }, ref) => (
+const Command = forwardRef< ComponentRef<typeof CommandPrimitive>, ComponentPropsWithoutRef<typeof CommandPrimitive> >(({ className, ...props }, ref) => (
   <CommandPrimitive
     ref={ref}
     className={cn("flex h-full w-full flex-col overflow-hidden text-ink", className)}
