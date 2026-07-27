@@ -5,6 +5,8 @@ import { GeistMono } from "geist/font/mono";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { SiteChrome } from "@/components/layout/site-chrome";
 import { siteConfig } from "@/config/site";
+import { Analytics } from '@vercel/analytics/next';
+
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -30,6 +32,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" suppressHydrationWarning className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body className="min-h-screen bg-base font-sans text-ink antialiased">
         <ThemeProvider>
+          <Analytics />
           <SiteChrome>{children}</SiteChrome>
         </ThemeProvider>
       </body>
