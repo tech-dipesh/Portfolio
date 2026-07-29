@@ -1,11 +1,9 @@
 # Dipendra Sharma — Portfolio
-
 Personal portfolio built with Next.js App Router, TypeScript, and Tailwind CSS.
 
 ## Stack
-
 - Next.js 16 (App Router, `src/` directory)
-- TypeScript, strict mode, no `any` — generics used wherever a value's shape varies
+- TypeScript, strict mode, no `any`
 - Tailwind CSS with a custom violet-on-black design token system
 - Hand-built shadcn-style primitives on top of Radix UI (`components/ui`)
 - `next-themes` for light / dark / system mode
@@ -14,83 +12,29 @@ Personal portfolio built with Next.js App Router, TypeScript, and Tailwind CSS.
 - Markdown blog posts via `gray-matter` + `react-markdown`, no CMS
 
 ## Getting started
-
 ```bash
 pnpm install
 pnpm dev
 ```
-
 Runs on `http://localhost:3000`.
 
 ```bash
 pnpm build   # production build
 pnpm lint    # eslint, flat config
+pnpm start
 ```
+**Resumt Pdf**- There are the 4 Different set of resume exist on the Website.
+`resume.pdf`: Core Resume For the Universal System with Combined: DSA, Web Dev & Devops
+`dsa.pdf`: This is the Pure Problem Solving & DSa With Heavy Codeforces/Leetcode 
+`frontend.pdf`: Only frontend or the Client side Project Exist Pure Frontend
+`backend.pdf`: Only backend or the server side Project Exist Pure Backend
+`devops.pdf`: Pure Cloud or the Devops Resume Major Focus on the Deployment ci cd pipeline, Github Action, Docker, Aws. 
 
-## Where to drop your own content
+**Blog Posts**: Blog Post Exist on the .md File inside: `src/content/blogs` With Content Exist such as: `title, excerpt, tags, readTime, date, featured` 
 
-**Cal.com booking** — the "Schedule a call" section fetches your real event
-types from the Cal.com API. Create an API key at
-[Cal.com → Settings → Developer → API Keys](https://app.cal.com/settings/developer/api-keys),
-then add it to `.env.local` (copy `.env.local.example`):
-
-```bash
-CAL_API_KEY=cal_live_xxxxxxxxxxxx
-```
-
-Your Cal.com username is set in `src/config/cal.ts`. Without the key, the
-section falls back to a single "Book on Cal.com" button instead of breaking.
-
-**Contact form** — the form on the homepage posts to Formspree. Create a free
-form at [formspree.io](https://formspree.io), then swap the endpoint in
-`src/config/contact.ts`:
-
-```ts
-export const contactConfig = {
-  formspreeEndpoint: "https://formspree.io/f/YOUR_FORM_ID",
-};
-```
-
-**Project screenshots** — until these exist, each project card falls back to an
-abstract mock UI automatically. Drop real screenshots in:
-
-```
-public/projects/yeti-jobs.png
-public/projects/stateflow.png
-public/projects/home-finder.png
-public/projects/beat-bridge.png
-```
-
-**Resume PDFs** — the resume picker (navbar dropdown + ⌘K → "Download resume")
-expects these exact filenames:
-
-```
-public/resume/resume.pdf     (main)
-public/resume/frontend.pdf
-public/resume/backend.pdf
-public/resume/devops.pdf
-```
-
-**Blog posts** — add a new `.md` file to `src/content/blogs/` with frontmatter:
-
-```md
----
-title: "Post title"
-excerpt: "One sentence summary"
-tags: ["Tag One", "Tag Two"]
-readTime: "5 min read"
-date: "2026-07-09"
-featured: false
----
-
-Body content in markdown.
-```
-
-The blog list and `/blogs/[slug]` route pick it up automatically, no code
-changes needed.
+The blog list and `/blogs/[slug]` route pick it up automatically 
 
 ## Content sources
-
 Project, skill, experience, and LeetCode data all live in `src/config/*.ts`,
 typed against the interfaces in `src/lib/types.ts`. LeetCode and GitHub stats
 are a static snapshot with an `asOf` field rather than a live API call, since
@@ -98,7 +42,6 @@ this is a static, backend-free site — update `src/config/leetcode.ts` by hand
 when the numbers move.
 
 ## Structure
-
 ```
 src/
   app/            routes: home, /leetcode, /blogs, /blogs/[slug]
@@ -108,7 +51,7 @@ src/
     leetcode/     stats visualization
     blogs/        post card
     ui/           hand-built primitives (button, card, command, dropdown...)
-  config/         typed content — edit these files to change what's on the site
+  config/         typed content — With The Content Such as Blogs 
   content/blogs/  markdown blog posts
   lib/            types, utils, blog loader
   providers/      theme provider
