@@ -12,7 +12,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/tech-dipesh/yeti-jobs",
     liveUrl: "https://yeti-jobs.vercel.app",
     apiDocsUrl: "https://yeti-jobs.onrender.com/api/v1/swagger/",
-    screenshot: "/assets/images/yeti-jobs.png",
+    screenshot: "/projects/yeti-jobs.png",
     span: "three",
     techStack: ["Node.js", "Express", "PostgreSQL", "React", "TypeScript", "Docker", "Supabase"],
     features: [
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     year: "2026",
     githubUrl: "https://github.com/tech-dipesh/StateFlow-Project-Managment",
     liveUrl: "https://state-flows.vercel.app",
-    screenshot: "/assets/images/state-flow.png",
+    screenshot: "/projects/images/state-flow.png",
     span: "two",
     techStack: ["React", "Tailwind CSS", "Context API", "dnd-kit", "Chart.js"],
     features: [
@@ -52,7 +52,7 @@ export const projects: Project[] = [
     year: "2025",
     githubUrl: "https://github.com/tech-dipesh/mega-project-listing",
     liveUrl: "https://mega-project-listing.onrender.com",
-    screenshot: "/assets/images/airbnb.png",
+    screenshot: "/projects/images/airbnb.png",
     span: "one",
     techStack: ["Node.js", "Express", "MongoDB", "EJS", "Passport.js"],
     features: [
@@ -70,7 +70,7 @@ export const projects: Project[] = [
     year: "2024",
     githubUrl: "https://tech-dipesh.github.io/Beat-Bridge/#/",
     liveUrl: "https://tech-dipesh.github.io/Beat-Bridge/#/",
-    screenshot: "/assets/images/beat-bridge.png",
+    screenshot: "/projects/images/beat-bridge.png",
     span: "one",
     techStack: ["HTML5", "CSS3", "JavaScript (ES6)", "Web Audio API"],
     features: [
