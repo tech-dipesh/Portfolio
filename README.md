@@ -56,3 +56,7 @@ src/
   lib/            types, utils, blog loader
   providers/      theme provider
 ```
+
+
+
+# Thanks
