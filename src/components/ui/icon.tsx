@@ -37,6 +37,7 @@ import {
   Award,
   TerminalSquare,
   HelpCircle,
+  Lightbulb,
 } from "lucide-react";
 
 const iconRegistry = {
@@ -47,6 +48,7 @@ const iconRegistry = {
   mail: Mail,
   code: Code,
   notebook: Notebook,
+  Lightbulb,
   award: Award,
   "terminal-square": TerminalSquare,
   Braces,

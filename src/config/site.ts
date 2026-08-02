@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Dipendra Sharma",
   title: "Dipendra Sharma — Backend-Focused Full-Stack Developer",
   keywords: ['Dipendra Sharma', 'Dipendra Sharma Nepal', 'Dipesh Sharma', 'Dipendra Sharma developer', 'Dipendra Sharma Chitkara University', 'Dipendra Sharma Software Engineer', 'Dipendra Sharma Baglung', "backend engineer", "full stack developer", "PERN stack", "Docker", "PostgreSQL", "React", "Node.js", "LeetCode", "GSSoC", "CodeaThon",],
-  description: "Computer science student focused on backend development and scalable systems. Building Yeti Jobs, a production job portal, and solving 250+ DSA problems on the way.",
+  description: "Backend engineer thinking in faults, not failures. Building YetiJobs with 50+ APIs, 74% smaller Docker images, and load-tested resilience. 325+ LeetCode problems solved. Reading DDIA.",
   url: "https://www.dipsharma.me",
   location: "Chandigarh, India",
   availability: "Available for internships",

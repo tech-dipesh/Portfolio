@@ -19,6 +19,7 @@ import {
   Swords,
   Code,
   Notebook,
+  Lightbulb,
   ArrowLeft,
   Award,
   TerminalSquare,
@@ -121,6 +122,9 @@ export function CommandMenu({ open, onOpenChange }: CommandMenuProps) {
               </CommandItem>
               <CommandItem onSelect={() => goTo("/certifications")}>
                 <ItemIcon icon={Award} /> Certifications
+              </CommandItem>
+              <CommandItem onSelect={() => goTo("/certifications")}>
+                <ItemIcon icon={Lightbulb} /> Principles
               </CommandItem>
               <CommandItem onSelect={() => goTo("/#schedule")}>
                 <ItemIcon icon={Calendar} /> Calendar

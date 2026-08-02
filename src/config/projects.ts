@@ -6,7 +6,7 @@ export const projects: Project[] = [
     name: "Yeti Jobs",
     tagline: "A production job portal connecting seekers and recruiters",
     summary:
-      "Built the full platform end to end: 50+ REST APIs, JWT with role-based access, and a PostgreSQL schema tuned with composite and GIN indexes that took search latency from 7ms down to 0.9ms. Shipped an AI resume scorer, Docker images cut by 74%, and load tested to 67 requests per second with zero failures.",
+      "Built the full platform end to end: 50+ REST APIs, JWT with role-based access, and a PostgreSQL schema tuned with composite and GIN indexes that took search latency from 7ms down to 0.9ms. Designed for faults, not just features — load tested to 67 requests per second with zero failures, caught a connection pool leak before production, and shrank Docker images by 74% to buy headroom for scale. Shipped an AI resume scorer and automated CI/CD via GitHub Actions.",
     role: "Solo project",
     year: "2026",
     githubUrl: "https://github.com/tech-dipesh/yeti-jobs",
@@ -16,6 +16,7 @@ export const projects: Project[] = [
     span: "three",
     techStack: ["Node.js", "Express", "PostgreSQL", "React", "TypeScript", "Docker", "Supabase"],
     features: [
+      { title: "Fault-tolerant architecture", detail: "Designed for component-level resilience — connection pooling, rate limiting, and error handling prevent single faults from becoming system failures" },
       { title: "Full-text job search", detail: "Composite and GIN indexing cut query time from 7ms to 0.9ms" },
       { title: "Role-based access", detail: "JWT auth with separate dashboards for seekers, recruiters, and admins" },
       { title: "AI resume scoring", detail: "OpenAI-backed ATS feedback scored 0 to 100 against a job posting" },
