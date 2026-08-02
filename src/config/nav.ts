@@ -16,4 +16,5 @@ export const siteRoutes: NavLink[] = [
 export const footerRoutes: NavLink[] = [
   { label: "Certifications", href: "/certifications", icon: "award" },
   { label: "Uses", href: "/uses", icon: "terminal-square" },
+  { label: "Principles", href: "/principles", icon: "Lightbulb" },
 ];

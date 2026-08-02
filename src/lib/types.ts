@@ -124,3 +124,9 @@ export interface CommandAction<T = void> {
   shortcut?: string;
   run: () => T;
 }
+export interface Principle {
+  id: number;
+  topic: string;
+  description: string;
+  references: string;
+}
