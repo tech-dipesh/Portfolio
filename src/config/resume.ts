@@ -30,4 +30,11 @@ export const resumeVariants: ResumeVariant[] = [
   label: "DSA Resume",
   description: "Problem-solving and algorithms focus for big-tech DSA interviews",
   file: "/dsa.pdf",
-}];
+  },
+  {
+    id: "yeti-jobs",
+    label: "Yeti Jobs Thought",
+    description: "Talk About My Yeti Jobs Thoughts & Features.",
+    file: "/yeti-jobs.pdf",
+  }
+];
