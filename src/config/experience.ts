@@ -10,7 +10,7 @@ export const experience: ExperienceEntry[] = [
     summary:
       "Contributing to open-source repositories in JavaScript and TypeScript, working through real pull request review cycles alongside mentors.",
     metrics: [
-      { label: "Contributions merged", value: 7, unit: "+" },
+      { label: "Contributions merged", value: 5, unit: "+" },
       { label: "Repositories touched", value: 3, unit: "" },
     ],
   },
@@ -32,7 +32,7 @@ export const experience: ExperienceEntry[] = [
     id: "stateflow",
     role: "Frontend Engineer",
     org: "StateFlow (personal project)",
-    period: "Nov 2025 — Dec 2025",
+    period: "Oct 2025 — Dec 2025",
     location: "Chandigarh, India",
     summary:
       "Built a Jira-style project management tool with a hand-rolled undo/redo engine and drag-and-drop boards, all persisted client-side.",

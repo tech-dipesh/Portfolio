@@ -34,7 +34,7 @@ export const projects: Project[] = [
     year: "2026",
     githubUrl: "https://github.com/tech-dipesh/StateFlow-Project-Managment",
     liveUrl: "https://state-flows.vercel.app",
-    screenshot: "/projects/images/state-flow.png",
+    screenshot: "/projects/state-flow.png",
     span: "two",
     techStack: ["React", "Tailwind CSS", "Context API", "dnd-kit", "Chart.js"],
     features: [
@@ -53,7 +53,7 @@ export const projects: Project[] = [
     year: "2025",
     githubUrl: "https://github.com/tech-dipesh/mega-project-listing",
     liveUrl: "https://mega-project-listing.onrender.com",
-    screenshot: "/projects/images/airbnb.png",
+    screenshot: "/projects/airbnb.png",
     span: "one",
     techStack: ["Node.js", "Express", "MongoDB", "EJS", "Passport.js"],
     features: [
@@ -71,7 +71,7 @@ export const projects: Project[] = [
     year: "2024",
     githubUrl: "https://tech-dipesh.github.io/Beat-Bridge/#/",
     liveUrl: "https://tech-dipesh.github.io/Beat-Bridge/#/",
-    screenshot: "/projects/images/beat-bridge.png",
+    screenshot: "/projects/beat-bridge.png",
     span: "one",
     techStack: ["HTML5", "CSS3", "JavaScript (ES6)", "Web Audio API"],
     features: [
