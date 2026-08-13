@@ -69,7 +69,7 @@ export function CodePlayground() {
         })}
       </div>
       <div className="border-t border-border bg-raised/60 px-5 py-3 font-mono text-xs text-ink-faint">
-        search latency <span className="text-accent-soft">7ms → 0.9ms</span>
+        search latency <span className="text-accent-soft">7ms → 4.9ms</span>
       </div>
     </div>
   );
