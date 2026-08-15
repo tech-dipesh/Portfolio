@@ -17,14 +17,20 @@ export const metadata: Metadata = {
     title: siteConfig.title,
     description: siteConfig.description,
     url: siteConfig.url,
-    siteName: "Dipendra Portfolio", 
+    siteName: "Dipendra Sharma", 
     type: "website",
+    images: [
+       {
+         url: "/assets/profile.png"
+       }
+     ]
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
   },
+  verification: {google: "-6pkHi3bGPEYcHlhs8vOHw1QNgHVWnIg2IyCIuz4u_8"}
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -35,6 +41,30 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <Analytics />
           <SiteChrome>{children}</SiteChrome>
         </ThemeProvider>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Dipendra Sharma",
+              alternateName: "Dipesh Sharma",
+              url: "https://www.dipsharma.me",
+              image: "https://www.dipsharma.me/assets/profile.png",
+              sameAs: [
+                "https://github.com/tech-dipesh",
+                "https://linkedin.com/in/tech-dipesh",
+                "https://leetcode.com/u/tech-dipesh",
+                "https://codeforces.com/profile/dipeshnoobs"
+              ],
+              jobTitle: "Backend Developer",
+              alumniOf: {
+                "@type": "CollegeOrUniversity",
+                name: "Chitkara University"
+              }
+            })
+          }}
+        />
       </body>
     </html>
   );

@@ -17,16 +17,16 @@ export function Hero() {
         </div>
 
         <h1 className="mt-6 text-5xl font-semibold leading-[1.05] tracking-tighter md:text-6xl">
+          Dipendra Sharma
+          <br />
           <span className="text-gradient">Backend-focused</span>
           <br />
           <span className="text-gradient">full-stack developer.</span>
         </h1>
 
         <p className="mt-6 max-w-md text-base leading-relaxed text-ink-muted">
-          Computer science student who builds real things, not tutorial projects. I design database
-          schemas, tune queries, and ship production systems end to end — most recently a job portal
-          serving real search traffic at sub-millisecond latency.
-        </p>
+          I`&abos`m Dipendra Sharma, a Bachelor of Computer Applications (BCA) student at Chitkara University and a backend-focused full-stack developer.
+          </p>  
 
         <div className="mt-8 flex flex-wrap items-center gap-3">
           <Button variant="accent" size="lg" asChild>
