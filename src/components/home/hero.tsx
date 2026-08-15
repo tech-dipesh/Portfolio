@@ -25,7 +25,7 @@ export function Hero() {
         </h1>
 
         <p className="mt-6 max-w-md text-base leading-relaxed text-ink-muted">
-          I`&abos`m Dipendra Sharma, a Bachelor of Computer Applications (BCA) student at Chitkara University and a backend-focused full-stack developer.
+          I&apos;m Dipendra Sharma, a Bachelor of Computer Applications (BCA) student at Chitkara University and a backend-focused full-stack developer.
           </p>  
 
         <div className="mt-8 flex flex-wrap items-center gap-3">
