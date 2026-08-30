@@ -41,7 +41,7 @@ export const resumeVariants: ResumeVariant[] = [
       id: "fde",
       label: "Forward Deploy Engineering",
       description: "Turning customer problems into AI-powered solutions from prototype to production",
-      file: "/ai.pdf",
+      file: "/fde.pdf",
   },
   {
     id: "yeti-jobs",
