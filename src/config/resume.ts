@@ -4,7 +4,7 @@ export const resumeVariants: ResumeVariant[] = [
   {
     id: "main",
     label: "Main Resume",
-    description: "Full-stack overview, best for general applications",
+    description: "Full Stack Engineering/Software Engineering/Web Dev Focused Work",
     file: "/resume.pdf",
   },
   {
@@ -30,6 +30,18 @@ export const resumeVariants: ResumeVariant[] = [
   label: "DSA Resume",
   description: "Problem-solving and algorithms focus for big-tech DSA interviews",
   file: "/dsa.pdf",
+  },
+  {
+    id: "ai",
+    label: "AI Engineering Resume",
+    description: "Enterprise-grade LLM orchestration and secure API scaling for high-throughput AI application deployment",
+    file: "/ai.pdf",
+  },
+  {
+      id: "fde",
+      label: "Forward Deploy Engineering",
+      description: "Turning customer problems into AI-powered solutions from prototype to production",
+      file: "/ai.pdf",
   },
   {
     id: "yeti-jobs",
