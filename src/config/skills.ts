@@ -47,9 +47,9 @@ export const skillGroups: SkillGroup[] = [
 
 export const futureSkills = [
   "CI/CD (GitHub Actions)",
-  "Message Queues (BullMQ)",
+  "Computer Foundation (Revision)",
   "WebSockets (Socket.io)",
-  "Next.js (full-stack system)",
+  "Foundation of Type (Revision)",
 ];
 
 export const achievements: Achievement[] = [
