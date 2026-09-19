@@ -38,6 +38,10 @@ import {
   TerminalSquare,
   HelpCircle,
   Lightbulb,
+  Languages,
+  Gamepad2,
+  MessagesSquare,
+  User,
 } from "lucide-react";
 
 const iconRegistry = {
@@ -48,6 +52,7 @@ const iconRegistry = {
   mail: Mail,
   code: Code,
   notebook: Notebook,
+  user: User,
   Lightbulb,
   award: Award,
   "terminal-square": TerminalSquare,
@@ -79,6 +84,9 @@ const iconRegistry = {
   TextCursor,
   Award,
   TerminalSquare,
+  Languages,
+  Gamepad2,
+  MessagesSquare,
 } satisfies Record<string, LucideIcon>;
 
 export type IconName = keyof typeof iconRegistry;

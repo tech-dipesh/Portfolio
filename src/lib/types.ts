@@ -13,10 +13,18 @@ export interface Project {
   githubUrl: string;
   liveUrl: string;
   apiDocsUrl?: string;
+  videoUrl?: string;
   screenshot: string;
   span: "one" | "two" | "three";
   techStack: string[];
   features: ProjectFeature[];
+  description: string;
+}
+
+export interface Interest {
+  label: string;
+  icon: string;
+  detail: string;
 }
 
 export interface SkillItem {

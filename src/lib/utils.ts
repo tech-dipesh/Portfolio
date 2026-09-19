@@ -5,6 +5,18 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function formatMonthYear(date: Date): string {
-  return date.toLocaleDateString("en-US", { month: "long", year: "numeric" });
+export function extractYouTubeId(url: string): string | null {
+  const pattern = /(?:youtu\.be\/|youtube\.com\/(?:embed\/|watch\?v=|shorts\/))([\w-]{11})/;
+  const match = url.match(pattern);
+  return match?.[1] ?? null;
+}
+
+export function formatDescription(raw: string): string[] {
+  return raw
+    .split("\n")
+    .map((line) => line.trim())
+    .join("\n")
+    .split(/\n\s*\n/)
+    .map((paragraph) => paragraph.replace(/\n/g, " ").trim())
+    .filter(Boolean);
 }
