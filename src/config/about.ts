@@ -26,7 +26,9 @@ export const interests: Interest[] = [
 export const nepalStory = {
   heading: "Baglung, Nepal",
   paragraphs: [
-    "I grew up in Baglung, a hill district in Nepal, where the geography still doesn't feel real to me even having lived it. Drive roughly 100km from the flat Terai plains near the Indian border, and you go from completely flat land to standing under the Himalayas — a shift most places in the world would need thousands of kilometers to pull off.",
-    "Some mornings, stepping out of bed means the first thing in view is a mountain range most people fly across the world to see once. It's easy to stop noticing something like that. I try not to.",
+    "I grew up in Baglung, Nepal, a place where mountains are part of everyday life. The same mountains people travel across continents to see were outside my window. A few hours away, the landscape changes completely. The hills give way to the flatlands of Butwal, in the heart of Lumbini, the birthplace of peace. Looking back, I realize I grew up between two very different worlds, both of which shaped how I see the world today.",
+    "My journey eventually took me from Nepal to Chitkara University. At the time, I was simply excited to sit in front of a computer and understand how things worked behind the screen. I never imagined that curiosity would lead me to build production applications, design backend systems, work with cloud infrastructure, and create projects used by real people.",
+    "From a kid fascinated by a computer screen to someone building systems with thousands of lines of code, the distance feels much greater than the kilometers between Baglung, Butwal, and Chandigarh. Every project, every bug, every late night spent learning has been a small step forward. There is still a long road ahead, but that is what makes the journey worth pursuing.",
+    "Explore your potential. That phrase brought me to Chitkara. Looking back, it feels less like a slogan and more like a challenge I am still working to live up to every day."
   ],
 };

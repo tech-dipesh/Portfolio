@@ -6,6 +6,10 @@ export const certifications: Certification[] = [
     url: "https://drive.google.com/file/d/1dm50tkY0vqV_o72b8oGpKCVlFYHxn0yi/view?usp=sharing",
   },
   {
+    title:"Claude 101" ,
+    url: "https://academy.claude.com/badges/bb5b1269-3e4e-42ff-951b-235063a0adbf"
+  },
+  {
     title: "Web Development Masterclass",
     url: "https://www.udemy.com/certificate/UC-01b424ec-55bc-4123-971f-a0e773357caf/",
   },

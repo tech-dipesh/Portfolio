@@ -9,6 +9,7 @@ import {
   GitBranch,
   Mail,
   Calendar,
+  User,
   Copy,
   FileDown,
   Sun,
@@ -23,6 +24,7 @@ import {
   ArrowLeft,
   Award,
   TerminalSquare,
+  ExternalLink,
   CornerDownLeft,
   ArrowUp,
   ArrowDown,
@@ -108,7 +110,10 @@ export function CommandMenu({ open, onOpenChange }: CommandMenuProps) {
               <CommandItem onSelect={() => goTo("/#hero")}>
                 <ItemIcon icon={Home} /> Home
               </CommandItem>
-              <CommandItem onSelect={() => goTo("/#projects")}>
+              <CommandItem onSelect={() => goTo("/about")}>
+                <ItemIcon icon={User} /> About
+              </CommandItem>
+              <CommandItem onSelect={() => goTo("projects")}>
                 <ItemIcon icon={Layers} /> Projects
               </CommandItem>
               <CommandItem onSelect={() => goTo("/#experience")}>
@@ -123,7 +128,7 @@ export function CommandMenu({ open, onOpenChange }: CommandMenuProps) {
               <CommandItem onSelect={() => goTo("/certifications")}>
                 <ItemIcon icon={Award} /> Certifications
               </CommandItem>
-              <CommandItem onSelect={() => goTo("/certifications")}>
+              <CommandItem onSelect={() => goTo("/principles")}>
                 <ItemIcon icon={Lightbulb} /> Principles
               </CommandItem>
               <CommandItem onSelect={() => goTo("/#schedule")}>
@@ -145,6 +150,9 @@ export function CommandMenu({ open, onOpenChange }: CommandMenuProps) {
               </CommandItem>
               <CommandItem onSelect={toggleTheme}>
                 <ItemIcon icon={theme === "dark" ? Sun : Moon} tone="accent" /> Toggle theme
+              </CommandItem>
+              <CommandItem onSelect={() => window.open("/api/status", "_blank")}>
+                <ItemIcon icon={ExternalLink} tone="accent" /> View API status (JSON)
               </CommandItem>
             </CommandGroup>
             <CommandGroup heading="Socials">
