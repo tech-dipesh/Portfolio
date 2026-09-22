@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { Skills } from "@/components/home/skills";
 
 export default function SkillsRedirect() {
-  redirect("/#skills");
+  return <Skills/>
 }

@@ -4,7 +4,9 @@ import { Projects } from "@/components/home/projects";
 import { GithubActivity } from "@/components/home/github-activity";
 import { Experience } from "@/components/home/experience";
 import { Skills } from "@/components/home/skills";
-import ScheduleCall   from "@/components/home/schedule-call";
+import { TechTree } from "@/components/home/tech-tree";
+import {ScheduleCall} from "@/components/home/schedule-call";
+
 import { Contact } from "@/components/home/contact";
 import { CalSchedule } from "@/components/home/cal-schedule-inline";
 export default function HomePage() {
@@ -16,6 +18,7 @@ export default function HomePage() {
       <GithubActivity />
       <Experience />
       <Skills />
+      <TechTree />
       <ScheduleCall />
       <CalSchedule/> 
       <Contact />
