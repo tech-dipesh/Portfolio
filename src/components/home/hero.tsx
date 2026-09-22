@@ -25,12 +25,12 @@ export function Hero() {
         </h1>
 
         <p className="mt-6 max-w-md text-base leading-relaxed text-ink-muted">
-          I&apos;m Dipendra Sharma, a Bachelor of Computer Applications (BCA) student at Chitkara University and a backend-focused full-stack developer.
+          I&apos;m Dipendra Sharma, a CS student at Chitkara University and a backend-focused full-stack developer.
           </p>  
 
         <div className="mt-8 flex flex-wrap items-center gap-3">
           <Button variant="accent" size="lg" asChild>
-            <a href="#projects">
+            <a href="projects">
               View projects
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
@@ -40,20 +40,21 @@ export function Hero() {
           </Button>
         </div>
 
-        <dl className="mt-12 grid grid-cols-3 gap-6 border-t border-border pt-6">
-          <div>
-            <dt className="text-2xl font-semibold tracking-tight">50+</dt>
-            <dd className="text-xs text-ink-faint">REST APIs shipped</dd>
-          </div>
-          <div>
-            <dt className="text-2xl font-semibold tracking-tight">325</dt>
-            <dd className="text-xs text-ink-faint">LeetCode problems</dd>
-          </div>
-          <div>
-            <dt className="text-2xl font-semibold tracking-tight">0.9ms</dt>
-            <dd className="text-xs text-ink-faint">search latency</dd>
-          </div>
-        </dl>
+        <a
+          href={siteConfig.leetcode}
+          target="_blank"
+          rel="noreferrer"
+          className="group mt-12 inline-flex items-center gap-4 border-t border-border pt-6 transition-colors"
+        >
+          <span className="text-3xl font-semibold tracking-tight text-ink transition-colors group-hover:text-accent-soft">
+            325
+          </span>
+          <span className="text-sm text-ink-faint transition-colors group-hover:text-ink-muted">
+            LeetCode problems solved
+            <br />
+            <span className="text-xs">— verify it yourself, link&apos;s real</span>
+          </span>
+        </a>
       </div>
 
       <div className="animate-float">

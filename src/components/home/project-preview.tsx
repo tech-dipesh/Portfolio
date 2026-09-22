@@ -31,6 +31,7 @@ export function ProjectPreview({ src, alt }: { src: string; alt: string }) {
       src={src}
       alt={alt}
       fill
+      loading="eager"
       unoptimized
       className="object-cover object-top"
       onError={() => setFailed(true)}

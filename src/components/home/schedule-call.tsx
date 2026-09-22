@@ -3,7 +3,7 @@ import { CalendarClock, ArrowUpRight, Video } from "lucide-react";
 import { getCalEventTypes } from "@/lib/cal";
 import { calConfig } from "@/config/cal";
 
-export default async function ScheduleCall() {
+export async function ScheduleCall() {
   const eventTypes = await getCalEventTypes();
   return (
     <section id="schedule" className="container mt-32 scroll-mt-28">

@@ -1,4 +1,5 @@
-import { ArrowUpRight, Github, FileJson } from "lucide-react";
+import Link from "next/link";
+import { ArrowUpRight, Github, FileJson, ArrowRight } from "lucide-react";
 import { CardInteractive } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ProjectPreview } from "@/components/home/project-preview";
@@ -80,6 +81,14 @@ export function ProjectCard({ project }: { project: Project }) {
             </a>
           ) : null}
         </div>
+
+        <Link
+          href={`/projects/${project.slug}`}
+          className="group/more mt-1 flex items-center gap-1 text-sm font-medium text-accent-soft transition-colors hover:text-accent"
+        >
+          View case study
+          <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover/more:translate-x-1" />
+        </Link>
       </div>
     </CardInteractive>
   );
