@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, Github, FileJson } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { ProjectVideo } from "@/components/projects/project-video";
+import { ProjectPager } from "@/components/projects/project-pager";
 import { projects } from "@/config/projects";
 import { formatDescription } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
@@ -96,6 +98,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         ) : null}
       </div>
 
+      <div className="mt-10">
+        <ProjectVideo videoUrl={project.videoUrl} name={project.name} />
+      </div>
+
       <div className="mt-10 space-y-5">
         {paragraphs.map((paragraph) => (
           <p key={paragraph.slice(0, 32)} className="text-base leading-relaxed text-ink-muted">
@@ -118,6 +124,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </div>
       </div>
 
+      <ProjectPager previous={previous} next={next} />
     </div>
   );
 }
