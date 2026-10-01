@@ -1,11 +1,11 @@
 import type { NavLink } from "@/lib/types";
 
 export const homeSections: NavLink[] = [
-  { label: "Home", href: "#hero", icon: "home" },
+  { label: "Home", href: "/", icon: "home" },
   { label: "Projects", href: "projects", icon: "layers" },
-  { label: "Experience", href: "#experience", icon: "git-branch" },
-  { label: "Skills", href: "#skills", icon: "wrench" },
-  { label: "Contact", href: "#contact", icon: "mail" },
+  { label: "Experience", href: "/#experience", icon: "git-branch" },
+  { label: "Skills", href: "/skills", icon: "wrench" },
+  { label: "Contact", href: "/#contact", icon: "mail" },
 ];
 
 export const siteRoutes: NavLink[] = [

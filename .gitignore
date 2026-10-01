@@ -1,4 +1,4 @@
-node_modules
+node_modules/
 .next
 .env
 .env.local
@@ -6,4 +6,6 @@ node_modules
 .DS_Store
 next-env.d.ts
 "!**/*.tsbuildinfo"
-notes.md
+*.md
+!README.md
+*.zip

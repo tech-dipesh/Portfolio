@@ -28,6 +28,8 @@ import {
   CornerDownLeft,
   ArrowUp,
   ArrowDown,
+  Wrench,
+  RouterIcon,
 } from "lucide-react";
 import {
   CommandDialog,
@@ -139,6 +141,9 @@ export function CommandMenu({ open, onOpenChange }: CommandMenuProps) {
               </CommandItem>
               <CommandItem onSelect={() => goTo("/#contact")}>
                 <ItemIcon icon={Mail} /> Contact
+              </CommandItem>
+              <CommandItem onSelect={() => goTo("/skills")}>
+                <ItemIcon icon={Wrench} /> Skills
               </CommandItem>
             </CommandGroup>
             <CommandGroup heading="Actions">
