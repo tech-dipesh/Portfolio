@@ -1,0 +1,84 @@
+{
+  "id": "/",
+  "name": "Dipendra Sharma — Backend-Focused Full-Stack Developer",
+  "short_name": "Dipesh",
+  "description": "Portfolio of Dipendra Sharma — a backend-focused full-stack developer building scalable systems with Node.js, PostgreSQL, and Docker.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "lang": "en",
+  "dir": "ltr",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "any",
+  "theme_color": "#0f172a",
+  "background_color": "#0f172a",
+  "categories": ["portfolio", "productivity", "developer tools"],
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
+  "edge_side_panel": {
+    "preferred_width": 480
+  },
+  "icons": [
+    { "src": "/icons/icon-48x48.png", "sizes": "48x48", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-72x72.png", "sizes": "72x72", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-96x96.png", "sizes": "96x96", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-128x128.png", "sizes": "128x128", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-144x144.png", "sizes": "144x144", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-152x152.png", "sizes": "152x152", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-256x256.png", "sizes": "256x256", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-384x384.png", "sizes": "384x384", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-maskable-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/icons/icon-maskable-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/desktop-home.png",
+      "sizes": "1280x800",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Homepage on desktop"
+    },
+    {
+      "src": "/screenshots/mobile-home.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Homepage on mobile"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "About",
+      "short_name": "About",
+      "description": "Read about Dipendra Sharma",
+      "url": "/about?source=pwa_shortcut",
+      "icons": [{ "src": "/icons/shortcut-about.png", "sizes": "96x96", "type": "image/png" }]
+    },
+    {
+      "name": "Projects",
+      "short_name": "Projects",
+      "description": "View featured projects",
+      "url": "/#projects?source=pwa_shortcut",
+      "icons": [{ "src": "/icons/shortcut-projects.png", "sizes": "96x96", "type": "image/png" }]
+    },
+    {
+      "name": "Blog",
+      "short_name": "Blog",
+      "description": "Read the latest posts",
+      "url": "/blogs?source=pwa_shortcut",
+      "icons": [{ "src": "/icons/shortcut-blog.png", "sizes": "96x96", "type": "image/png" }]
+    },
+    {
+      "name": "Download Resume",
+      "short_name": "Resume",
+      "description": "Download the main resume PDF",
+      "url": "/resume.pdf?source=pwa_shortcut",
+      "icons": [{ "src": "/icons/shortcut-resume.png", "sizes": "96x96", "type": "image/png" }]
+    }
+  ]
+}
