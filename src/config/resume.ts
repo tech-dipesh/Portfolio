@@ -19,12 +19,12 @@ export const resumeVariants: ResumeVariant[] = [
     description: "APIs, databases, and system design",
     file: "/backend.pdf",
   },
-  {
-    id: "devops",
-    label: "DevOps Resume",
-    description: "Docker, CI/CD, and infrastructure work",
-    file: "/devops.pdf",
-  },
+  // {
+  //   id: "devops",
+  //   label: "DevOps Resume",
+  //   description: "Docker, CI/CD, and infrastructure work",
+  //   file: "/devops.pdf",
+  // },
   {
   id: "dsa",
   label: "DSA Resume",
