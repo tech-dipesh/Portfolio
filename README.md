@@ -58,5 +58,16 @@ src/
 ```
 
 
+## Type Fixed Ui Upgrade: (Sep 18 Start)
+- Create new: `api/status` backend routes which check a my server status.
+- Generate the `/about` Page With Include my Content. 
+- Add the Skills Tree with a view case study are on the output
+- We can Visit a Individual project with a prev next with clean leoops.
+- Alway zero icon fallback silent.
+- The Bug on the project move to a `[slug]` not a id.
+- On the Principels with link to a ceritificate.
+- Whre the Cal.com compos stack on the top of each other.
+- Add one more Claude My Certifications.
+- Reduce the from 2mb+ size of the `favicon.ico` to some kbs which also effect our fcp.
 
 # Thanks

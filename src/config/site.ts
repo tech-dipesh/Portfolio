@@ -6,7 +6,7 @@ export const siteConfig = {
   url: "https://www.dipsharma.me",
   location: "Chandigarh, India",
   availability: "Available for internships",
-  email: "dipsharmadev@gmail.com",
+  email: "hello@dipsharma.me",
   github: "https://github.com/tech-dipesh",
   linkedin: "https://linkedin.com/in/tech-dipesh",
   twitter: "https://x.com/tec_dipesh",
