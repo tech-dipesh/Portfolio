@@ -47,6 +47,51 @@ export const projects: Project[] = [
     `
   },
   {
+    slug: "daigo",
+    name: "Daigo",
+    tagline: "A two-sided real-time commute marketplace for students and office-goers",
+    summary:
+      "Building a peer-to-peer commute-sharing platform where riders post requests and drivers accept in real time. Solving cold-start bootstrapping with circle-based matching, geospatial route overlap with raw PostGIS queries, and multi-hop relay matching that chains two drivers through a single transfer. Architected a failure-resistant backend with Redis pub/sub, idempotency keys, and atomic seat release — designed for correctness at scale, not just features.",
+    role: "Solo project",
+    year: "2026",
+    githubUrl: "https://github.com/tech-dipesh/Daigo",
+    liveUrl: "https://github.com/tech-dipesh/Daigo",
+    screenshot: "/projects/coming-soon.png",
+    span: "two",
+    techStack: ["Next.js", "TypeScript", "PostgreSQL + PostGIS", "Prisma", "Redis", "QStash", "Stadia Maps", "Razorpay"],
+    features: [
+      { title: "Cold-start bootstrapping", detail: "Circle-based matching prioritizes college/office email domains before opening to the general public — solving the real problem every two-sided marketplace faces" },
+      { title: "Multi-hop relay matching", detail: "When no single driver covers the full route, the system chains two drivers through one transfer — structurally closer to flight search than a typical carpool clone" },
+      { title: "Geospatial route overlap", detail: "Raw PostGIS queries via Prisma $queryRaw calculate detour limits and suggest meeting points based on lat/long proximity" },
+      { title: "Real-time accept flow", detail: "WebSocket + Redis pub/sub for cross-instance delivery — 75-second countdown, first-accept-wins concurrency with Prisma transactions" },
+      { title: "Pricing correctness", detail: "Per-zone multipliers, time-of-day bands, and demand multipliers — two hard caps checked against the rounded value, not raw float" },
+      { title: "Failure-resistant backend", detail: "Idempotency keys for payment retries, webhook verification for Razorpay mock, atomic seat release, and refresh token rotation with revocation" },
+      { title: "Background jobs", detail: "Upstash QStash handles exports, verification, and alerts without blocking API responses" },
+      { title: "Signed-URL uploads", detail: "Supabase direct-to-storage uploads validate type/size server-side, then let clients upload directly — reducing API load" },
+    ],
+    description: `
+      Daigo is a two-sided real-time commute marketplace that connects riders and drivers who are already traveling similar routes. A rider posts a request from point A to point B with a time window; the app pushes it to drivers whose existing routes overlap. Price is agreed before the trip starts. When no single driver covers the full route, Daigo chains two drivers through a single relay transfer — the same structural problem as multi-leg flight search.
+  
+      The project was built as a deliberate answer to the question: what makes a system genuinely hard to build, versus just feature-rich? Most student projects follow the same shapes — a CRUD app with auth, a todo list, a chat app. Daigo isn't that shape. It's a marketplace with cold-start dynamics, adversarial trust behaviors, pricing correctness constraints, geospatial matching, and safety-critical product design — every piece maps to a real systems-design problem, not just a feature checkbox.
+  
+      Cold-start bootstrapping was the first hard problem. A marketplace with no drivers has no value for riders, and vice versa. The solution was "circles" — college and office email domains get matched to each other first, before the platform opens to the general public. This bootstraps density in a controlled cohort before dealing with the chaos of open signups. A notify-me waitlist handles unmatched requests, and a referral system tied to a coin economy encourages organic growth.
+  
+      Geospatial matching was the second major challenge. Prisma has no native PostGIS support, so route overlap queries use raw SQL through Prisma's $queryRaw. The system calculates detour limits — how far off their existing route a driver can be pushed before the match becomes unfair — and suggests a meeting point based on latitude/longitude proximity. Every raw query result uses an explicit custom generic type, never \`any\`.
+  
+      Real-time matching required thinking about concurrency at the distributed level. When a rider's request matches multiple drivers, the platform uses WebSocket connections for live delivery. But Vercel's serverless functions don't share memory — a WebSocket message sent from one function instance can't reach a user connected to a different instance without a cross-instance channel. Redis pub/sub solves this: the match event publishes to a Redis channel, and every function instance subscribed receives it and forwards to its connected clients. A 75-second countdown drives driver response, with first-accept-wins logic enforced through Prisma transactions.
+  
+      The pricing engine has correctness constraints most systems miss. Base rates vary by vehicle type, then apply per-zone multipliers (~100 lat/long grid cells across the pilot region, folding terrain and city density into one value), time-of-day bands, and a demand multiplier based on open requests versus online drivers. Two hard caps apply — a per-km ceiling and an absolute ceiling. The critical detail: calculations use raw float precision internally, but the final price is rounded to a whole rupee. Caps must be checked against the rounded value, not the raw float, or a rounded price can land just over the cap. This is the kind of bug that only surfaces in production, and designing against it upfront is what separates a thought-through system from a shipped one.
+  
+      The backend was architected for failure, not just for the happy path. Payment retries use idempotency keys — a dropped connection and retry during a flaky network can't create a duplicate charge. Razorpay webhooks are verified server-side. Seat release on cancellation is atomic, so two riders can't book the same seat concurrently. Refresh tokens rotate with revocation on each use, so a stolen token can't be replayed. Background jobs — CSV exports, document verification, email alerts — run through Upstash QStash instead of blocking API responses. File uploads (driver licenses, RC documents) use a signed-URL flow: the client requests a signed URL from a Next.js route that validates type and size, then uploads directly to Supabase storage — bypassing the backend entirely for the actual file transfer.
+  
+      Trust and safety were treated as first-class concerns, not afterthoughts. A reputation score is cached on the user row and recalculated asynchronously rather than computed on every read. Two-way ratings, "highly recommend" tags, and a 5-warning suspension system with an appeal flow give the platform teeth. An emergency contact is required at signup, and an emergency button grabs a one-time location, sends a high-alert email, and pushes a live WebSocket notification to the admin dashboard. Distance-gated visibility hides phone numbers and driver photos until the trip is close to starting.
+  
+      The system is being built with a strict zero-cost infrastructure budget — Next.js on Vercel's free tier, Upstash Redis for caching and pub/sub, Stadia Maps (which bundles map tiles, geocoding, and routing under one free quota), Brevo for email, and Razorpay test mode for payments. Every tool chosen has a verified free tier, which forces architectural decisions that a larger budget would let you avoid.
+      
+      Daigo is still in active development on Backend. The must-build tier — auth, roles, vehicle verification, request forms, matching engine, pricing, trip lifecycle, payments, safety features, admin dashboard, i18n — is being executed in focused weekly sprints. The relay matching, circle bootstrapping, and pricing benchmark come next. The project's real value isn't the feature list; it's that every piece required reasoning about a real systems-design problem, and the backend now reflects that thinking end-to-end.
+    `
+  },
+  {
     slug: "stateflow",
     name: "StateFlow",
     tagline: "A Jira-inspired task manager with drag-and-drop boards",

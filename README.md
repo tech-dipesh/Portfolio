@@ -70,4 +70,6 @@ src/
 - Add one more Claude My Certifications.
 - Reduce the from 2mb+ size of the `favicon.ico` to some kbs which also effect our fcp.
 
+- Change to the new email: hello@dipsharma.me
+
 # Thanks
