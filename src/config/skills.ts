@@ -46,10 +46,10 @@ export const skillGroups: SkillGroup[] = [
 ];
 
 export const futureSkills = [
-  "CI/CD (GitHub Actions)",
+  "Database Internals",
   "Computer Foundation (Revision)",
-  "WebSockets (Socket.io)",
-  "Foundation of Type (Revision)",
+  "AI Infrastructure",
+  "RAG Systems",
 ];
 
 export const achievements: Achievement[] = [
