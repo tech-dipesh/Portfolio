@@ -1,6 +1,6 @@
 # Dipendra Sharma
 
-Backend-focused full-stack developer.
+Backend-focused full-stack developer/Engineer.
 
 Website:
 https://www.dipsharma.me
@@ -12,6 +12,7 @@ LinkedIn:
 https://linkedin.com/in/tech-dipesh
 
 Projects:
+- Daigo
 - Yeti Jobs
 - RuntimeX
 - StateFlow
