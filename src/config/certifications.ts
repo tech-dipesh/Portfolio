@@ -33,4 +33,8 @@ export const certifications: Certification[] = [
     title: "The Complete Introduction to C++ Programming",
     url: "https://www.udemy.com/certificate/UC-b46e00b1-fba1-4c52-a73e-fe8994661e8a/",
   },
+  {
+    title: "Machine Learning- From Basics to Advanced",
+    url: "https://www.udemy.com/certificate/UC-e1056bfb-65d5-4c48-8f74-dead2d04bd08",
+    }
 ];

@@ -1,52 +1,7 @@
 import type { Project } from "@/lib/types";
 
 export const projects: Project[] = [
-  {
-    slug: "yeti-jobs",
-    name: "Yeti Jobs",
-    tagline: "A production job portal connecting seekers and recruiters",
-    summary:
-      "Built the full platform end to end: 50+ REST APIs, JWT with role-based access, and a PostgreSQL schema tuned with composite and GIN indexes that took search latency from 7ms down to 0.9ms. Designed for faults, not just features — load tested to 67 requests per second with zero failures, caught a connection pool leak before production, and shrank Docker images by 74% to buy headroom for scale. Shipped an AI resume scorer and automated CI/CD via GitHub Actions.",
-    role: "Solo project",
-    year: "2026",
-    githubUrl: "https://github.com/tech-dipesh/yeti-jobs",
-    liveUrl: "https://yeti-jobs.vercel.app",
-    apiDocsUrl: "https://yeti-jobs.onrender.com/api/v1/swagger/",
-    screenshot: "/projects/yeti-jobs.png",
-    span: "three",
-    techStack: ["Node.js", "Express", "PostgreSQL", "React", "TypeScript", "Docker", "Supabase"],
-    features: [
-      { title: "Fault-tolerant architecture", detail: "Designed for component-level resilience — connection pooling, rate limiting, and error handling prevent single faults from becoming system failures" },
-      { title: "Idempotent job applications", detail: "A per-user, per-job idempotency key (rotated every 5 minutes) means a dropped connection and retry during a flaky network can't create a duplicate application or race against itself" },
-      { title: "Full-text job search", detail: "Composite and GIN indexing cut query time from 7ms to 0.9ms" },
-      { title: "Role-based access", detail: "JWT auth with separate dashboards for seekers, recruiters, and admins" },
-      { title: "AI resume scoring", detail: "OpenAI-backed ATS feedback scored 0 to 100 against a job posting" },
-      { title: "Container optimized", detail: "Multi-stage Docker builds shrank images from 1.99GB to 520MB" },
-      { title: "Load tested", detail: "67 req/sec sustained with zero failures at 100 concurrent users" },
-    ],
-    description: `
-    Yeti Jobs is a full-stack production job portal built from scratch to connect job seekers, recruiters, and administrators through a scalable hiring workflow. The platform was designed as a complete software system rather than a simple CRUD application, covering authentication, role-based access control, job discovery, applications, company management, resume handling, and recruiter operations.
-    
-    I designed and implemented the complete backend architecture using Node.js, Express.js, PostgreSQL, and TypeScript. The system contains 50+ REST APIs covering authentication, user profiles, companies, jobs, applications, bookmarks, and administrative operations. The database schema was designed around real application requirements, including relational modeling, foreign key relationships, indexing strategies, and optimized queries.
-    
-    One of the main engineering challenges was building a fast job search experience. I implemented PostgreSQL full-text search with GIN indexing and optimized database queries, reducing search latency from 7ms to 0.9ms. The application also uses pagination, filtering, and optimized API responses to handle larger datasets efficiently.
-    
-    Authentication and authorization were built with security in mind. The platform supports multiple user roles including job seekers, recruiters, and administrators. JWT-based authentication protects private routes, while middleware controls access based on permissions and ownership. Recruiters manage companies, publish jobs, review applicants, and maintain hiring workflows, while candidates manage profiles, resumes, saved jobs, and applications.
-    
-    The frontend was developed using React, TypeScript, and Tailwind CSS with a focus on responsive user experience. The interface includes role-based navigation, protected routes, dynamic dashboards, job search with debouncing, application tracking, profile management, resume uploads, and recruiter tools. I built reusable components, custom hooks, centralized API handling with Axios, and optimized data fetching using request cancellation with AbortController.
-    
-    Performance optimization was a major focus throughout development. The frontend uses lazy loading, pagination, optimized rendering patterns, and efficient state management with React Context API. Search requests are optimized through debouncing to reduce unnecessary API calls. Images and Docker configurations were optimized, reducing container image size by 74%, from 1.99GB to 520MB through multi-stage Docker builds and Alpine-based images.
-    
-    The project includes an AI-powered resume scoring system that evaluates resumes against job descriptions and provides ATS-style feedback with a score from 0 to 100. This helps candidates understand resume gaps and improve their chances during applications.
-    
-    For reliability testing, I performed load testing with Apache Bench and verified system behavior under concurrent traffic. The application sustained 67 requests per second with 100 concurrent users while maintaining zero failed requests. During testing, I identified and fixed backend issues such as connection pool management problems before deployment.
-    
-    The application is deployed using modern cloud infrastructure with Vercel for frontend hosting, Render for backend services, and Supabase for database and storage services. CI/CD automation was added using GitHub Actions to improve deployment workflow and maintain code quality.
-    
-    Building Yeti Jobs helped me understand how real-world applications are designed, optimized, tested, and maintained. The project combines frontend engineering, backend architecture, database optimization, security practices, cloud deployment, and performance testing into a complete production-style system.
-    `
-  },
-  {
+{
     slug: "daigo",
     name: "Daigo",
     tagline: "A two-sided real-time commute marketplace for students and office-goers",
@@ -56,7 +11,7 @@ export const projects: Project[] = [
     year: "2026",
     githubUrl: "https://github.com/tech-dipesh/Daigo",
     liveUrl: "https://github.com/tech-dipesh/Daigo",
-    screenshot: "/projects/coming-soon.png",
+    screenshot: "/projects/daigo.png",
     span: "two",
     techStack: ["Next.js", "TypeScript", "PostgreSQL + PostGIS", "Prisma", "Redis", "QStash", "Stadia Maps", "Razorpay"],
     features: [
@@ -89,6 +44,51 @@ export const projects: Project[] = [
       The system is being built with a strict zero-cost infrastructure budget — Next.js on Vercel's free tier, Upstash Redis for caching and pub/sub, Stadia Maps (which bundles map tiles, geocoding, and routing under one free quota), Brevo for email, and Razorpay test mode for payments. Every tool chosen has a verified free tier, which forces architectural decisions that a larger budget would let you avoid.
       
       Daigo is still in active development on Backend. The must-build tier — auth, roles, vehicle verification, request forms, matching engine, pricing, trip lifecycle, payments, safety features, admin dashboard, i18n — is being executed in focused weekly sprints. The relay matching, circle bootstrapping, and pricing benchmark come next. The project's real value isn't the feature list; it's that every piece required reasoning about a real systems-design problem, and the backend now reflects that thinking end-to-end.
+    `
+  },
+  {
+    slug: "yeti-jobs",
+    name: "Yeti Jobs",
+    tagline: "A production job portal connecting seekers and recruiters",
+    summary:
+      "Built the full platform end to end: 50+ REST APIs, JWT with role-based access, and a PostgreSQL schema tuned with composite and GIN indexes that took search latency from 7ms down to 4.9ms. Designed for faults, not just features — load tested to 67 requests per second with zero failures, caught a connection pool leak before production, and shrank Docker images by 74% to buy headroom for scale. Shipped an AI resume scorer and automated CI/CD via GitHub Actions.",
+    role: "Solo project",
+    year: "2026",
+    githubUrl: "https://github.com/tech-dipesh/yeti-jobs",
+    liveUrl: "https://yeti-jobs.vercel.app",
+    apiDocsUrl: "https://yeti-jobs.onrender.com/api/v1/swagger/",
+    screenshot: "/projects/yeti-jobs.png",
+    span: "three",
+    techStack: ["Node.js", "Express", "PostgreSQL", "React", "TypeScript", "Docker", "Supabase"],
+    features: [
+      { title: "Fault-tolerant architecture", detail: "Designed for component-level resilience — connection pooling, rate limiting, and error handling prevent single faults from becoming system failures" },
+      { title: "Idempotent job applications", detail: "A per-user, per-job idempotency key (rotated every 5 minutes) means a dropped connection and retry during a flaky network can't create a duplicate application or race against itself" },
+      { title: "Full-text job search", detail: "Composite and GIN indexing cut query time from 7ms to 4.9ms" },
+      { title: "Role-based access", detail: "JWT auth with separate dashboards for seekers, recruiters, and admins" },
+      { title: "AI resume scoring", detail: "OpenAI-backed ATS feedback scored 0 to 100 against a job posting" },
+      { title: "Container optimized", detail: "Multi-stage Docker builds shrank images from 1.99GB to 520MB" },
+      { title: "Load tested", detail: "67 req/sec sustained with zero failures at 100 concurrent users" },
+    ],
+    description: `
+    Yeti Jobs is a full-stack production job portal built from scratch to connect job seekers, recruiters, and administrators through a scalable hiring workflow. The platform was designed as a complete software system rather than a simple CRUD application, covering authentication, role-based access control, job discovery, applications, company management, resume handling, and recruiter operations.
+    
+    I designed and implemented the complete backend architecture using Node.js, Express.js, PostgreSQL, and TypeScript. The system contains 50+ REST APIs covering authentication, user profiles, companies, jobs, applications, bookmarks, and administrative operations. The database schema was designed around real application requirements, including relational modeling, foreign key relationships, indexing strategies, and optimized queries.
+    
+    One of the main engineering challenges was building a fast job search experience. I implemented PostgreSQL full-text search with GIN indexing and optimized database queries, reducing search latency from 7ms to 4.9ms. The application also uses pagination, filtering, and optimized API responses to handle larger datasets efficiently.
+    
+    Authentication and authorization were built with security in mind. The platform supports multiple user roles including job seekers, recruiters, and administrators. JWT-based authentication protects private routes, while middleware controls access based on permissions and ownership. Recruiters manage companies, publish jobs, review applicants, and maintain hiring workflows, while candidates manage profiles, resumes, saved jobs, and applications.
+    
+    The frontend was developed using React, TypeScript, and Tailwind CSS with a focus on responsive user experience. The interface includes role-based navigation, protected routes, dynamic dashboards, job search with debouncing, application tracking, profile management, resume uploads, and recruiter tools. I built reusable components, custom hooks, centralized API handling with Axios, and optimized data fetching using request cancellation with AbortController.
+    
+    Performance optimization was a major focus throughout development. The frontend uses lazy loading, pagination, optimized rendering patterns, and efficient state management with React Context API. Search requests are optimized through debouncing to reduce unnecessary API calls. Images and Docker configurations were optimized, reducing container image size by 74%, from 1.99GB to 520MB through multi-stage Docker builds and Alpine-based images.
+    
+    The project includes an AI-powered resume scoring system that evaluates resumes against job descriptions and provides ATS-style feedback with a score from 0 to 100. This helps candidates understand resume gaps and improve their chances during applications.
+    
+    For reliability testing, I performed load testing with Apache Bench and verified system behavior under concurrent traffic. The application sustained 67 requests per second with 100 concurrent users while maintaining zero failed requests. During testing, I identified and fixed backend issues such as connection pool management problems before deployment.
+    
+    The application is deployed using modern cloud infrastructure with Vercel for frontend hosting, Render for backend services, and Supabase for database and storage services. CI/CD automation was added using GitHub Actions to improve deployment workflow and maintain code quality.
+    
+    Building Yeti Jobs helped me understand how real-world applications are designed, optimized, tested, and maintained. The project combines frontend engineering, backend architecture, database optimization, security practices, cloud deployment, and performance testing into a complete production-style system.
     `
   },
   {
