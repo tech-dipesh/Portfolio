@@ -55,6 +55,17 @@ export function Experience() {
           <h3 className="mt-1 text-lg font-semibold">{active.org}</h3>
           <p className="mt-3 text-sm leading-relaxed text-ink-muted">{active.summary}</p>
 
+          {active.highlights?.length ? (
+            <ul className="mt-5 space-y-2.5">
+              {active.highlights.map((highlight) => (
+                <li key={highlight} className="flex gap-2.5 text-sm leading-relaxed text-ink-muted">
+                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
+                  {highlight}
+                </li>
+              ))}
+            </ul>
+          ) : null}
+
           <div className="mt-6 space-y-4">
             {active.metrics.map((metric) => (
               <div key={metric.label}>

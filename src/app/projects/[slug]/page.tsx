@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowUpRight, Github, FileJson } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { ProjectVideo } from "@/components/projects/project-video";
 import { ProjectPager } from "@/components/projects/project-pager";
+import { ProjectSections } from "@/components/projects/project-sections";
 import { projects } from "@/config/projects";
 import { formatDescription } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
@@ -22,9 +23,15 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   const project = projects.find((item) => item.slug === slug);
   if (!project) return {};
 
+  const title = project.seoTitle ?? `${project.name} — ${siteConfig.name}`;
+  const description = project.seoDescription ?? project.tagline;
+
   return {
-    title: `${project.name} — ${siteConfig.name}`,
-    description: project.tagline,
+    title,
+    description,
+    keywords: project.keywords,
+    alternates: { canonical: `${siteConfig.url}/projects/${project.slug}` },
+    openGraph: { title, description, url: `${siteConfig.url}/projects/${project.slug}`, type: "article" },
   };
 }
 
@@ -38,6 +45,17 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const previous = projects[(index - 1 + projects.length) % projects.length] ?? project;
   const next = projects[(index + 1) % projects.length] ?? project;
   const paragraphs = formatDescription(project.description);
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: project.name,
+    url: project.liveUrl,
+    description: project.seoDescription ?? project.tagline,
+    operatingSystem: "Any",
+    sameAs: [project.githubUrl],
+    mainEntityOfPage: `${siteConfig.url}/projects/${project.slug}`,
+    author: { "@type": "Person", name: siteConfig.name, url: siteConfig.url },
+  };
 
   return (
     <div className="container max-w-3xl scroll-mt-28">
@@ -55,8 +73,19 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <span>{project.role}</span>
       </div>
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+      />
+
       <h1 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">{project.name}</h1>
       <p className="mt-2 text-lg text-ink-muted">{project.tagline}</p>
+      {project.status ? (
+        <p className="mt-3 flex items-center gap-2 text-xs text-ink-muted">
+          <span className="h-2 w-2 rounded-full bg-emerald-400" />
+          {project.status}
+        </p>
+      ) : null}
 
       <div className="mt-5 flex flex-wrap gap-1.5">
         {project.techStack.map((tech) => (
@@ -123,6 +152,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           ))}
         </div>
       </div>
+
+      <ProjectSections sections={project.sections} />
 
       <ProjectPager previous={previous} next={next} />
     </div>
