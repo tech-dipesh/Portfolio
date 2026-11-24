@@ -1,7 +1,11 @@
 import { ProjectCard } from "@/components/home/project-card";
+import { FlagshipProject } from "@/components/home/flagship-project";
 import { projects } from "@/config/projects";
 
 export function Projects() {
+  const flagship = projects.find((project) => project.flagship);
+  const others = projects.filter((project) => project !== flagship);
+
   return (
     <section id="projects" className="container mt-32 scroll-mt-28">
       <div className="max-w-xl">
@@ -15,8 +19,14 @@ export function Projects() {
         </p>
       </div>
 
-      <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
-        {projects.map((project) => (
+      {flagship ? (
+        <div className="mt-10">
+          <FlagshipProject project={flagship} />
+        </div>
+      ) : null}
+
+      <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-3">
+        {others.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}
       </div>
