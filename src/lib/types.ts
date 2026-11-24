@@ -19,6 +19,17 @@ export interface Project {
   techStack: string[];
   features: ProjectFeature[];
   description: string;
+  flagship?: boolean;
+  status?: string;
+  seoTitle?: string;
+  seoDescription?: string;
+  keywords?: string[];
+  sections?: ProjectSection[];
+}
+
+export interface ProjectSection {
+  title: string;
+  points: string[];
 }
 
 export interface Interest {
@@ -51,6 +62,7 @@ export interface ExperienceEntry {
   location: string;
   summary: string;
   metrics: ExperienceMetric[];
+  highlights?: string[];
 }
 
 export interface ResumeVariant {

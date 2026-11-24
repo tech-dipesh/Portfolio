@@ -42,6 +42,13 @@ import {
   Gamepad2,
   MessagesSquare,
   User,
+  FileCode,
+  Bolt,
+  Workflow,
+  Network,
+  Lock,
+  ServerCog,
+  Archive,
 } from "lucide-react";
 
 const iconRegistry = {
@@ -87,6 +94,13 @@ const iconRegistry = {
   Languages,
   Gamepad2,
   MessagesSquare,
+  FileCode,
+  Bolt,
+  Workflow,
+  Network,
+  Lock,
+  ServerCog,
+  Archive,
 } satisfies Record<string, LucideIcon>;
 
 export type IconName = keyof typeof iconRegistry;

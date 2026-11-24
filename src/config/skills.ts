@@ -7,6 +7,7 @@ export const skillGroups: SkillGroup[] = [
       { name: "JavaScript", icon: "Braces" },
       { name: "TypeScript", icon: "FileCode2" },
       { name: "Java", icon: "Coffee" },
+      { name: "Python", icon: "FileCode" },
       { name: "C", icon: "Cpu" },
       { name: "C++", icon: "CircuitBoard" },
       { name: "SQL", icon: "Database" },
@@ -21,6 +22,8 @@ export const skillGroups: SkillGroup[] = [
       { name: "Redux", icon: "Boxes" },
       { name: "Node.js", icon: "Server" },
       { name: "Express", icon: "Route" },
+      { name: "FastAPI", icon: "Bolt" },
+      { name: "Django", icon: "Workflow" },
       { name: "PostgreSQL", icon: "DatabaseZap" },
       { name: "MongoDB", icon: "Leaf" },
       { name: "Prisma", icon: "Triangle" },
@@ -39,7 +42,10 @@ export const skillGroups: SkillGroup[] = [
       { name: "Vercel", icon: "Rocket" },
       { name: "Render", icon: "Cloud" },
       { name: "Vite", icon: "Zap" },
-      { name: "AWS", icon: "CloudCog" },
+      { name: "AWS EC2", icon: "ServerCog" },
+      { name: "AWS S3", icon: "Archive" },
+      { name: "Nginx", icon: "Network" },
+      { name: "Caddy", icon: "Lock" },
       { name: "Apache Bench", icon: "Gauge" },
     ],
   },
@@ -47,7 +53,7 @@ export const skillGroups: SkillGroup[] = [
 
 export const futureSkills = [
   "Database Internals",
-  "Computer Foundation (Revision)",
+  "Go (Golang)",
   "AI Infrastructure",
   "RAG Systems",
 ];
