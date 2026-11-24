@@ -3,47 +3,119 @@ import type { Project } from "@/lib/types";
 export const projects: Project[] = [
 {
     slug: "daigo",
-    name: "Daigo",
-    tagline: "A two-sided real-time commute marketplace for students and office-goers",
+    name: "DaiGo",
+    tagline: "Commute sharing with relay matching, built for students and office-goers",
     summary:
-      "Building a peer-to-peer commute-sharing platform where riders post requests and drivers accept in real time. Solving cold-start bootstrapping with circle-based matching, geospatial route overlap with raw PostGIS queries, and multi-hop relay matching that chains two drivers through a single transfer. Architected a failure-resistant backend with Redis pub/sub, idempotency keys, and atomic seat release — designed for correctness at scale, not just features.",
+      "A rider posts where they're going and DaiGo pushes the request to people already driving that way, chaining two drivers into a relay when nobody covers the full trip. Built to stay correct under concurrency: first-accept-wins inside database transactions, idempotency keys for retries, and price caps checked on the rounded value. Live at daigo.dipsharma.me with the backend complete and the frontend routes nearly done.",
     role: "Solo project",
     year: "2026",
-    githubUrl: "https://github.com/tech-dipesh/Daigo",
-    liveUrl: "https://github.com/tech-dipesh/Daigo",
+    githubUrl: "https://github.com/tech-dipesh/daigo",
+    liveUrl: "https://daigo.dipsharma.me",
     screenshot: "/projects/daigo.png",
-    span: "two",
-    techStack: ["Next.js", "TypeScript", "PostgreSQL + PostGIS", "Prisma", "Redis", "QStash", "Stadia Maps", "Razorpay"],
+    span: "three",
+    flagship: true,
+    status: "Live · backend complete, frontend routes nearly done",
+    seoTitle: "DaiGo: Commute Sharing & Carpooling App with Relay Matching",
+    seoDescription:
+      "DaiGo matches riders with drivers already heading their way, chains two drivers into a relay when nobody covers the whole trip, and shows the price before the ride. Built by Dipendra Sharma.",
+    keywords: [
+      "DaiGo",
+      "daigo.dipsharma.me",
+      "DaiGo commute sharing app",
+      "carpooling app",
+      "commute sharing platform",
+      "relay ride matching",
+      "ride sharing for students",
+      "Dipendra Sharma",
+    ],
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL + PostGIS",
+      "Prisma",
+      "Upstash Redis",
+      "QStash",
+      "WebSockets",
+      "Redux Toolkit",
+      "MapLibre",
+      "AWS S3",
+    ],
     features: [
-      { title: "Cold-start bootstrapping", detail: "Circle-based matching prioritizes college/office email domains before opening to the general public — solving the real problem every two-sided marketplace faces" },
-      { title: "Multi-hop relay matching", detail: "When no single driver covers the full route, the system chains two drivers through one transfer — structurally closer to flight search than a typical carpool clone" },
-      { title: "Geospatial route overlap", detail: "Raw PostGIS queries via Prisma $queryRaw calculate detour limits and suggest meeting points based on lat/long proximity" },
-      { title: "Real-time accept flow", detail: "WebSocket + Redis pub/sub for cross-instance delivery — 75-second countdown, first-accept-wins concurrency with Prisma transactions" },
-      { title: "Pricing correctness", detail: "Per-zone multipliers, time-of-day bands, and demand multipliers — two hard caps checked against the rounded value, not raw float" },
-      { title: "Failure-resistant backend", detail: "Idempotency keys for payment retries, webhook verification for Razorpay mock, atomic seat release, and refresh token rotation with revocation" },
-      { title: "Background jobs", detail: "Upstash QStash handles exports, verification, and alerts without blocking API responses" },
-      { title: "Signed-URL uploads", detail: "Supabase direct-to-storage uploads validate type/size server-side, then let clients upload directly — reducing API load" },
+      { title: "Push-based matching", detail: "Requests go to people already travelling the route, with a detour limit and a suggested meeting point from raw PostGIS queries" },
+      { title: "Relay matching", detail: "No single driver covers the trip? Two drivers are chained through a walkable transfer point, and the trip only commits when both accept, in one transaction" },
+      { title: "First-accept-wins", detail: "A 75-second accept window enforced on the server, with concurrent accepts serialized inside database transactions so two drivers can never both win" },
+      { title: "Idempotent writes", detail: "A wrapper on risky POST routes replays the first successful response on a retry, so a flaky network can't double-charge or double-complete a trip" },
+      { title: "Transparent pricing", detail: "Zone, time-of-day, weather and demand multipliers, two hard caps checked against the rounded rupee value, and the full breakdown shown before the ride" },
+      { title: "Cold-start circles", detail: "College and office email domains get matched first, backed by a notify-me waitlist and a coin-based referral system" },
+      { title: "Safety layer", detail: "A mandatory emergency contact, a one-tap alert that reaches admins live, and distance-gated visibility of names, photos and phone numbers" },
+      { title: "Demo console", detail: "One trigger runs a 1,000-request simulation or 100 parallel accepts on a single trip, so the backend can be inspected without clicking through it" },
+    ],
+    sections: [
+      {
+        title: "Architecture",
+        points: [
+          "Four strict layers: thin Next.js route handlers, centralized Zod validation with human-readable error messages, a service layer for business logic and transactions, and a repository layer that holds every Prisma and SQL call",
+          "PostgreSQL with PostGIS through Prisma: 28 tables, UUID ids generated by pgcrypto, strict enums, and soft deletes for users and trips so audit data survives without breaking foreign keys",
+          "Geo queries are raw SQL through $queryRaw because Prisma has no PostGIS support, and the extension is declared first so the template defaults can't conflict with it",
+          "Upstash Redis handles rate limits, live events and chat (cleared once the trip is rated), while QStash runs heavy exports and alerts in the background",
+          "Licence, RC and profile photos go straight to AWS S3 through short-lived presigned URLs, so large files never touch backend memory",
+          "Redux Toolkit with RTK Query handles client state, caching and optimistic updates, and next-intl serves English, Nepali and Hindi",
+        ],
+      },
+      {
+        title: "Engineering problems solved",
+        points: [
+          "Race conditions: simultaneous driver accepts are serialized inside database transactions, with the 75-second expiry enforced server-side",
+          "Duplicate transactions: an idempotency wrapper replays the first successful response when a client retries, and driver auto-accept uses the same keys to prevent double booking",
+          "Payment integrity: online payments auto-mark paid (mock gateway for now), cash needs the driver's completion photo, and any mismatch lands in an admin complaint queue",
+          "Webhook verification on the Razorpay mock gateway, so the payment flow already has the shape of the real integration",
+          "Atomic cancellation: the seat is released back to the route and the request resets to pending so it can be matched again",
+          "Real-time resilience: events flow through Redis pub/sub to WebSocket clients, and if the socket drops, the client falls back to polling",
+          "Cold start: circles match college and office email domains first, before the platform opens to the public",
+        ],
+      },
+      {
+        title: "Safety and trust",
+        points: [
+          "One mandatory emergency contact at signup; the emergency button grabs a one-time location, emails the contact through Brevo and pushes a live alert to the admin dashboard with the phone number hidden for rescue",
+          "Drivers see only a rider's first name until they're within 10 km, the driver's photo appears within 3 km, and phone numbers stay hidden until close",
+          "Vulnerable-rider requests get top priority with top-rated drivers, and unaccompanied minors need a guardian booking, live tracking and high-trust drivers only",
+          "A trust score cached on the user row and recalculated asynchronously, two-way ratings, and 5 warnings leading to suspension with an appeal flow",
+          "Roles for super admin, admin, moderator, rider and driver, with extra email verification for the super admin on every login",
+        ],
+      },
+      {
+        title: "Known limits",
+        points: [
+          "Payments run on a mock gateway for now, with Razorpay planned",
+          "Licence and RC checks are demo-level, not real government ID verification",
+          "Location sharing is manual, and the 15-hour driver fatigue cap can't be enforced in practice",
+          "Trust-farming only has a rate cap on score gains, documented as a known limitation",
+          "WebSockets aren't supported on Vercel yet, so polling is the fallback for now",
+          "Mapped for three regions only",
+        ],
+      },
     ],
     description: `
-      Daigo is a two-sided real-time commute marketplace that connects riders and drivers who are already traveling similar routes. A rider posts a request from point A to point B with a time window; the app pushes it to drivers whose existing routes overlap. Price is agreed before the trip starts. When no single driver covers the full route, Daigo chains two drivers through a single relay transfer — the same structural problem as multi-leg flight search.
-  
-      The project was built as a deliberate answer to the question: what makes a system genuinely hard to build, versus just feature-rich? Most student projects follow the same shapes — a CRUD app with auth, a todo list, a chat app. Daigo isn't that shape. It's a marketplace with cold-start dynamics, adversarial trust behaviors, pricing correctness constraints, geospatial matching, and safety-critical product design — every piece maps to a real systems-design problem, not just a feature checkbox.
-  
-      Cold-start bootstrapping was the first hard problem. A marketplace with no drivers has no value for riders, and vice versa. The solution was "circles" — college and office email domains get matched to each other first, before the platform opens to the general public. This bootstraps density in a controlled cohort before dealing with the chaos of open signups. A notify-me waitlist handles unmatched requests, and a referral system tied to a coin economy encourages organic growth.
-  
-      Geospatial matching was the second major challenge. Prisma has no native PostGIS support, so route overlap queries use raw SQL through Prisma's $queryRaw. The system calculates detour limits — how far off their existing route a driver can be pushed before the match becomes unfair — and suggests a meeting point based on latitude/longitude proximity. Every raw query result uses an explicit custom generic type, never \`any\`.
-  
-      Real-time matching required thinking about concurrency at the distributed level. When a rider's request matches multiple drivers, the platform uses WebSocket connections for live delivery. But Vercel's serverless functions don't share memory — a WebSocket message sent from one function instance can't reach a user connected to a different instance without a cross-instance channel. Redis pub/sub solves this: the match event publishes to a Redis channel, and every function instance subscribed receives it and forwards to its connected clients. A 75-second countdown drives driver response, with first-accept-wins logic enforced through Prisma transactions.
-  
-      The pricing engine has correctness constraints most systems miss. Base rates vary by vehicle type, then apply per-zone multipliers (~100 lat/long grid cells across the pilot region, folding terrain and city density into one value), time-of-day bands, and a demand multiplier based on open requests versus online drivers. Two hard caps apply — a per-km ceiling and an absolute ceiling. The critical detail: calculations use raw float precision internally, but the final price is rounded to a whole rupee. Caps must be checked against the rounded value, not the raw float, or a rounded price can land just over the cap. This is the kind of bug that only surfaces in production, and designing against it upfront is what separates a thought-through system from a shipped one.
-  
-      The backend was architected for failure, not just for the happy path. Payment retries use idempotency keys — a dropped connection and retry during a flaky network can't create a duplicate charge. Razorpay webhooks are verified server-side. Seat release on cancellation is atomic, so two riders can't book the same seat concurrently. Refresh tokens rotate with revocation on each use, so a stolen token can't be replayed. Background jobs — CSV exports, document verification, email alerts — run through Upstash QStash instead of blocking API responses. File uploads (driver licenses, RC documents) use a signed-URL flow: the client requests a signed URL from a Next.js route that validates type and size, then uploads directly to Supabase storage — bypassing the backend entirely for the actual file transfer.
-  
-      Trust and safety were treated as first-class concerns, not afterthoughts. A reputation score is cached on the user row and recalculated asynchronously rather than computed on every read. Two-way ratings, "highly recommend" tags, and a 5-warning suspension system with an appeal flow give the platform teeth. An emergency contact is required at signup, and an emergency button grabs a one-time location, sends a high-alert email, and pushes a live WebSocket notification to the admin dashboard. Distance-gated visibility hides phone numbers and driver photos until the trip is close to starting.
-  
-      The system is being built with a strict zero-cost infrastructure budget — Next.js on Vercel's free tier, Upstash Redis for caching and pub/sub, Stadia Maps (which bundles map tiles, geocoding, and routing under one free quota), Brevo for email, and Razorpay test mode for payments. Every tool chosen has a verified free tier, which forces architectural decisions that a larger budget would let you avoid.
-      
-      Daigo is still in active development on Backend. The must-build tier — auth, roles, vehicle verification, request forms, matching engine, pricing, trip lifecycle, payments, safety features, admin dashboard, i18n — is being executed in focused weekly sprints. The relay matching, circle bootstrapping, and pricing benchmark come next. The project's real value isn't the feature list; it's that every piece required reasoning about a real systems-design problem, and the backend now reflects that thinking end-to-end.
+      DaiGo is a commute-sharing platform for students and office-goers, closer to BlaBlaCar than Uber. A rider posts where they are going; the app pushes the request to people who already drive that way, by bike, car, auto or cab. The price is shown before the ride with a plain breakdown, and when no single driver covers the whole trip, DaiGo chains two drivers into a relay with one handover. It is live at daigo.dipsharma.me, built for three mapped regions, with affordability as the main goal.
+
+      The project started as an answer to one question: what makes a system hard to build, rather than just full of features? Most student projects follow the same shapes, a CRUD app with auth or a chat app. DaiGo is a two-sided marketplace with cold-start dynamics, adversarial trust behavior, pricing correctness constraints, geospatial matching and safety-critical design, so every piece maps to a real systems-design problem.
+
+      Cold start was the first hard problem. A marketplace with no drivers has no value for riders, and the reverse is just as true. The answer was circles: college and office email domains get matched to each other first, before the platform opens to the public. A notify-me waitlist catches requests that expire unmatched, and a referral system tied to a coin economy encourages organic growth.
+
+      Matching is geospatial. Route overlap within a detour limit, plus a suggested meeting point, runs as raw PostGIS queries because Prisma can't express them. When no single driver fits, a second PostGIS query searches a 3 km radius around the midpoint to chain two drivers through a walkable transfer point. The trip only commits when both drivers accept, in a single transaction, and the price is the same as a direct match.
+
+      Concurrency was the second hard problem. When a request reaches several drivers, the first to accept wins, with a 75-second window enforced on the server and the countdown shown per second on the client. Simultaneous accepts are serialized inside database transactions, so they can't race. Events travel through Redis pub/sub to WebSocket clients, with a polling fallback so the app still works if the connection drops. Once a driver is matched, a 5-minute offer window lets driver and rider settle the price before the trip locks.
+
+      The pricing engine has a correctness constraint most systems miss. Base rates run from 7 to 40 rupees per km by vehicle type, then pick up a per-zone multiplier (about 100 grid zones), time-of-day bands, weather input and a demand multiplier with a high/low threshold instead of a fixed ratio. Two hard caps apply, a per-km ceiling and an absolute ceiling. Calculations use raw float precision, but the final price is rounded to a whole rupee, and the caps are checked against the rounded value so a rounded price can never land just over a cap.
+
+      The backend was designed for failure, not just the happy path. Risky POST routes go through an idempotency wrapper, so a retry after a dropped connection replays the first successful response instead of creating a duplicate transaction. Cancellations release seats atomically, refresh tokens rotate with revocation, and JWTs are revocable so a suspended user can't keep using a token until it expires. Uploads go directly to S3 through presigned URLs, and QStash runs exports and alerts in the background instead of blocking requests.
+
+      Trust and safety were treated as first-class features. A trust score is cached on the user row and recalculated asynchronously, ratings run both ways, and five warnings lead to suspension with an appeal flow. An emergency contact is required at signup, the emergency button alerts admins live, and names, photos and phone numbers only appear as a trip gets close.
+
+      To let a reviewer see all of this without clicking through the app, there is a demo console for moderators. One trigger runs a 1,000-request simulation or fires 100 parallel accepts at exactly one trip and shows the numbers. The interface is localized in English, Nepali and Hindi and built without a heavy component library, including a custom slide-to-confirm booking control, six-box OTP inputs and a lazy-loaded MapLibre map that follows the system theme.
+
+      The backend is complete and the frontend routes are nearly done. Payments are still a mock gateway, licence checks are demo-level, and the map covers three regions, all listed under known limits. The value of the project isn't the feature list, it's that every piece required reasoning about a real systems-design problem.
     `
   },
   {
@@ -51,23 +123,33 @@ export const projects: Project[] = [
     name: "Yeti Jobs",
     tagline: "A production job portal connecting seekers and recruiters",
     summary:
-      "Built the full platform end to end: 50+ REST APIs, JWT with role-based access, and a PostgreSQL schema tuned with composite and GIN indexes that took search latency from 7ms down to 4.9ms. Designed for faults, not just features — load tested to 67 requests per second with zero failures, caught a connection pool leak before production, and shrank Docker images by 74% to buy headroom for scale. Shipped an AI resume scorer and automated CI/CD via GitHub Actions.",
+      "Built the full platform end to end: 50+ REST APIs, JWT with role-based access, and a PostgreSQL schema tuned with composite and GIN indexes that took search latency from 7ms down to 4.9ms. Designed for faults, not just features — load tested to 67 requests per second with zero failures, caught a connection pool leak before production, and shrank Docker images by 74% to buy headroom for scale. Shipped an AI resume scorer, automated CI/CD via GitHub Actions, and ported the backend from Render to an AWS EC2 instance.",
     role: "Solo project",
     year: "2026",
     githubUrl: "https://github.com/tech-dipesh/yeti-jobs",
     liveUrl: "https://yeti-jobs.vercel.app",
     apiDocsUrl: "https://yeti-jobs.onrender.com/api/v1/swagger/",
     screenshot: "/projects/yeti-jobs.png",
-    span: "three",
-    techStack: ["Node.js", "Express", "PostgreSQL", "React", "TypeScript", "Docker", "Supabase"],
+    span: "two",
+    techStack: ["Node.js", "Express", "PostgreSQL", "React", "TypeScript", "Docker", "Supabase", "AWS EC2"],
     features: [
       { title: "Fault-tolerant architecture", detail: "Designed for component-level resilience — connection pooling, rate limiting, and error handling prevent single faults from becoming system failures" },
-      { title: "Idempotent job applications", detail: "A per-user, per-job idempotency key (rotated every 5 minutes) means a dropped connection and retry during a flaky network can't create a duplicate application or race against itself" },
+      { title: "EC2 deployment", detail: "Backend ported from Render's free tier to an AWS EC2 instance, so it runs on infrastructure I control instead of a host that sleeps after 15 idle minutes" },
       { title: "Full-text job search", detail: "Composite and GIN indexing cut query time from 7ms to 4.9ms" },
       { title: "Role-based access", detail: "JWT auth with separate dashboards for seekers, recruiters, and admins" },
       { title: "AI resume scoring", detail: "OpenAI-backed ATS feedback scored 0 to 100 against a job posting" },
       { title: "Container optimized", detail: "Multi-stage Docker builds shrank images from 1.99GB to 520MB" },
       { title: "Load tested", detail: "67 req/sec sustained with zero failures at 100 concurrent users" },
+    ],
+    sections: [
+      {
+        title: "Planned next",
+        points: [
+          "Idempotency keys on job applications, so a dropped connection and a retry can't create a duplicate application",
+          "A Redis-cached popular-jobs endpoint to take repeated reads off PostgreSQL",
+          "Direct-to-storage resume uploads through signed URLs, so files never pass through the backend",
+        ],
+      },
     ],
     description: `
     Yeti Jobs is a full-stack production job portal built from scratch to connect job seekers, recruiters, and administrators through a scalable hiring workflow. The platform was designed as a complete software system rather than a simple CRUD application, covering authentication, role-based access control, job discovery, applications, company management, resume handling, and recruiter operations.
@@ -86,9 +168,38 @@ export const projects: Project[] = [
     
     For reliability testing, I performed load testing with Apache Bench and verified system behavior under concurrent traffic. The application sustained 67 requests per second with 100 concurrent users while maintaining zero failed requests. During testing, I identified and fixed backend issues such as connection pool management problems before deployment.
     
-    The application is deployed using modern cloud infrastructure with Vercel for frontend hosting, Render for backend services, and Supabase for database and storage services. CI/CD automation was added using GitHub Actions to improve deployment workflow and maintain code quality.
+    The application runs on Vercel for the frontend, an AWS EC2 instance for the backend, and Supabase for database and storage. The backend was ported from Render, whose free tier sleeps after 15 minutes of inactivity, to EC2 so it stays on and runs on infrastructure I control. CI/CD automation was added using GitHub Actions to improve deployment workflow and maintain code quality.
     
     Building Yeti Jobs helped me understand how real-world applications are designed, optimized, tested, and maintained. The project combines frontend engineering, backend architecture, database optimization, security practices, cloud deployment, and performance testing into a complete production-style system.
+    `
+  },
+  {
+    slug: "home-finder",
+    name: "Home Finder",
+    tagline: "An Airbnb-style rental platform with live maps",
+    summary:
+      "My first backend-focused project using the MVC pattern: Passport.js authentication, Cloudinary image uploads, and MapTiler geocoding that turns an address into map coordinates.",
+    role: "Solo project",
+    year: "2025",
+    githubUrl: "https://github.com/tech-dipesh/mega-project-listing",
+    liveUrl: "https://mega-project-listing.onrender.com",
+    screenshot: "/projects/airbnb.png",
+    span: "one",
+    techStack: ["Node.js", "Express", "MongoDB", "EJS", "Passport.js"],
+    features: [
+      { title: "Auth and ownership", detail: "Only listing owners can edit or delete their own posts" },
+      { title: "Geocoding", detail: "MapTiler turns a typed address into live map markers" },
+    ],
+    description: `
+    Home Finder is an Airbnb-inspired rental platform and my first major backend-focused project, built to understand how real-world web applications handle authentication, authorization, database relationships, file uploads, validation, and geolocation. The project follows the MVC architecture pattern and combines multiple backend concepts into a single application while maintaining a structured and scalable codebase.
+    
+    Users can create accounts, log in securely, publish property listings, upload images, browse available rentals, and leave reviews with ratings. Authentication is implemented using Passport.js with session-based login, while authorization rules ensure that only listing owners can edit or delete their own content and review authors can manage their own reviews.
+    
+    A major part of the project was integrating Cloudinary for image storage and management. Uploaded images are processed and stored in the cloud, with image URLs saved directly in MongoDB for efficient retrieval and rendering. The platform also includes MapTiler geocoding, allowing users to enter a location as plain text and automatically convert it into geographic coordinates that are displayed on an interactive map.
+    
+    The backend was built with Node.js, Express, and MongoDB, using Mongoose to model relationships between users, listings, and reviews. Joi validation was added to prevent invalid data from reaching the database, while custom middleware handles authentication checks, authorization rules, and centralized error management. Session data is persisted using connect-mongo, providing reliable login sessions across requests.
+    
+    During development, I solved challenges involving nested routes, middleware organization, session handling, image upload pipelines, geocoding integration, schema validation, database relationships, and deployment configuration. Building Home Finder helped me gain practical experience with backend architecture, RESTful routing, cloud services, authentication workflows, and creating maintainable full-stack applications beyond basic CRUD functionality.
     `
   },
   {
@@ -130,35 +241,6 @@ export const projects: Project[] = [
     During development, I solved multiple frontend challenges including drag-and-drop state synchronization, controlled form handling, localStorage data consistency, event handling issues, sorting logic, CSV formatting problems, and responsive layout improvements.
     
     StateFlow helped me understand advanced frontend concepts beyond basic component development, including state history management, drag-and-drop architecture, performance optimization, client-side persistence, reusable component design, and building a complete user-focused application from an empty repository.
-    `
-  },
-  {
-    slug: "home-finder",
-    name: "Home Finder",
-    tagline: "An Airbnb-style rental platform with live maps",
-    summary:
-      "My first backend-focused project using the MVC pattern: Passport.js authentication, Cloudinary image uploads, and MapTiler geocoding that turns an address into map coordinates.",
-    role: "Solo project",
-    year: "2025",
-    githubUrl: "https://github.com/tech-dipesh/mega-project-listing",
-    liveUrl: "https://mega-project-listing.onrender.com",
-    screenshot: "/projects/airbnb.png",
-    span: "one",
-    techStack: ["Node.js", "Express", "MongoDB", "EJS", "Passport.js"],
-    features: [
-      { title: "Auth and ownership", detail: "Only listing owners can edit or delete their own posts" },
-      { title: "Geocoding", detail: "MapTiler turns a typed address into live map markers" },
-    ],
-    description: `
-    Home Finder is an Airbnb-inspired rental platform and my first major backend-focused project, built to understand how real-world web applications handle authentication, authorization, database relationships, file uploads, validation, and geolocation. The project follows the MVC architecture pattern and combines multiple backend concepts into a single application while maintaining a structured and scalable codebase.
-    
-    Users can create accounts, log in securely, publish property listings, upload images, browse available rentals, and leave reviews with ratings. Authentication is implemented using Passport.js with session-based login, while authorization rules ensure that only listing owners can edit or delete their own content and review authors can manage their own reviews.
-    
-    A major part of the project was integrating Cloudinary for image storage and management. Uploaded images are processed and stored in the cloud, with image URLs saved directly in MongoDB for efficient retrieval and rendering. The platform also includes MapTiler geocoding, allowing users to enter a location as plain text and automatically convert it into geographic coordinates that are displayed on an interactive map.
-    
-    The backend was built with Node.js, Express, and MongoDB, using Mongoose to model relationships between users, listings, and reviews. Joi validation was added to prevent invalid data from reaching the database, while custom middleware handles authentication checks, authorization rules, and centralized error management. Session data is persisted using connect-mongo, providing reliable login sessions across requests.
-    
-    During development, I solved challenges involving nested routes, middleware organization, session handling, image upload pipelines, geocoding integration, schema validation, database relationships, and deployment configuration. Building Home Finder helped me gain practical experience with backend architecture, RESTful routing, cloud services, authentication workflows, and creating maintainable full-stack applications beyond basic CRUD functionality.
     `
   },
   {
