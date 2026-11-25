@@ -31,7 +31,7 @@ export async function GET() {
     status: "open_to_internships",
     message: "hey, you found the API. nice.",
     location: "Chandigarh, India",
-    currentlyBuilding: "Yeti Jobs — a production job portal, PERN stack",
+    currentlyBuilding: "DaiGo : a commute-sharing platform with relay matching (daigo.dipsharma.me)",
     currentlyLearning: futureSkills,
     links: {
       portfolio: siteConfig.url,

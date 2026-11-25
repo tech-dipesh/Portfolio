@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CodePlayground } from "@/components/home/code-playground";
@@ -10,10 +11,13 @@ export function Hero() {
       <div>
         <div className="flex items-center gap-4">
           <ProfilePhoto />
-          <div className="inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-medium text-accent-soft">
+          <Link
+            href="/projects/daigo"
+            className="inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-medium text-accent-soft transition-colors hover:border-accent/60"
+          >
             <MapPin className="h-3 w-3" />
-            {siteConfig.location} · Building Yeti Jobs
-          </div>
+            {siteConfig.location} · DaiGo is live
+          </Link>
         </div>
 
         <h1 className="mt-6 text-5xl font-semibold leading-[1.05] tracking-tighter md:text-6xl">

@@ -13,7 +13,7 @@ const pipeline: PipelineStep[] = [
   { label: "docker build", detail: "multi-stage build, alpine base, 520MB image" },
   { label: "test suite", detail: "28 integration tests, jest + supertest" },
   { label: "load test", detail: "67 req/s sustained, 0 failures at 100 concurrent" },
-  { label: "deploy", detail: "render + vercel, cold start eliminated" },
+  { label: "deploy", detail: "ec2 + vercel, no cold starts" },
 ];
 
 type StepStatus = "done" | "active" | "pending";

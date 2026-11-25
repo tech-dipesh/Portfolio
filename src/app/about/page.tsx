@@ -38,10 +38,17 @@ export default function AboutPage() {
         </p>
         <p className="text-base leading-relaxed text-ink-muted">
           Most of what I know, I learned by building things all the way to production instead of
-          stopping at a tutorial&apos;s finish line — Yeti Jobs, a job portal with a real database
-          schema and real auth, is the clearest proof of that. Outside of shipping code, I spend a
+          stopping at a tutorial&apos;s finish line — DaiGo, a commute-sharing platform with relay
+          matching and race-safe booking, and Yeti Jobs, a job portal with a real database schema
+          and real auth, are the clearest proof of that. Outside of shipping code, I spend a
           lot of time on LeetCode, not to collect a solved-count, but because every hard problem
           teaches me to see the shape of a solution before I write a line of it.
+        </p>
+        <p className="text-base leading-relaxed text-ink-muted">
+          I&apos;m a language-agnostic software engineer. The value I bring to a business matters
+          more to me than the language or framework I bring it in: JavaScript and TypeScript are
+          my daily tools, Python and Django come with my volunteer work at Jawafdehi, and Go is
+          what I&apos;m learning next.
         </p>
         <p className="text-base leading-relaxed text-ink-muted">
           I&apos;m currently {siteConfig.availability.toLowerCase()} — if you&apos;re hiring for a
