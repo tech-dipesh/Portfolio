@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: siteConfig.title,
   description: siteConfig.description,
+  alternates: { types: { "application/rss+xml": "/rss" } },
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.description,

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Rss } from "lucide-react";
 import { BlogCard } from "@/components/blogs/blog-card";
 import { getAllPosts } from "@/lib/blog";
 import { siteConfig } from "@/config/site";
@@ -20,6 +21,13 @@ export default function BlogsPage() {
           Short write-ups on the specific problems I ran into while building Yeti Jobs and StateFlow, and
           how I actually solved them.
         </p>
+        <a
+          href="/rss"
+          className="mt-4 inline-flex items-center gap-1.5 text-sm text-ink-faint transition-colors hover:text-ink"
+        >
+          <Rss className="h-3.5 w-3.5" />
+          Subscribe via RSS
+        </a>
       </div>
 
       {posts.length === 0 ? (

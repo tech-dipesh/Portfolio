@@ -16,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
     url: `${siteConfig.url}/projects/${project.slug}`,
-    priority: 0.8,
+    priority: project.flagship ? 0.95 : 0.8,
   }));
 
   const blogRoutes: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
