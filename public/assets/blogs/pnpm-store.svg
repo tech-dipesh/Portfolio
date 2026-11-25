@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" role="img" aria-label="Diagram: npm stores a copy of every package in every project, pnpm keeps one shared store and links to it">
+  <rect width="900" height="440" rx="24" fill="#0f172a" stroke="#334155"/>
+  <line x1="450" y1="30" x2="450" y2="360" stroke="#334155" stroke-dasharray="4 6"/>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif">
+    <text x="40" y="52" font-size="24" font-weight="700" fill="#f8fafc">npm</text>
+    <text x="40" y="76" font-size="14" fill="#94a3b8">a full copy in every project</text>
+    <text x="490" y="52" font-size="24" font-weight="700" fill="#f8fafc">pnpm</text>
+    <text x="490" y="76" font-size="14" fill="#94a3b8">one shared store, linked into each project</text>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" text-anchor="middle">
+    <rect x="40" y="110" width="110" height="172" rx="12" fill="#1e293b" stroke="#334155"/>
+    <rect x="160" y="110" width="110" height="172" rx="12" fill="#1e293b" stroke="#334155"/>
+    <rect x="280" y="110" width="110" height="172" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="95" y="132" fill="#94a3b8">project A</text>
+    <text x="215" y="132" fill="#94a3b8">project B</text>
+    <text x="335" y="132" fill="#94a3b8">project C</text>
+  </g>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" text-anchor="middle" fill="#cbd5e1">
+    <rect x="54" y="148" width="82" height="24" rx="6" fill="#334155"/><text x="95" y="164">react</text>
+    <rect x="54" y="180" width="82" height="24" rx="6" fill="#334155"/><text x="95" y="196">next</text>
+    <rect x="54" y="212" width="82" height="24" rx="6" fill="#334155"/><text x="95" y="228">zod</text>
+    <rect x="54" y="244" width="82" height="24" rx="6" fill="#334155"/><text x="95" y="260">axios</text>
+    <rect x="174" y="148" width="82" height="24" rx="6" fill="#334155"/><text x="215" y="164">react</text>
+    <rect x="174" y="180" width="82" height="24" rx="6" fill="#334155"/><text x="215" y="196">next</text>
+    <rect x="174" y="212" width="82" height="24" rx="6" fill="#334155"/><text x="215" y="228">zod</text>
+    <rect x="174" y="244" width="82" height="24" rx="6" fill="#334155"/><text x="215" y="260">axios</text>
+    <rect x="294" y="148" width="82" height="24" rx="6" fill="#334155"/><text x="335" y="164">react</text>
+    <rect x="294" y="180" width="82" height="24" rx="6" fill="#334155"/><text x="335" y="196">next</text>
+    <rect x="294" y="212" width="82" height="24" rx="6" fill="#334155"/><text x="335" y="228">zod</text>
+    <rect x="294" y="244" width="82" height="24" rx="6" fill="#334155"/><text x="335" y="260">axios</text>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif">
+    <text x="40" y="312" font-size="13" fill="#fca5a5">3 projects, 3 copies of every package</text>
+    <rect x="40" y="324" width="350" height="14" rx="7" fill="#ef4444" opacity="0.85"/>
+    <text x="490" y="312" font-size="13" fill="#c4b5fd">3 projects, 1 copy, hard-linked</text>
+    <rect x="490" y="324" width="350" height="14" rx="7" fill="#1e293b"/>
+    <rect x="490" y="324" width="117" height="14" rx="7" fill="#8b5cf6"/>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" text-anchor="middle">
+    <rect x="490" y="110" width="110" height="68" rx="12" fill="#1e293b" stroke="#334155"/>
+    <rect x="610" y="110" width="110" height="68" rx="12" fill="#1e293b" stroke="#334155"/>
+    <rect x="730" y="110" width="110" height="68" rx="12" fill="#1e293b" stroke="#334155"/>
+    <text x="545" y="136" fill="#94a3b8">project A</text>
+    <text x="665" y="136" fill="#94a3b8">project B</text>
+    <text x="785" y="136" fill="#94a3b8">project C</text>
+    <text x="545" y="158" font-size="11" fill="#a78bfa">links only</text>
+    <text x="665" y="158" font-size="11" fill="#a78bfa">links only</text>
+    <text x="785" y="158" font-size="11" fill="#a78bfa">links only</text>
+    <line x1="545" y1="178" x2="545" y2="206" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="4 3"/>
+    <line x1="665" y1="178" x2="665" y2="206" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="4 3"/>
+    <line x1="785" y1="178" x2="785" y2="206" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="4 3"/>
+    <rect x="490" y="206" width="350" height="76" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="665" y="228" fill="#c4b5fd">global store, one copy</text>
+  </g>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" text-anchor="middle" fill="#ddd6fe">
+    <rect x="506" y="242" width="68" height="24" rx="6" fill="#4c1d95"/><text x="540" y="258">react</text>
+    <rect x="582" y="242" width="68" height="24" rx="6" fill="#4c1d95"/><text x="616" y="258">next</text>
+    <rect x="658" y="242" width="68" height="24" rx="6" fill="#4c1d95"/><text x="692" y="258">zod</text>
+    <rect x="734" y="242" width="68" height="24" rx="6" fill="#4c1d95"/><text x="768" y="258">axios</text>
+  </g>
+  <text x="450" y="394" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="700" fill="#c4b5fd">Over 20 GB reclaimed on my machine</text>
+</svg>
